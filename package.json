@@ -1,0 +1,23 @@
+{
+  "name": "qualified-embed",
+  "version": "1.0.0",
+  "description": "With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our simple SDK makes it simple to embed code challenges and assessments into your existing products.",
+  "main": "src/embed.js",
+  "scripts": {
+    "build": "webpack",
+    "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^3.6.4",
+    "penpal": "^5.2.1",
+    "prettier": "^3.2.5",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "ink-docstrap": "^1.3.2"
+  }
+}
