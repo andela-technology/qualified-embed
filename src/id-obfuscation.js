@@ -30,7 +30,7 @@ const base64MapReverse = Object.entries(base64Map)
  */
 export function obfuscateId(objectID) {
 	return btoa(objectID.replace(/.{2}/g, (v) => String.fromCharCode(parseInt(v, 16))))
-		.replace(/[\/=+]/g, v => base64Map[v]);
+		.replace(/[/=+]/g, v => base64Map[v]);
 }
 
 

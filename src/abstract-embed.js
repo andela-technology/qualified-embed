@@ -1,7 +1,4 @@
-/* eslint-disable angular/no-private-call,angular/log,no-console */
-
 import { ucFirst } from './utils/string-utils';
-import { isFunction } from './utils/type-utils';
 import { connectToChild } from './vendor/penpal';
 import { remove } from './utils/array-utils';
 import { toSafeObject } from './utils/object-utils/object-utils';
@@ -32,8 +29,7 @@ export class AbstractEmbed {
 		try {
 			// enable direct access via the node object
 			node.QualifiedEmbed = this;
-		} catch(err) {}
-
+		} catch(err) { /* ignore errors */ }
 
 		if(node.nodeName === 'IFRAME') {
 			/**
@@ -71,7 +67,7 @@ export class AbstractEmbed {
 		if(this.node) {
 			try {
 				this.node.QualifiedEmbed = null;
-			} catch(err) {}
+			} catch(err) { /* ignore errors */ }
 		}
 		if(this.connection) {
 			try {
@@ -106,7 +102,7 @@ export class AbstractEmbed {
 					eventProps[prop] = this[prop];
 				});
 				[this, this.options, manager].forEach(obj => {
-					if(obj && isFunction(obj[handler])) {
+					if(obj && typeof obj[handler] === 'function') {
 						obj[handler](eventProps);
 					}
 				});

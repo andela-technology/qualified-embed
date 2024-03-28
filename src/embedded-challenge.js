@@ -1,4 +1,3 @@
-/* eslint-disable angular/no-private-call,angular/log,no-console */
 import { AbstractEmbed } from './abstract-embed';
 import { QUALIFIED_EMBED_BASE_URL, QUALIFIED_EMBED_DATA_PROPERTY } from './constants';
 import { concatUrl, toQueryParams } from './utils/string-utils';
@@ -8,7 +7,7 @@ function _getStorageData(id, challengeId) {
 	try {
 		const jsonData = window.localStorage[id];
 		savedData = JSON.parse(jsonData || '{}');
-	} catch(err) {}
+	} catch(err) { /* ignore errors */ }
 	if(challengeId) {
 		return (savedData || {})[challengeId];
 	} else {

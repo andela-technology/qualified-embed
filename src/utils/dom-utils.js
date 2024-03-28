@@ -1,6 +1,3 @@
-/* eslint-disable angular/timeout-service */
-import { isString } from './type-utils';
-
 const doc = window.document;
 
 export function docReady(fn) {

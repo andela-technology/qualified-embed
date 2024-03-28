@@ -1,6 +1,6 @@
 # Qualified Embed SDK
 
-With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our simple SDK makes it simple to embed code challenges and assessments into your existing products.
+With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.
 
 
 ## See embeds in action

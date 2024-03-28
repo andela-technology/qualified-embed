@@ -1,5 +1,3 @@
-/* eslint-disable angular/no-private-call,angular/log,no-console */
-
 import { AbstractEmbed } from './abstract-embed';
 import { QUALIFIED_EMBED_BASE_URL } from './constants';
 import { concatUrl } from './utils/string-utils';

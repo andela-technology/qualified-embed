@@ -1,8 +1,6 @@
-/* eslint-disable angular/no-private-call */
 import { noop } from './utils/function-utils';
 import { QualifiedEmbeddedChallenge } from './embedded-challenge';
 import { docReady } from './utils/dom-utils';
-import { isString } from './utils/type-utils';
 import { QUALIFIED_EMBED_DEFAULT_SELECTOR } from './constants';
 
 function _checkDestroyed(manager) {
@@ -81,7 +79,7 @@ export class QualifiedEmbedManager {
 
 		if(autoCreate) {
 			docReady(() => {
-				const selector = isString(autoCreate) ? autoCreate : QUALIFIED_EMBED_DEFAULT_SELECTOR;
+				const selector = typeof autoCreate === 'string' ? autoCreate : QUALIFIED_EMBED_DEFAULT_SELECTOR;
 				Array.from(document.querySelectorAll(selector)).forEach(node => {
 					this.createEditor({ node });
 				});
