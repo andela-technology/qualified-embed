@@ -1,4 +1,4 @@
-# qualified-embed-manager
+# Qualified Embed
 
 Work in progress migration of Qualified's Embed to a public npm package
 
@@ -15,6 +15,7 @@ npm run jsdoc # bundle the docs to /docs
 
 ## TODO
 
+- Simplify classes `window.QualifiedEmbed.QualifiedEmbedManager.init({` -> `new window.QualifiedEmbed.Manager({`.
 - Add end-user usage instructions (and unpkg/jsdelivr options for script tags)
 - Add development instructions
 - Format codebase with prettier and add ignore-revs, possibly add husky precommit hook
@@ -24,6 +25,7 @@ npm run jsdoc # bundle the docs to /docs
   - If we want to move it to netlify, something like https://www.npmjs.com/package/jsdoc-to-markdown might help
 - Determine whether we can remove the /manager directory from the main codebase
 - Run by legal before going public
+- get webpack to build for browser module imports as well as script tags (or rely on unpkg?)
 - Add tests?
 - Add CONTRIBUTING.md, LICENSE
 - Flesh out this readme

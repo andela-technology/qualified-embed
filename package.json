@@ -5,12 +5,14 @@
   "main": "src/embed.js",
   "scripts": {
     "build": "webpack",
+    "dev": "webpack serve",
     "lint": "eslint src",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andela-technology/qualified-embed-manager.git" },
+    "url": "git+https://github.com/andela-technology/qualified-embed-manager.git"
+  },
   "keywords": [
     "qualified",
     "embed"
@@ -28,6 +30,7 @@
     "penpal": "^5.2.1",
     "prettier": "^3.2.5",
     "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   }
 }

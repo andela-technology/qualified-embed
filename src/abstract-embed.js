@@ -1,7 +1,7 @@
 import { ucFirst } from './utils/string-utils';
 import { connectToChild } from './vendor/penpal';
 import { remove } from './utils/array-utils';
-import { toSafeObject } from './utils/object-utils/object-utils';
+import { toSafeObject } from './utils/object-utils';
 
 /**
  * Base class for embedded challenges and assessments
