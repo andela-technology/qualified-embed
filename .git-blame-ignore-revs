@@ -14,3 +14,4 @@
 # You should add new commit hashes to this file when you create or find such big
 # automated refactorings while reading code history. If you only know the short hash,
 # use `git rev-parse 1d5abf01` to expand it to the full SHA1 hash needed in this file.
+3363937f0bb614046eb88906acc666a447e7ce7a # Autoformat with prettier ^3.2.5 defaults
