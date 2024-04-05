@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: path.resolve("src", "embed.js"),
+  entry: path.join(__dirname, "src", "embed.js"),
   output: {
     filename: "embed.min.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
     library: {
       name: "QualifiedEmbed",
       type: "umd",
