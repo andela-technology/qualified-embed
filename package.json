@@ -7,7 +7,7 @@
     "build": "webpack",
     "dev": "webpack serve",
     "lint": "eslint src",
-    "format": "prettier -w src",
+    "format": "prettier -w .",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
   },
   "repository": {
