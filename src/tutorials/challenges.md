@@ -3,11 +3,11 @@ but can also be used for quick, low-stakes tests.
 
 When embedding challenges, you can:
 
-* Completely control the candidate experience, including setting the theme and controlling the workflow better.
-* Provide inline access to practice or example challenges.
-* Override or limit some functionality.
-* Enable read-only or restricted editing modes.
-* Dynamically change file contents.
+- Completely control the candidate experience, including setting the theme and controlling the workflow better.
+- Provide inline access to practice or example challenges.
+- Override or limit some functionality.
+- Enable read-only or restricted editing modes.
+- Dynamically change file contents.
 
 ## Quick Start Example
 
@@ -48,6 +48,7 @@ window.qualifiedEmbedManager = window.QualifiedEmbed.init({
 });
 </script>
 ```
+
 ## Usage
 
 There are two main ways to use embedded challenges: authenticated and public.
@@ -61,22 +62,21 @@ You can mix both techniques in the same page, within the same manager. This can 
 
 The Embed editor is not intended as a 1-to-1 replacement for the dedicated assessment suite. Several features are not available within the embedded app at this time, including:
 
-* **Time-Limits** are not shown or enforced, either for whole assessments or for individual challenges. If you need to enforce time limits, you should manage them within your application.
-* **Quiz Challenges** are not currently supported at all.
-* **Project Code Challenges** are presented in a limited format:
-  * There is no way to **submit** project challenges.
-  * Candidates are not able to add, rename, or delete files.
-  * There is no file tree.
-  * The editor also only shows editable (`readwrite`) files to the candidate.
-* **External IDE** is not supported.
-* For **Assessments**, your system will be required to mark the assessment as submitted for complete scoring.
+- **Time-Limits** are not shown or enforced, either for whole assessments or for individual challenges. If you need to enforce time limits, you should manage them within your application.
+- **Quiz Challenges** are not currently supported at all.
+- **Project Code Challenges** are presented in a limited format:
+  - There is no way to **submit** project challenges.
+  - Candidates are not able to add, rename, or delete files.
+  - There is no file tree.
+  - The editor also only shows editable (`readwrite`) files to the candidate.
+- **External IDE** is not supported.
+- For **Assessments**, your system will be required to mark the assessment as submitted for complete scoring.
 
 If any of the above are necessary for your use case, [try embedding full assessments instead]{@tutorial assessments}.
 
 ## Initial Setup
 
 For configuring group of challenges, please use `init` on [window.QualifiedEmbed]{@linkcode QualifiedEmbedManager}. Once you've set up your manager, you can create individual embeds using {@link QualifiedEmbedManager#createEditor}. See {@link QualifiedEmbeddedChallenge} for the editor functions.
-
 
 ### Direct Challenge Creation
 
@@ -128,7 +128,6 @@ These options will help you set up the challenge correctly.
 - [initialFiles]{@linkcode ChallengeOptions#initialFiles} is used to override the contents of the files used within the challenge.
 - [localStorageId]{@linkcode ChallengeOptions#localStorageId} can be set to automatically back up and restore the editor's contents within the browser's localStorage.
 
-
 ## Callbacks
 
 The embedded editor provides several callbacks throughout its lifecycle. Click on any callback for details.
@@ -137,4 +136,3 @@ The embedded editor provides several callbacks throughout its lifecycle. Click o
 - [onChange()]{@linkcode ChallengeOptions#onChange} is called every time the editor's contents change (debounced to prevent too much noise). Use this to build a custom save/restore along with [initialFiles]{@linkcode ChallengeOptions#initialFiles}.
 - [onRunStart()]{@linkcode ChallengeOptions#onRunStart} is called at the start of any run of the code.
 - [onRun()]{@linkcode ChallengeOptions#onRun} is called after every completed run of the code. It includes a lot of detailed information about the run results.
-

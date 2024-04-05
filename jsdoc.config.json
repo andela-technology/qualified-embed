@@ -6,9 +6,7 @@
     "destination": "docs",
     "tutorials": "src/tutorials"
   },
-  "plugins": [
-    "plugins/markdown"
-  ],
+  "plugins": ["plugins/markdown"],
   "templates": {
     "systemName": "Qualified Embed SDK",
     "footer": "<div><br><br><br><br><br><br></div>",

@@ -2,9 +2,9 @@ Embedding assessments allows you to embed an entire Qualified assessment directl
 
 You should embed the full assessment whenever you need the following:
 
-* The complete assessment experience, including getting full scores & playback.
-* The full project challenge experience, including creating and moving files.
-* Q&A challenges
+- The complete assessment experience, including getting full scores & playback.
+- The full project challenge experience, including creating and moving files.
+- Q&A challenges
 
 ## Quick Start Example
 
@@ -49,6 +49,7 @@ documentReady(function() {
 function documentReady(f){var d=document;"complete"===d.readyState||"interactive"===d.readyState?window.setTimeout(f,1):d.addEventListener("DOMContentLoaded",f)}
 </script>
 ```
+
 ## Usage
 
 Before you can use embedded assessments, you need to [invite the candidate or student using the AssessmentInvitations API](https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations). This provides you with the unique `invitePath` and `authToken` properties needed to load the assessment.
@@ -69,7 +70,7 @@ These options will help you configure the style and visible components of the ed
 
 - [hideSidebar]{@linkcode AssessmentOptions#hideSidebar} can be used to completely hide the built-in navigation sidebar. If you do this, you may want to provide external controls for challenge navigation. However, the internal challenge buttons will allow the candidate to move forward to the next challenge and through to submission (but never backwards to a previous one).
 
-    **Also note this hides the timer.** On timed assessments, this means you'll need to provide your own external timer. You can use [`startedAt`, `timeLimit`, and `cutOffTime` from `onLoaded` to create an external timer]{@linkplain AssessmentOptions~LoadData}.
+  **Also note this hides the timer.** On timed assessments, this means you'll need to provide your own external timer. You can use [`startedAt`, `timeLimit`, and `cutOffTime` from `onLoaded` to create an external timer]{@linkplain AssessmentOptions~LoadData}.
 
 - [hideWelcome]{@linkcode AssessmentOptions#hideWelcome} can be used to immediately start a candidate on the assessment. This also hides any welcome screen information, such as navigation and timer information.
 
@@ -82,4 +83,3 @@ The embedded editor provides several callbacks throughout its lifecycle. Click o
 - [onSolutionUpdated()]{@linkcode AssessmentOptions#onSolutionUpdated} is called as challenges are changed and solutions are modified.
 - [onSubmitted()]{@linkcode AssessmentOptions#onSubmitted} is called once the entire assessment has been submitted.
 - [onError()]{@linkcode AssessmentOptions#onError} is called for unrecoverable error events, such as network errors or permissions errors.
-

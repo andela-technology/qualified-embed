@@ -1,17 +1,14 @@
-import { padNum } from './utils/string-utils';
-
+import { padNum } from "./utils/string-utils";
 
 // Because base64 encoding includes URL-unfriendly characters (/, +, and =), we map them
 // to URL-safe characters _, -, and ~ (tilde).
 // This means we don't have to escape the characters. We also get the benefit of slightly better obfuscation,
 // since the value doesn't look as much like a base64 encoding.
-const base64Map = { '/': '_', '+': '-', '=': '~' };
-const base64MapReverse = Object.entries(base64Map)
-	.reduce((o, [k, v]) => {
-		o[v] = k;
-		return o;
-	}, {});
-
+const base64Map = { "/": "_", "+": "-", "=": "~" };
+const base64MapReverse = Object.entries(base64Map).reduce((o, [k, v]) => {
+  o[v] = k;
+  return o;
+}, {});
 
 /**
  * Obfuscates a Mongo-DB ObjectID in several steps:
@@ -29,10 +26,10 @@ const base64MapReverse = Object.entries(base64Map)
  * @returns {string} Obfuscated ID.
  */
 export function obfuscateId(objectID) {
-	return btoa(objectID.replace(/.{2}/g, (v) => String.fromCharCode(parseInt(v, 16))))
-		.replace(/[/=+]/g, v => base64Map[v]);
+  return btoa(
+    objectID.replace(/.{2}/g, (v) => String.fromCharCode(parseInt(v, 16))),
+  ).replace(/[/=+]/g, (v) => base64Map[v]);
 }
-
 
 /**
  * Reverses an obfuscation performed by obfuscateId.
@@ -43,8 +40,8 @@ export function obfuscateId(objectID) {
  * @returns {string} Original ID as a hexadecimal string
  */
 export function deobfuscateId(obfuscatedId) {
-	return atob(obfuscatedId.replace(/[-_~]/g, v => base64MapReverse[v]))
-		.split('')
-		.map(c => padNum(c.charCodeAt(0).toString(16)))
-		.join('');
+  return atob(obfuscatedId.replace(/[-_~]/g, (v) => base64MapReverse[v]))
+    .split("")
+    .map((c) => padNum(c.charCodeAt(0).toString(16)))
+    .join("");
 }

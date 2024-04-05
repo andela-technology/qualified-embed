@@ -1,16 +1,16 @@
-import { identity } from './function-utils';
+import { identity } from "./function-utils";
 
 export function ucFirst(str) {
-	str = String(str);
-	return str.length === 0 ? str : str[0].toUpperCase() + str.slice(1);
+  str = String(str);
+  return str.length === 0 ? str : str[0].toUpperCase() + str.slice(1);
 }
 
 export function toStringEmpty(str) {
-	if(str === null || str === undefined) {
-		return '';
-	} else {
-		return String(str);
-	}
+  if (str === null || str === undefined) {
+    return "";
+  } else {
+    return String(str);
+  }
 }
 
 /**
@@ -20,18 +20,21 @@ export function toStringEmpty(str) {
  * @returns {string}
  */
 export function padNum(n, len = 2) {
-	const s = toStringEmpty(n);
-	return '0'.repeat(Math.max(0, len - s.length)) + s;
+  const s = toStringEmpty(n);
+  return "0".repeat(Math.max(0, len - s.length)) + s;
 }
 
 export function concatUrl(...parts) {
-	const slashes = /^\/+|\/+$/g;
-	return parts.map(p => toStringEmpty(p).replace(slashes, '')).filter(identity).join('/');
+  const slashes = /^\/+|\/+$/g;
+  return parts
+    .map((p) => toStringEmpty(p).replace(slashes, ""))
+    .filter(identity)
+    .join("/");
 }
 
 export function toQueryParams(params) {
-	return Object.keys(params)
-		.filter(k => params[k])
-		.map(k => `${k}=${encodeURIComponent(params[k])}`)
-		.join('&');
+  return Object.keys(params)
+    .filter((k) => params[k])
+    .map((k) => `${k}=${encodeURIComponent(params[k])}`)
+    .join("&");
 }

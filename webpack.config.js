@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     {
-      apply: compiler => {
+      apply: (compiler) => {
         compiler.hooks.afterEmit.tap("CopyPublicHtml", () => {
           const fs = require("fs");
           const src = path.join(__dirname, "public", "index.html");

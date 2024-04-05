@@ -1,8 +1,8 @@
 {
-	"challenges": {
-		"title": "Embedding Challenges"
-	},
-	"assessments": {
-		"title": "Embedding Assessments"
-	}
+  "challenges": {
+    "title": "Embedding Challenges"
+  },
+  "assessments": {
+    "title": "Embedding Assessments"
+  }
 }

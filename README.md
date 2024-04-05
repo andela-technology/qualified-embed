@@ -5,7 +5,6 @@ With Embed, you can now build advanced, developer-friendly coding products for e
 - [Qualified Embed SDK docs](https://andela-technology.github.io/qualified-embed/)
 - [Qualified Embed demo](https://www.qualified.io/embedded)
 
-
 ## Usage
 
 Node:
@@ -20,11 +19,9 @@ CDN/browser:
 <script src=":replace with unpkg or jsdelivr url:"></script>
 ```
 
-
 ## Examples
 
 TODO: react and vanilla. https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/ has an example of testing an npm package locally.
-
 
 ## Development
 
@@ -38,13 +35,11 @@ npm run lint # run eslint
 npm run format # run prettier
 ```
 
-
 ## Deploying the Package
 
 ```
 npm publish
 ```
-
 
 ## Deploying the Docs
 
@@ -55,7 +50,6 @@ git add -f docs
 git commit -m "Deploy docs"
 git push
 ```
-
 
 ## TODO
 

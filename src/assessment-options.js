@@ -5,156 +5,155 @@
  * @interface
  */
 export const AssessmentOptions = {
-	/**
-	 * Unique `invitePath` for this assessment retrieved from the
-	 * [AssessmentInvitation API](https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations).
-	 *
-	 * Note: The invite path will be modified to provide a more secure integration to the embedded assessment. If the
-	 * candidate attempts to open the iframe in a new tab, it will not work as a standalone assessment.
-	 *
-	 * @name AssessmentOptions#invitePath
-	 * @type string
-	 */
-	invitePath: undefined,
+  /**
+   * Unique `invitePath` for this assessment retrieved from the
+   * [AssessmentInvitation API](https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations).
+   *
+   * Note: The invite path will be modified to provide a more secure integration to the embedded assessment. If the
+   * candidate attempts to open the iframe in a new tab, it will not work as a standalone assessment.
+   *
+   * @name AssessmentOptions#invitePath
+   * @type string
+   */
+  invitePath: undefined,
 
-	/**
-	 * The `authToken` value from an [AssessmentInvitation](https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations). This token is required
-	 * to enable to candidate to gain access to the embedded assessment.
-	 *
-	 * @name AssessmentOptions#authToken
-	 * @type string
-	 */
-	authToken: undefined,
+  /**
+   * The `authToken` value from an [AssessmentInvitation](https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations). This token is required
+   * to enable to candidate to gain access to the embedded assessment.
+   *
+   * @name AssessmentOptions#authToken
+   * @type string
+   */
+  authToken: undefined,
 
-	/**
-	 * The unique embed client key value set on your team.
-	 *
-	 * @name AssessmentOptions#embedClientKey
-	 * @type string
-	 */
-	embedClientKey: undefined,
+  /**
+   * The unique embed client key value set on your team.
+   *
+   * @name AssessmentOptions#embedClientKey
+   * @type string
+   */
+  embedClientKey: undefined,
 
-	/**
-	 * Override the base URL for testing and debugging.
-	 *
-	 * @name AssessmentOptions#baseURL
-	 * @type string
-	 */
-	baseURL: null,
+  /**
+   * Override the base URL for testing and debugging.
+   *
+   * @name AssessmentOptions#baseURL
+   * @type string
+   */
+  baseURL: null,
 
-	/**
-	 * Enables setting up the editor in different read-only modes.
-	 *
-	 * * `null` or `"normal"` The default, normal mode with full editing and saving.
-	 * * `"restricted"` Means you can edit the code, but changes will never be saved, or sent back to the parent
-	 *   window.
-	 * * `"readonly"` Means you cannot edit the code at all. Useful for reviewing-only, without making changes.
-	 *   This also disables running code.
-	 *
-	 * **Note 1:** This feature works in conjunction with the property `editMode` set on the assessment itself via the API.
-	 * If this property is set, the embedded editor can only make the assessment _more_ restricted, it cannot make it
-	 * editable again.
-	 *
-	 * **Note 2:** If the assessment is normally editable, this feature only prevents saving changes at the client-level.
-	 * It's still possible for a very clever user to make changes by accessing the API directly. It should not be
-	 * considered a security feature.
-	 *
-	 * @name AssessmentOptions#mode
-	 * @type (null|"normal"|"readonly"|"restricted"|"runonly")
-	 */
-	mode: undefined,
+  /**
+   * Enables setting up the editor in different read-only modes.
+   *
+   * * `null` or `"normal"` The default, normal mode with full editing and saving.
+   * * `"restricted"` Means you can edit the code, but changes will never be saved, or sent back to the parent
+   *   window.
+   * * `"readonly"` Means you cannot edit the code at all. Useful for reviewing-only, without making changes.
+   *   This also disables running code.
+   *
+   * **Note 1:** This feature works in conjunction with the property `editMode` set on the assessment itself via the API.
+   * If this property is set, the embedded editor can only make the assessment _more_ restricted, it cannot make it
+   * editable again.
+   *
+   * **Note 2:** If the assessment is normally editable, this feature only prevents saving changes at the client-level.
+   * It's still possible for a very clever user to make changes by accessing the API directly. It should not be
+   * considered a security feature.
+   *
+   * @name AssessmentOptions#mode
+   * @type (null|"normal"|"readonly"|"restricted"|"runonly")
+   */
+  mode: undefined,
 
-	/**
-	 * The entire assessment navigation sidebar will not be shown. This also includes timer information.
-	 *
-	 * Not recommended unless you are planning on recreating the built-in navigation externally.
-	 *
-	 * @name AssessmentOptions#hideSidebar
-	 * @type boolean
-	 */
-	hideSidebar: undefined,
+  /**
+   * The entire assessment navigation sidebar will not be shown. This also includes timer information.
+   *
+   * Not recommended unless you are planning on recreating the built-in navigation externally.
+   *
+   * @name AssessmentOptions#hideSidebar
+   * @type boolean
+   */
+  hideSidebar: undefined,
 
-	/**
-	 * If true, the welcome screen is not shown at the beginning, and the assessment is auto-started immediately upon
-	 * loading.
-	 *
-	 * @name AssessmentOptions#hideWelcome
-	 * @type boolean
-	 */
-	hideWelcome: undefined,
+  /**
+   * If true, the welcome screen is not shown at the beginning, and the assessment is auto-started immediately upon
+   * loading.
+   *
+   * @name AssessmentOptions#hideWelcome
+   * @type boolean
+   */
+  hideWelcome: undefined,
 
-	/**
-	 * If true, the review screen is not shown in the sidebar. It will still be shown after submission, or if the
-	 * assessment becomes non-editable (post-submission or timeout).
-	 *
-	 * **NOTE:** The assessment will not be submittable within the assessment editor! You must submit the assessment
-	 * via {@link QualifiedEmbeddedAssessment.submit()}, an API call, or using timed assessments.
-	 *
-	 * @name AssessmentOptions#hideReview
-	 * @type boolean
-	 */
-	hideReview: undefined,
+  /**
+   * If true, the review screen is not shown in the sidebar. It will still be shown after submission, or if the
+   * assessment becomes non-editable (post-submission or timeout).
+   *
+   * **NOTE:** The assessment will not be submittable within the assessment editor! You must submit the assessment
+   * via {@link QualifiedEmbeddedAssessment.submit()}, an API call, or using timed assessments.
+   *
+   * @name AssessmentOptions#hideReview
+   * @type boolean
+   */
+  hideReview: undefined,
 
+  /**
+   * Callback for when the editor has loaded.
+   *
+   * This callback is always called at least once, and can be called multiple times.
+   *
+   * * Before an assessment result is found, it will be called with `started` set to `false`.
+   * * It will always be called when the assessment is ready to solve, with `started` set to `true`.
+   *
+   * @method AssessmentOptions#onLoaded
+   *
+   * @param {Object} eventData
+   * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
+   * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
+   */
+  onLoaded(eventData) {},
 
-	/**
-	 * Callback for when the editor has loaded.
-	 *
-	 * This callback is always called at least once, and can be called multiple times.
-	 *
-	 * * Before an assessment result is found, it will be called with `started` set to `false`.
-	 * * It will always be called when the assessment is ready to solve, with `started` set to `true`.
-	 *
-	 * @method AssessmentOptions#onLoaded
-	 *
-	 * @param {Object} eventData
-	 * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-	 * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
-	 */
-	onLoaded(eventData) {},
+  /**
+   * Callback whenever the assessment result is updated (active challenge changed, score updated, etc).
+   *
+   * @method AssessmentOptions#onUpdated
+   *
+   * @param {Object} eventData
+   * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
+   * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
+   */
+  onUpdated(eventData) {},
 
-	/**
-	 * Callback whenever the assessment result is updated (active challenge changed, score updated, etc).
-	 *
-	 * @method AssessmentOptions#onUpdated
-	 *
-	 * @param {Object} eventData
-	 * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-	 * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
-	 */
-	onUpdated(eventData) {},
+  /**
+   * Callback as the candidate makes changes to a solution (runs code, answers questions, etc)
+   *
+   * @method AssessmentOptions#onSolutionUpdated
+   *
+   * @param {Object} eventData
+   * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
+   * @param {AssessmentOptions~ChallengeData} eventData.data - Information about the current challenge & solution
+   */
+  onSolutionUpdated(eventData) {},
 
-	/**
-	 * Callback as the candidate makes changes to a solution (runs code, answers questions, etc)
-	 *
-	 * @method AssessmentOptions#onSolutionUpdated
-	 *
-	 * @param {Object} eventData
-	 * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-	 * @param {AssessmentOptions~ChallengeData} eventData.data - Information about the current challenge & solution
-	 */
-	onSolutionUpdated(eventData) {},
+  /**
+   * Callback with the results once the assessment has been submitted.
+   *
+   * @method AssessmentOptions#onSubmitted
+   *
+   * @param {Object} eventData
+   * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
+   * @param {AssessmentOptions~SubmissionResult} eventData.data Results of the submission
+   */
+  onSubmitted(eventData) {},
 
-	/**
-	 * Callback with the results once the assessment has been submitted.
-	 *
-	 * @method AssessmentOptions#onSubmitted
-	 *
-	 * @param {Object} eventData
-	 * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-	 * @param {AssessmentOptions~SubmissionResult} eventData.data Results of the submission
-	 */
-	onSubmitted(eventData) {},
-
-	/**
-	 * Callback when there is an unrecoverable error.
-	 *
-	 * @method AssessmentOptions#onError
-	 *
-	 * @param {Object} eventData
-	 * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-	 * @param {AssessmentOptions~ErrorData} eventData.data - Information about the error.
-	 */
-	onError(eventData) {},
+  /**
+   * Callback when there is an unrecoverable error.
+   *
+   * @method AssessmentOptions#onError
+   *
+   * @param {Object} eventData
+   * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
+   * @param {AssessmentOptions~ErrorData} eventData.data - Information about the error.
+   */
+  onError(eventData) {},
 };
 
 /**
@@ -231,14 +230,14 @@ export const AssessmentOptions = {
  * @enum {string}
  */
 const ERROR_CONTEXTS = {
-	/** An error that occurred before the candidate can start the assessment */
-	load: 'load',
-	/** A repeated error saving the solution */
-	saveSolution: 'saveSolution',
-	/** A repeated error submitting a project challenge solution */
-	submitSolution: 'submitSolution',
-	/** A repeated error submitting the entire assessment */
-	submitAssessment: 'submitAssessment',
+  /** An error that occurred before the candidate can start the assessment */
+  load: "load",
+  /** A repeated error saving the solution */
+  saveSolution: "saveSolution",
+  /** A repeated error submitting a project challenge solution */
+  submitSolution: "submitSolution",
+  /** A repeated error submitting the entire assessment */
+  submitAssessment: "submitAssessment",
 };
 
 // Note: JSDoc cannot handle exporting an enum directly, so it has to be separate like this.
