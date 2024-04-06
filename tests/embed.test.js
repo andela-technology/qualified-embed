@@ -1,80 +1,94 @@
 import { expect, test } from "@playwright/test";
 
-const embedSelector = 'iframe[src*="embed"]';
-let embed;
+class Embed {
+  constructor(page) {
+    this.page = page;
+    this.embedSelector = 'iframe[src*="embed"]';
+    const embed = (this.embed = page.frameLocator(this.embedSelector));
 
+    this.editor = embed.locator(".multi-file-layout-code-editor").first();
+    this.editorSettings = embed.getByText("Editor Settings", { exact: true });
+    this.instructions = embed.locator("tab-heading :text('Instructions')");
+    this.layout = embed.locator("multi-file-layout");
+    this.readOnly = embed.getByText("Read-Only");
+    this.run = embed.getByRole("button", { name: "Run" });
+    this.runner = embed.frameLocator("#runner-frame");
+    this.runOutput = embed.getByText("Run Output", { exact: true });
+    this.settings = embed.locator("tab-heading :text('Editor Settings')");
+    this.solutionCode = embed.getByText("Solution Code", { exact: true });
+    this.startHere = embed.locator(":text('Start Here!')");
+    this.submit = embed.getByRole("button", { name: "Submit" });
+    this.testCases = embed.getByText("Test Cases", { exact: true });
+    this.testResults = this.runner.getByText("Test Results:");
+  }
+
+  goto() {
+    return this.page.goto("/", { waitUntil: "commit" });
+  }
+
+  waitForCRToken() {
+    const crTokenURL = "https://coderunner-production.qualified.io/token";
+    return this.page.waitForResponse(
+      (response) => response.status() === 200 && response.url() === crTokenURL,
+    );
+  }
+}
+
+let embed;
 test.beforeEach(async ({ page }) => {
-  embed = page.frameLocator(embedSelector);
-  await page.goto("/", { waitUntil: "commit" });
+  embed = new Embed(page);
+  await embed.goto();
 });
 
 test("loads", async () => {
-  await expect(embed.locator("multi-file-layout")).toBeVisible();
+  await expect(embed.layout).toBeVisible();
+});
+
+test("matches screenshot", async ({ page }) => {
+  await embed.waitForCRToken();
+  await expect(page).toHaveScreenshot();
 });
 
 test("shows the correct tabs", async () => {
-  const solutionCode = embed.getByText("Solution Code", { exact: true });
-  const testCases = embed.getByText("Test Cases", { exact: true });
-  const runOutput = embed.getByText("Run Output", { exact: true });
-  const editorSettings = embed.getByText("Editor Settings", { exact: true });
-  const instructions = embed.locator("tab-heading :text('Instructions')");
-
-  await expect(solutionCode).toBeVisible();
-  await expect(testCases).toBeVisible();
-  await expect(runOutput).toBeVisible();
-  await expect(instructions).toBeVisible();
-  await expect(editorSettings).toBeVisible();
+  await expect(embed.solutionCode).toBeVisible();
+  await expect(embed.testCases).toBeVisible();
+  await expect(embed.runOutput).toBeVisible();
+  await expect(embed.instructions).toBeVisible();
+  await expect(embed.editorSettings).toBeVisible();
 });
 
 test("submits and shows run response", async ({ page }) => {
-  const runner = embed.frameLocator("#runner-frame");
-  await page.waitForResponse(
-    (response) =>
-      response.status() === 200 &&
-      response.url() === "https://coderunner-production.qualified.io/token",
-  );
-  await embed.getByText("Submit", { exact: true }).click();
-  await expect(runner.getByText("Test Results:")).toBeVisible();
+  await embed.waitForCRToken();
+  await embed.submit.click();
+  await expect(embed.testResults).toBeVisible();
 });
 
 test("runs and shows run response", async ({ page }) => {
-  const runner = embed.frameLocator("#runner-frame");
-  await page.waitForResponse(
-    (response) =>
-      response.status() === 200 &&
-      response.url() === "https://coderunner-production.qualified.io/token",
-  );
-  await embed.getByText("Run", { exact: true }).click();
-  await expect(runner.getByText("Test Results:")).toBeVisible();
+  await embed.waitForCRToken();
+  await embed.run.click();
+  await expect(embed.testResults).toBeVisible();
 });
 
 test("can be destroyed", async ({ page }) => {
-  await expect(page.locator(embedSelector)).toBeVisible();
+  await expect(page.locator(embed.embedSelector)).toBeVisible();
   await page.evaluate("window.manager.destroy()");
-  await expect(page.locator(embedSelector)).not.toBeVisible();
+  await expect(page.locator(embed.embedSelector)).not.toBeVisible();
 });
 
 test("loads the correct challenge instructions", async ({ page }) => {
-  const startHere = embed.locator(":text('Start Here!')");
-  const instructions = embed.locator("tab-heading :text('Instructions')");
-  const settings = embed.locator("tab-heading :text('Editor Settings')");
-
-  await expect(startHere).not.toBeVisible();
-  await instructions.click();
-  await expect(instructions).toBeVisible();
-  await settings.click();
-  await expect(startHere).not.toBeVisible();
+  await expect(embed.startHere).not.toBeVisible();
+  await embed.instructions.click();
+  await expect(embed.instructions).toBeVisible();
+  await embed.settings.click();
+  await expect(embed.startHere).not.toBeVisible();
 });
 
 test("updates an editor config", async ({ page }) => {
-  const readOnly = embed.getByText("Read-Only");
-  const run = embed.getByText("Run", { exact: true });
-  const submit = embed.getByText("Submit", { exact: true });
-  const pyCode = embed.getByText("def say_hello");
+  const pyCode = embed.editor.getByText("def say_hello");
 
-  await expect(run).toBeVisible();
-  await expect(submit).toBeVisible();
-  await expect(readOnly).not.toBeVisible();
+  await expect(embed.run).toBeVisible();
+  await expect(embed.submit).toBeVisible();
+  await expect(embed.readOnly).not.toBeVisible();
   await expect(pyCode).not.toBeVisible();
 
   const options = {
@@ -88,8 +102,16 @@ test("updates an editor config", async ({ page }) => {
   })`);
   expect(config.options).toEqual(expect.objectContaining(options));
 
-  await expect(readOnly).toBeVisible();
-  await expect(run).not.toBeVisible();
-  await expect(submit).not.toBeVisible();
+  await expect(embed.readOnly).toBeVisible();
+  await expect(embed.run).not.toBeVisible();
+  await expect(embed.submit).not.toBeVisible();
   await expect(pyCode).toBeVisible();
+});
+
+test("allows editing text", async ({ page }) => {
+  await embed.editor.getByText("Complete this function").click();
+  await page.keyboard.press("PageUp");
+  await page.keyboard.type("// foobar");
+  await page.keyboard.press("Enter");
+  await expect(embed.editor).toContainText("// foobar");
 });
