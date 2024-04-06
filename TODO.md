@@ -2,6 +2,7 @@
 
 - add unpkg/jsdelivr options for script tags, remove AMD from bundler potentially
   - get webpack to build for browser module imports as well as script tags (or rely on unpkg?)
+  - update default baseUrl to point to latest CDN
 - Prepare for npm release (@qualified/embed-sdk) https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/
 - Determine how to version the docs (different GH pages branches or top-level folders? https://stackoverflow.com/questions/47643881/github-pages-maintaining-multiple-versions has ideas)
 - Remove the embed/manager directory and relevant gulp stuff from the main codebase

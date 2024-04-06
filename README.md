@@ -1,6 +1,6 @@
 # Qualified Embed SDK
 
-With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.
+With Qualified Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.
 
 ## Documentation
 
@@ -56,14 +56,14 @@ See our [quick start](https://andela-technology.github.io/qualified-embed/tutori
 ```bash
 git config blame.ignoreRevsFile .git-blame-ignore-revs
 npm i # install dependencies
-npm run dev # run a development server
+npm start # run a development server
 npm run build # bundle the manager to /dist
 npm run jsdoc # bundle the docs to /docs
 npm run lint # run eslint
 npm run format # run prettier
 ```
 
-If you're adjusting Embed internals in the Qualified codebase, update `baseURL` in the Embed options in <public/index.html> to `http://localhost:3001` (or the port the Qualified UI Docker container is running on).
+If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in <public/index.html> to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
 
 ### Deploying the Package
 

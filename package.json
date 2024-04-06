@@ -4,8 +4,8 @@
   "description": "With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.",
   "main": "src/embed.js",
   "scripts": {
+    "start": "webpack serve",
     "build": "webpack",
-    "dev": "webpack serve",
     "lint": "eslint src",
     "format": "prettier -w .",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
