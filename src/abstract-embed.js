@@ -103,6 +103,11 @@ export class AbstractEmbed {
     const manager = this.manager;
     const methods = {};
     methodNames.forEach((method) => {
+      /**
+       * Creates event handlers for method names.
+       * @param {*} data - The data to be passed to the method
+       * @returns {undefined}
+       */
       methods[method] = (data) => {
         const handler = `on` + ucFirst(method);
         const eventProps = {
