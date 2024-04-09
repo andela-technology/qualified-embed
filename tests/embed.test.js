@@ -1,6 +1,13 @@
 import { expect, test } from "@playwright/test";
 
+/**
+ * Represents Qualified Embed on a page
+ */
 class Embed {
+  /**
+   * Constructs a new Embed page object model instance
+   * @param {import("@playwright/test").Page} page - The Playwright page instance to use for manipulating Embed.
+   */
   constructor(page) {
     this.page = page;
     this.embedSelector = 'iframe[src*="embed"]';
@@ -28,10 +35,19 @@ class Embed {
     this.testResults = this.runner.getByText("Test Results:");
   }
 
+  /**
+   * Navigates to the test server's base URL
+   * @returns {undefined}
+   */
   goto() {
     return this.page.goto("/", { waitUntil: "commit" });
   }
 
+  /**
+   * Waits for the Code Runner to respond with a token,
+   * indicating that Embed is ready to run and submit.
+   * @returns {undefined}
+   */
   waitForCRToken() {
     const crTokenURL = "https://coderunner-production.qualified.io/token";
     return this.page.waitForResponse(

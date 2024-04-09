@@ -20,6 +20,11 @@ module.exports = {
   },
   plugins: [
     {
+      /**
+       * Plugin to copy the public index.html file to
+       * the dist directory after webpack emits assets.
+       * @param {import("webpack").Compiler} compiler - The webpack compiler instance.
+       */
       apply: (compiler) => {
         compiler.hooks.afterEmit.tap("CopyPublicHtml", () => {
           const fs = require("fs");
