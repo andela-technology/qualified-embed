@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: path.join(__dirname, "src", "embed.js"),
+  entry: path.resolve("src", "embed.js"),
   output: {
     filename: "embed.min.js",
-    path: path.join(__dirname, "dist"),
+    path: path.resolve("dist"),
     library: {
       name: "QualifiedEmbed",
       type: "umd",
@@ -13,7 +13,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.resolve("public"),
     },
     compress: true,
     port: 9000,
@@ -23,8 +23,11 @@ module.exports = {
       apply: (compiler) => {
         compiler.hooks.afterEmit.tap("CopyPublicHtml", () => {
           const fs = require("fs");
-          const src = path.join(__dirname, "public", "index.html");
-          const dest = path.join(__dirname, "dist", "index.html");
+          const src = path.resolve("public", "index.html");
+          const dest = path.resolve("dist", "index.html");
+          const destDir = path.resolve("dist");
+          fs.rmSync(destDir, { recursive: true, force: true });
+          fs.mkdirSync(destDir, { recursive: true });
           fs.copyFileSync(src, dest);
         });
       },

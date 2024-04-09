@@ -11,7 +11,6 @@
 - Update SDK docs to show Node usage, and update browser usage with the new QualifiedEmbed prefix.
 - check on how https://www.qualified.io/embed and https://www.qualified.io/embedded will work after removing the manager (I guess they will point to jsdelivr rather than https://www.qualified.io/embed.js?)
 - Add Playwright tests to CI?
-- Playwright POM?
 - Add dependabot?
 - Run by legal before going public
 
