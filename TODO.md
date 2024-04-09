@@ -10,8 +10,6 @@
 - Add CONTRIBUTING.md (good example: https://gist.github.com/briandk/3d2e8b3ec8daf5a27a62#file-contributing-md), LICENSE
 - Update SDK docs to show Node usage, and update browser usage with the new QualifiedEmbed prefix.
 - check on how https://www.qualified.io/embed and https://www.qualified.io/embedded will work after removing the manager (I guess they will point to jsdelivr rather than https://www.qualified.io/embed.js?)
-- Add Playwright tests to CI?
-- Add dependabot?
 - Run by legal before going public
 
 ## Lower priority

@@ -1,5 +1,10 @@
 const doc = window.document;
 
+/**
+ * Executes the provided function when the DOM is ready.
+ * @param {Function} fn - The function to execute when the DOM is ready
+ * @returns {undefined}
+ */
 export function docReady(fn) {
   // see if DOM is already available
   if (doc.readyState === "complete" || doc.readyState === "interactive") {

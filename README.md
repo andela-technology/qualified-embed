@@ -63,7 +63,7 @@ npm run lint # run eslint
 npm run format # run prettier
 ```
 
-If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in <public/index.html> to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
+If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in [public/index.html](public/index.html) to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
 
 ### Deploying the Package
 
@@ -87,4 +87,12 @@ git push
 
 ## Contributing
 
-Issues and pull requests are welcome. Please lint and format all contributions with `npm run lint` and `npm run format` before submitting a pull request.
+Issues and pull requests are welcome. Before opening a PR, please create an issue and target the issue for closure with the PR.
+
+Before opening a PR, add automated tests if appropriate and run and pass all checks:
+
+```
+npm run format
+npm run lint
+npm run test
+```

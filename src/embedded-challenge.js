@@ -5,6 +5,14 @@ import {
 } from "./constants";
 import { concatUrl, toQueryParams } from "./utils/string-utils";
 
+/**
+ * Retrieves parsed data from localStorage. If challengeId is provided,
+ * retrieves data specifically for that challenge; otherwise, retrieves
+ * global data.
+ * @param {*} id - The identifier for the data in localStorage
+ * @param {string?} [challengeId] - Optional identifier for the challenge data to retrieve
+ * @returns {*} - The retrieved data, either for the specified challenge or globally
+ */
 function _getStorageData(id, challengeId) {
   let savedData;
   try {
@@ -22,6 +30,12 @@ function _getStorageData(id, challengeId) {
 
 let didAlert = false;
 
+/**
+ * Saves data to localStorage, optionally namespaced by challengeId.
+ * @param {*} id - The identifier for the data in localStorage
+ * @param {string} challengeId - The identifier for the challenge data
+ * @param {*} data - The data to save
+ */
 function _setStorageData(id, challengeId, data) {
   const savedData = _getStorageData(id);
   savedData[challengeId] = data;
@@ -145,7 +159,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    * Triggers the editor to start the challenge if not already started.
    *
    * When the `mode` is `readOnly` or `restricted`, this action is ignored.
-   * @return {Promise} A promise that resolves once the challenge is started, or rejects if an error occurs.
+   * @returns {Promise} A promise that resolves once the challenge is started, or rejects if an error occurs.
    */
   start() {
     return this._post("start");
@@ -158,7 +172,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `readOnly`, this action is ignored.
    *
-   * @return {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
   runTests() {
     return this._post("runTests");
@@ -171,7 +185,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `readOnly`, this action is ignored. This action is also ignored for Project Code Challenges.
    *
-   * @return {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
   attempt() {
     return this._post("attempt");
@@ -184,7 +198,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `restricted`, this action reverts the code to the last saved version.
    *
-   * @return {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
    */
   reset() {
     return this._post("reset");
@@ -204,7 +218,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    * @param {string} files.(path) - Contents of each file. Use the file path as the key for project challenges, or `code` and `testcases` for classic challenges.
    * @param {ChallengeOptions~Cursor?} cursor - Optional value to move the cursor to a specific file, line, and character. Note: this will move focus to the iframe, so use with caution.
    *
-   * @return {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
    */
   setFileContents(files, cursor) {
     return this._post("setFileContents", {
@@ -265,6 +279,11 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
     this.challengeData = data;
   }
 
+  /**
+   * Handles changes in the data and updates localStorage if enabled.
+   * @param {Object} root0 - The object containing the data
+   * @param {*} root0.data - The data being changed
+   */
   onChange({ data }) {
     if (this.options.localStorageId) {
       _setStorageData(this.options.localStorageId, this.challengeId, data);

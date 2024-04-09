@@ -60,6 +60,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the next challenge or review screen (if possible)
+   * @returns {undefined}
    */
   next() {
     return this._post("next");
@@ -67,6 +68,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the previous challenge or welcome screen (if possible)
+   * @returns {undefined}
    */
   previous() {
     return this._post("previous");
@@ -74,6 +76,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the welcome screen if possible.
+   * @returns {undefined}
    */
   welcome() {
     return this.switchChallenge("welcome");
@@ -81,6 +84,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the review screen if possible.
+   * @returns {undefined}
    */
   review() {
     return this.switchChallenge("review");
@@ -88,6 +92,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Submits the assessment. Will automatically switch to the review screen.
+   * @returns {undefined}
    */
   submit() {
     return this._post("submit");
