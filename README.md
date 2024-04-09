@@ -28,8 +28,8 @@ import { QualifiedEmbedManager } from "@qualified/embed-sdk";
 
 const manager = QualifiedEmbedManager.init({
   options: {
-    embedClientKey: "Your Embed key"
-  }
+    embedClientKey: "Your Embed key",
+  },
 });
 const editor = manager.createEditor({
   challengeId: "An embedded challenge ID",
