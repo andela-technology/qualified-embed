@@ -65,7 +65,7 @@ test("shows the correct tabs", async () => {
   await expect(embed.editorSettings).toBeVisible();
 });
 
-test("submits and shows run response by click", async ({ page }) => {
+test("submits and shows run response by click", async () => {
   await embed.waitForCRToken();
   await expect(embed.testResults).not.toBeVisible();
   await embed.submit.click();
@@ -79,7 +79,7 @@ test("submits and shows run response by keyboard", async ({ page }) => {
   await expect(embed.testResults).toBeVisible();
 });
 
-test("runs and shows run response by click", async ({ page }) => {
+test("runs and shows run response by click", async () => {
   await embed.waitForCRToken();
   await embed.run.click();
   await expect(embed.testResults).toBeVisible();
@@ -98,7 +98,7 @@ test("can be destroyed", async ({ page }) => {
   await expect(embed.body).not.toBeVisible();
 });
 
-test("loads the correct challenge instructions", async ({ page }) => {
+test("loads the correct challenge instructions", async () => {
   await expect(embed.startHere).not.toBeVisible();
   await embed.instructions.click();
   await expect(embed.instructions).toBeVisible();
