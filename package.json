@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "lint": "eslint src",
+    "lint": "eslint --ignore-path=.gitignore .",
     "format": "prettier -w .",
     "test": "npx playwright test",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
