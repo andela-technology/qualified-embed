@@ -1,7 +1,5 @@
 import { expect, test } from "@playwright/test";
 
-console.log("test");
-
 class Embed {
   constructor(page) {
     this.page = page;

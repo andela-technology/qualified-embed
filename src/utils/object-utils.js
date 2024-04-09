@@ -1,3 +1,10 @@
+/**
+ * Recursively creates a safe version of an object by removing
+ * functions and recursively transforming arrays and objects
+ * into safe versions.
+ * @param {*} data - The data to make safe
+ * @returns {*} - The safe version of the data
+ */
 export function toSafeObject(data) {
   let newData = data;
   if (typeof data === "function") {

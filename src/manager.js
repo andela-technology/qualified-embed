@@ -3,6 +3,11 @@ import { QualifiedEmbeddedChallenge } from "./embedded-challenge";
 import { docReady } from "./utils/dom-utils";
 import { QUALIFIED_EMBED_DEFAULT_SELECTOR } from "./constants";
 
+/**
+ * Checks if a manager has been destroyed.
+ * @param {*} manager - The manager to check
+ * @throws {Error} Throws an error if the manager has been destroyed
+ */
 function _checkDestroyed(manager) {
   if (manager.$$destroyed) {
     throw new Error("This manager has been destroyed, please create a new one");
