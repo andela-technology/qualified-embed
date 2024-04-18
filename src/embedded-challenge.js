@@ -158,7 +158,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
   /**
    * Triggers the editor to start the challenge if not already started.
    *
-   * When the `mode` is `readOnly` or `restricted`, this action is ignored.
+   * When the `mode` is `readonly` or `restricted`, this action is ignored.
    * @returns {Promise} A promise that resolves once the challenge is started, or rejects if an error occurs.
    */
   start() {
@@ -170,7 +170,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * Candidate tests can be run with this method even if actions or the testcases tab are hidden.
    *
-   * When the `mode` is `readOnly`, this action is ignored.
+   * When the `mode` is `readonly`, this action is ignored.
    *
    * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
@@ -183,7 +183,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * Submission tests can be run with this method even if actions or the code tab are hidden.
    *
-   * When the `mode` is `readOnly`, this action is ignored. This action is also ignored for Project Code Challenges.
+   * When the `mode` is `readonly`, this action is ignored. This action is also ignored for Project Code Challenges.
    *
    * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
@@ -194,7 +194,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
   /**
    * Triggers the editor to reset the solution code to the initial state.
    *
-   * When the `mode` is `readOnly`, this action is ignored.
+   * When the `mode` is `readonly`, this action is ignored.
    *
    * When the `mode` is `restricted`, this action reverts the code to the last saved version.
    *
