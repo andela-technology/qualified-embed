@@ -1,5 +1,5 @@
 import { ucFirst } from "./utils/string-utils";
-import { connectToChild } from "./vendor/penpal";
+import { connectToChild } from "penpal";
 import { remove } from "./utils/array-utils";
 import { toSafeObject } from "./utils/object-utils";
 
