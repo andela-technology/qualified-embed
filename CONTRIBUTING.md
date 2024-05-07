@@ -38,6 +38,7 @@ The [docs](https://andela-technology.github.io/qualified-embed/) are hosted on G
 
 ```bash
 git checkout docs
+git merge main
 npm run jsdoc
 git add -f docs
 git commit -m "Deploy docs"
@@ -46,6 +47,6 @@ git push
 
 If you're publishing docs for a new release, on the `docs` branch, modify the workflow above to include subfolders for each release version.
 
-The current version docs should be hosted at <https://andela-technology.github.io/qualified-embed/>, while outdated versions should be hosted at <https://andela-technology.github.io/qualified-embed/0.0.1> (for example).
+The docs for the current embed release should be hosted at <https://andela-technology.github.io/qualified-embed/docs>, while outdated versions should be hosted at <https://andela-technology.github.io/qualified-embed/docs/0.0.1> (for example).
 
 You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), then copying the newly-generated folder into its version number.

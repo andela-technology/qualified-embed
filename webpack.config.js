@@ -23,7 +23,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: false,
       template: path.resolve("public", "index.html"),
-      filename:  "index.html",
+      filename: "index.html",
     }),
   ],
 };
