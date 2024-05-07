@@ -1,6 +1,6 @@
 /**
  * Removes an item from an array if that item is found.
- * @param {Array} array
+ * @param {Array<any>} array
  * @param {*} item
  * @returns {boolean} True if the item is found.
  */

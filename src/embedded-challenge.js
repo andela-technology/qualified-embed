@@ -6,6 +6,14 @@ import {
 import { concatUrl, toQueryParams } from "./utils/string-utils";
 
 /**
+ * @typedef {import("./challenge-options").ChallengeOptions} ChallengeOptions
+ */
+
+/**
+ * @typedef {import("./manager").QualifiedEmbedManager} QualifiedEmbedManager
+ */
+
+/**
  * Retrieves parsed data from localStorage. If challengeId is provided,
  * retrieves data specifically for that challenge; otherwise, retrieves
  * global data.
@@ -67,7 +75,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * @param {Object} config
    * @param {HTMLElement} config.node - DOM node to use as basis for the injection. Will be used directly if an iFrame, otherwise an iFrame will get appended to this node.
-   * @param {string?} config.challengeId - Challenge ID for this editor. If not provided, will attempt to be found via the node's <code>data-qualified-embed</code> attribute.
+   * @param {string|undefined} config.challengeId - Challenge ID for this editor. If not provided, will attempt to be found via the node's <code>data-qualified-embed</code> attribute.
    * @param {ChallengeOptions?} config.options - Options and listeners for this editor, mixed with challenge-specific and shared options on the manager object.
    * @param {QualifiedEmbedManager?} config.manager - Parent manager for this editor.
    *
@@ -86,7 +94,10 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
        * @public
        */
       this.manager = manager;
-      manager.editors.push(this);
+
+      if (manager.editors) {
+        manager.editors.push(this);
+      }
     }
 
     if (!challengeId) {
@@ -119,7 +130,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
 
     /**
      * Contains information about the loaded challenge, set after {@link ChallengeOptions#onLoaded}.
-     * @type ChallengeOptions~LoadData
+     * @type ChallengeOptions.LoadData
      */
     this.challengeData = {};
 
@@ -132,10 +143,10 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
   /**
    * Updates the iframe with new options, or reloads the iframe if the challenge ID has changed.
    *
-   * @param {Object} config
-   * @param {string?} config.challengeId - Change the challenge ID. Automatically Triggers a reload if the challenge ID is different.
-   * @param {ChallengeOptions?} config.options - Update the options for this editor (mixed in with the current ones).
-   * @param {boolean?} config.reload - If true, force a reload even if the challenge ID hasn't changed.
+   * @param {Object} config - Configuration object for the update operation.
+   * @param {string} [config.challengeId] - Change the challenge ID. Automatically triggers a reload if the challenge ID is different.
+   * @param {ChallengeOptions|null} [config.options] - Update the options for this editor (mixed in with the current ones).
+   * @param {boolean} [config.reload=false] - If true, force a reload even if the challenge ID hasn't changed.
    */
   update({
     challengeId = this.challengeId,
@@ -172,7 +183,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `readonly`, this action is ignored.
    *
-   * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions.RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
   runTests() {
     return this._post("runTests");
@@ -185,7 +196,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `readonly`, this action is ignored. This action is also ignored for Project Code Challenges.
    *
-   * @returns {Promise<ChallengeOptions~RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions.RunResult>} A promise that resolves with the results of the run, or rejects if an error occurs.
    */
   attempt() {
     return this._post("attempt");
@@ -198,7 +209,7 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * When the `mode` is `restricted`, this action reverts the code to the last saved version.
    *
-   * @returns {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions.FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
    */
   reset() {
     return this._post("reset");
@@ -216,9 +227,9 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * @param {Object} files - Hash of file name or path to file contents to be set on the challenge solution.
    * @param {string} files.(path) - Contents of each file. Use the file path as the key for project challenges, or `code` and `testcases` for classic challenges.
-   * @param {ChallengeOptions~Cursor?} cursor - Optional value to move the cursor to a specific file, line, and character. Note: this will move focus to the iframe, so use with caution.
+   * @param {ChallengeOptions.Cursor?} cursor - Optional value to move the cursor to a specific file, line, and character. Note: this will move focus to the iframe, so use with caution.
    *
-   * @returns {Promise<ChallengeOptions~FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
+   * @returns {Promise<ChallengeOptions.FileContentsData>} A promise that resolves with the current files, or rejects if an error occurs.
    */
   setFileContents(files, cursor) {
     return this._post("setFileContents", {
@@ -234,8 +245,8 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
    *
    * This can include the `fileData` property, which will configure the entire solution at once.
    *
-   * @param {ChallengeOptions~RunResult} runResult
-   * @returns {Promise} A promise resolved after the result has been set, or rejects if an error occurs.
+   * @param {ChallengeOptions.RunResult} runResult
+   * @returns {Promise<void>} A promise resolved after the result has been set, or rejects if an error occurs.
    */
   setRunResult(runResult) {
     return this._post("setRunResult", runResult);
@@ -311,9 +322,12 @@ export class QualifiedEmbeddedChallenge extends AbstractEmbed {
       theme: this.options.theme,
     };
     const baseURL = this.options.baseURL || QUALIFIED_EMBED_BASE_URL;
-    this.iframe.src =
-      concatUrl(baseURL, "embed", this.challengeId) +
-      "?" +
-      toQueryParams(params);
+
+    if (this.iframe) {
+      this.iframe.src =
+        concatUrl(baseURL, "embed", this.challengeId) +
+        "?" +
+        toQueryParams(params);
+    }
   }
 }

@@ -13,7 +13,7 @@ export const AssessmentOptions = {
    * candidate attempts to open the iframe in a new tab, it will not work as a standalone assessment.
    *
    * @name AssessmentOptions#invitePath
-   * @type string
+   * @type {string|undefined}
    */
   invitePath: undefined,
 
@@ -22,7 +22,7 @@ export const AssessmentOptions = {
    * to enable to candidate to gain access to the embedded assessment.
    *
    * @name AssessmentOptions#authToken
-   * @type string
+   * @type {string|undefined}
    */
   authToken: undefined,
 
@@ -30,7 +30,7 @@ export const AssessmentOptions = {
    * The unique embed client key value set on your team.
    *
    * @name AssessmentOptions#embedClientKey
-   * @type string
+   * @type {string|undefined}
    */
   embedClientKey: undefined,
 
@@ -38,7 +38,7 @@ export const AssessmentOptions = {
    * Override the base URL for testing and debugging.
    *
    * @name AssessmentOptions#baseURL
-   * @type string
+   * @type {string|null}
    */
   baseURL: null,
 
@@ -60,7 +60,7 @@ export const AssessmentOptions = {
    * considered a security feature.
    *
    * @name AssessmentOptions#mode
-   * @type (null|"normal"|"readonly"|"restricted"|"runonly")
+   * @type {null|"normal"|"readonly"|"restricted"|"runonly"}
    */
   mode: undefined,
 
@@ -70,7 +70,7 @@ export const AssessmentOptions = {
    * Not recommended unless you are planning on recreating the built-in navigation externally.
    *
    * @name AssessmentOptions#hideSidebar
-   * @type boolean
+   * @type {boolean|undefined}
    */
   hideSidebar: undefined,
 
@@ -79,7 +79,7 @@ export const AssessmentOptions = {
    * loading.
    *
    * @name AssessmentOptions#hideWelcome
-   * @type boolean
+   * @type {boolean|undefined}
    */
   hideWelcome: undefined,
 
@@ -91,7 +91,7 @@ export const AssessmentOptions = {
    * via {@link QualifiedEmbeddedAssessment.submit()}, an API call, or using timed assessments.
    *
    * @name AssessmentOptions#hideReview
-   * @type boolean
+   * @type {boolean|undefined}
    */
   hideReview: undefined,
 
@@ -107,7 +107,7 @@ export const AssessmentOptions = {
    *
    * @param {Object} eventData
    * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-   * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
+   * @param {AssessmentOptions.LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
    */
   onLoaded(eventData) {},
 
@@ -118,7 +118,7 @@ export const AssessmentOptions = {
    *
    * @param {Object} eventData
    * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-   * @param {AssessmentOptions~LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
+   * @param {AssessmentOptions.LoadData} eventData.data - Information about the assessment, will also be stored in {@link QualifiedEmbeddedAssessment#assessmentData} for future access.
    */
   onUpdated(eventData) {},
 
@@ -129,7 +129,7 @@ export const AssessmentOptions = {
    *
    * @param {Object} eventData
    * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-   * @param {AssessmentOptions~ChallengeData} eventData.data - Information about the current challenge & solution
+   * @param {AssessmentOptions.ChallengeData} eventData.data - Information about the current challenge & solution
    */
   onSolutionUpdated(eventData) {},
 
@@ -140,7 +140,7 @@ export const AssessmentOptions = {
    *
    * @param {Object} eventData
    * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-   * @param {AssessmentOptions~SubmissionResult} eventData.data Results of the submission
+   * @param {AssessmentOptions.SubmissionResult} eventData.data Results of the submission
    */
   onSubmitted(eventData) {},
 
@@ -151,7 +151,7 @@ export const AssessmentOptions = {
    *
    * @param {Object} eventData
    * @param {QualifiedEmbeddedAssessment} eventData.assessment - Embedded Assessment for this event
-   * @param {AssessmentOptions~ErrorData} eventData.data - Information about the error.
+   * @param {AssessmentOptions.ErrorData} eventData.data - Information about the error.
    */
   onError(eventData) {},
 };
@@ -159,8 +159,8 @@ export const AssessmentOptions = {
 /**
  * Data about the loaded assessment, challenges, and more.
  *
- * @typedef AssessmentOptions~LoadData
- * @property {AssessmentOptions~ErrorData} error - If set, there was an error loading the challenge (invalid ID or restrictions)
+ * @typedef AssessmentOptions.LoadData
+ * @property {AssessmentOptions.ErrorData} error - If set, there was an error loading the challenge (invalid ID or restrictions)
  * @property {string} assessmentId - ID of the loaded assessment
  * @property {string} title - Title of assessment
  * @property {string} summary - Summary text on assessment, in Markdown
@@ -171,7 +171,7 @@ export const AssessmentOptions = {
  * @property {number} timeLimit - If a number greater than `0`, strict time limit in seconds. Otherwise, no time limit.
  * @property {string} cutOffTime - If there's a time limit, the ISO string for when that time will end.
  * @property {number} score - current score on the assessment (as seen by the candidate)
- * @property {Array<AssessmentOptions~ChallengeData>} challenges - Array of challenge details on the assessment
+ * @property {Array<AssessmentOptions.ChallengeData>} challenges - Array of challenge details on the assessment
  * @property {number} stageIndex - Number of the active challenge, or -1 if not on a challenge
  * @property {string} stageId - ID of the active challenge if on a challenge
  */
@@ -179,7 +179,7 @@ export const AssessmentOptions = {
 /**
  * Data about a specific challenge
  *
- * @typedef AssessmentOptions~ChallengeData
+ * @typedef AssessmentOptions.ChallengeData
  * @property {string} id - Challenge or Stage ID
  * @property {number} index - Index of challenge or stage
  * @property {string} title - Challenge or Stage title
@@ -200,12 +200,12 @@ export const AssessmentOptions = {
  *
  * If you want to see the actual scored results, you'll want to use the API or WebHooks to receive this data.
  *
- * @typedef AssessmentOptions~SubmissionResult
+ * @typedef AssessmentOptions.SubmissionResult
  * @property {string} assessmentId - ID of the loaded assessment
  * @property {string} assessmentResultId - ID of the current assessment result
  * @property {number} score - Current "score" on the assessment as seen by the candidate. This is not the actual
  *     score used to evaluate the candidate.
- * @property {Array<AssessmentOptions~ChallengeData>} challenges - Array of challenge details on the assessment
+ * @property {Array<AssessmentOptions.ChallengeData>} challenges - Array of challenge details on the assessment
  * @property {boolean} timerRanOut - If true, the timer ran out (causing automatic submission)
  * @property {number} solutionsStarted - Number of solutions started
  * @property {number} solutionsAttempted - Number of solutions attempted (submitted at least once)
@@ -215,7 +215,7 @@ export const AssessmentOptions = {
 /**
  * Information about errors that may occur, including unhandled JavaScript errors or network errors.
  *
- * @typedef AssessmentOptions~ErrorData
+ * @typedef AssessmentOptions.ErrorData
  * @property {ERROR_CONTEXTS} context - Provides a context for the error
  * @property {string} message - For JavaScript errors, the message of the error
  * @property {string} status - For network errors, the status code

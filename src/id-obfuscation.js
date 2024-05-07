@@ -4,11 +4,20 @@ import { padNum } from "./utils/string-utils";
 // to URL-safe characters _, -, and ~ (tilde).
 // This means we don't have to escape the characters. We also get the benefit of slightly better obfuscation,
 // since the value doesn't look as much like a base64 encoding.
+
+/**
+ * Maps characters for Base64 encoding.
+ * @type {Object.<string, string>}
+ */
 const base64Map = { "/": "_", "+": "-", "=": "~" };
-const base64MapReverse = Object.entries(base64Map).reduce((o, [k, v]) => {
-  o[v] = k;
-  return o;
-}, {});
+
+/**
+ * Maps characters for Base64 encoding in reverse.
+ * @type {Object.<string, string>}
+ */
+const base64MapReverse = Object.fromEntries(
+  Object.entries(base64Map).map(e => e.reverse())
+);
 
 /**
  * Obfuscates a Mongo-DB ObjectID in several steps:

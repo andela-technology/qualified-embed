@@ -4,6 +4,10 @@ import { remove } from "./utils/array-utils";
 import { toSafeObject } from "./utils/object-utils";
 
 /**
+ * @typedef {import('./manager').QualifiedEmbedManager} QualifiedEmbedManager
+ */
+
+/**
  * Base class for embedded challenges and assessments
  * @class
  * @abstract
@@ -11,7 +15,7 @@ import { toSafeObject } from "./utils/object-utils";
  */
 export class AbstractEmbed {
   /**
-   * @param {HTMLElement} node
+   * @param {{ node: (HTMLElement | HTMLIFrameElement | null) & { QualifiedEmbed?: any } }} options
    */
   constructor({ node }) {
     if (!node) {
@@ -21,7 +25,7 @@ export class AbstractEmbed {
      * Node assigned to this editor. As a convenience, this node will have the property `QualifiedEmbed` set to
      * this editor, so you can reference this editor via `node.QualifiedEmbed`.
      *
-     * @type HTMLElement
+     * @type {HTMLElement|null}
      * @public
      */
     this.node = node;
@@ -33,10 +37,26 @@ export class AbstractEmbed {
       /* ignore errors */
     }
 
+    /** @type {QualifiedEmbedManager|null} */
+    this.manager = null;
+
+    /**
+     * @typedef {Object} Methods
+     * @property {Function} [loaded] - Function to be called when the abstract embed is loaded.
+     * @param {Object} data - Data object passed when the embed is loaded.
+     * @returns {void}
+     */
+
+    /** @type {Methods|null} */
+    this.childMethods = null;
+
+    /** @type {"assessment"|null} */
+    this._type = null;
+
     if (node.nodeName === "IFRAME") {
       /**
        * IFRAME node for this editor. May be the same as `node`
-       * @type HTMLIFrameElement
+       * @type {HTMLIFrameElement|null}
        * @public
        */
       this.iframe = node;
@@ -44,7 +64,10 @@ export class AbstractEmbed {
       this.iframe = document.createElement("iframe");
       node.appendChild(this.iframe);
     }
-    this.iframe.classList.add("qualified-embedded");
+
+    if (this.iframe) {
+      this.iframe.classList.add("qualified-embedded");
+    }
   }
 
   /**
@@ -56,7 +79,7 @@ export class AbstractEmbed {
 
     this.$$destroyed = true;
 
-    if (this.manager) {
+    if (this.manager?.editors) {
       remove(this.manager.editors, this);
     }
     if (this.iframe) {
@@ -101,6 +124,7 @@ export class AbstractEmbed {
    */
   _initPenpal(methodNames, otherProps = []) {
     const manager = this.manager;
+    /** @type {Methods} */
     const methods = {};
     methodNames.forEach((method) => {
       /**
@@ -114,8 +138,12 @@ export class AbstractEmbed {
           [this._type || "editor"]: this,
           data,
         };
+
         otherProps.forEach((prop) => {
-          eventProps[prop] = this[prop];
+          if (prop in this) {
+            const key = /** @type {keyof AbstractEmbed} */ (prop);
+            eventProps[prop] = this[key];
+          }
         });
         [this, this.options, manager].forEach((obj) => {
           if (obj && typeof obj[handler] === "function") {
@@ -127,11 +155,11 @@ export class AbstractEmbed {
 
     this.connection = connectToChild({
       iframe: this.iframe,
-      timeout: 300000, // wait for 5 minutes for the connection, then throw an error
+      timeout: 300_000, // wait for 5 minutes for the connection, then throw an error
       methods,
     });
     this.connection.promise
-      .then((childMethods) => {
+      .then((/** @type {Methods} */ childMethods) => {
         this.childMethods = childMethods;
       })
       .catch((err) => {
@@ -147,9 +175,9 @@ export class AbstractEmbed {
 
   /**
    * Posts to the iframe
-   * @param {string} method Method to call
-   * @param {*} data Data to pass
-   * @returns Promise
+   * @param {string} method - Method to call
+   * @param {*} [data] - Optional data to pass
+   * @returns Promise<any>
    *
    * @protected
    * @ignore

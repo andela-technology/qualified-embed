@@ -4,6 +4,10 @@ import { docReady } from "./utils/dom-utils";
 import { QUALIFIED_EMBED_DEFAULT_SELECTOR } from "./constants";
 
 /**
+ * @typedef {import("./challenge-options").ChallengeOptions} ChallengeOptions
+ */
+
+/**
  * Checks if a manager has been destroyed.
  * @param {*} manager - The manager to check
  * @throws {Error} Throws an error if the manager has been destroyed
@@ -46,7 +50,7 @@ export class QualifiedEmbedManager {
    *        When using autoCreate, the challenge ID is found via the node property data-qualified-embed. Additional options can be passed in via challengeOptions.
    * @param {(ChallengeOptions)?} config.options - Default options for new embedded challenges.
    * @param {Object?} config.challengeOptions - Hash of options to be passed in when injecting an editor. The key should be the challenge ID.
-   * @param {ChallengeOptions} config.challengeOptions. - Unique options for each challenge.
+   * @param {ChallengeOptions} config.challengeOptions - Unique options for each challenge.
    *
    * @constructor
    */
@@ -65,7 +69,7 @@ export class QualifiedEmbedManager {
     this.onChange = onChange;
     /**
      * List of editors created on this manager.
-     * @type Array.<QualifiedEmbeddedChallenge>
+     * @type {Array.<QualifiedEmbeddedChallenge>|null}
      */
     this.editors = [];
     /**
@@ -76,7 +80,7 @@ export class QualifiedEmbedManager {
 
     /**
      * Challenge-specific options for new embedded challenge editors.
-     * @type Object
+     * @type {Object?}
      * @property {ChallengeOptions} challengeId - Options to be set when creating an editor using <code>challengeId</code> as a key.
      */
     this.challengeOptions = challengeOptions;
@@ -107,9 +111,9 @@ export class QualifiedEmbedManager {
 
     // Note: we are looking via node separately to prioritize matching the node over challenge ID.
     return (
-      (node && this.editors.find((editor) => editor.node === node)) ||
+      (node && this.editors?.find((editor) => editor.node === node)) ||
       (challengeId &&
-        this.editors.find((editor) => editor.challengeId === challengeId)) ||
+        this.editors?.find((editor) => editor.challengeId === challengeId)) ||
       false
     );
   }
@@ -143,10 +147,10 @@ export class QualifiedEmbedManager {
   /**
    * Updates an existing challenge editor, looking it up via node or challenge ID.
    *
-   * @param {Object} config
-   * @param {HTMLElement?} config.node - DOM node to use as basis for the injection.
-   * @param {string?} config.challengeId - Challenge ID currently used on the editor.
-   * @param {ChallengeOptions?} config.options - Updated options to set on the editor.
+   * @param {Object} config - Configuration object.
+   * @param {HTMLElement?} [config.node] - DOM node to use as basis for the injection.
+   * @param {string?} [config.challengeId] - Challenge ID currently used on the editor.
+   * @param {ChallengeOptions?} [config.options] - Updated options to set on the editor.
    * @returns {(QualifiedEmbeddedChallenge|boolean)} Challenge editor, or false if no editor was found.
    */
   updateEditor({ node, challengeId = null, options = {} } = {}) {
@@ -167,7 +171,7 @@ export class QualifiedEmbedManager {
 
     this.$$destroyed = true;
 
-    this.editors.forEach((editor) => {
+    this.editors?.forEach((editor) => {
       editor.destroy();
     });
     this.editors = null;

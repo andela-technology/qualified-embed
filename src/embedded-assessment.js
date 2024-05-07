@@ -4,6 +4,10 @@ import { concatUrl } from "./utils/string-utils";
 import { obfuscateId } from "./id-obfuscation";
 
 /**
+ * @typedef {import("./assessment-options").AssessmentOptions} AssessmentOptions
+ */
+
+/**
  * Represents a single embedded full assessment. [See Embedding Assessments tutorial for usage.]{@tutorial assessments}
  *
  * @class
@@ -44,7 +48,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
     /**
      * Contains information about the loaded assessment, set after {@link AssessmentOptions#onLoaded}.
-     * @type AssessmentOptions~LoadData
+     * @type {AssessmentOptions.LoadData}
      */
     this.assessmentData = {};
 
@@ -76,7 +80,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the welcome screen if possible.
-   * @returns {undefined}
+   * @returns {Promise<any>}
    */
   welcome() {
     return this.switchChallenge("welcome");
@@ -84,7 +88,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Goes to the review screen if possible.
-   * @returns {undefined}
+   * @returns {Promise<any>}
    */
   review() {
     return this.switchChallenge("review");
@@ -92,7 +96,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
 
   /**
    * Submits the assessment. Will automatically switch to the review screen.
-   * @returns {undefined}
+   * @returns {Promise<any>}
    */
   submit() {
     return this._post("submit");
@@ -106,7 +110,7 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
    * You can pass in `'welcome'` or `'review'` to go to those screens directly, or any challenge ID to go to that challenge.
    *
    * @param {string|number} challengeId - If a number, switches to that screen or challenge by index. If a string, attempts to switch by ID.
-   * @returns {Promise} The promise will reject if unable to find a matching stage.
+   * @returns {Promise<any>} The promise will reject if unable to find a matching stage.
    */
   switchChallenge(challengeId) {
     return this._post("switchChallenge", challengeId);
@@ -157,6 +161,8 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
   /**
    * An internally used handler to configure a newly loaded iframe.
    *
+   * @param {Object} options
+   * @param {AssessmentOptions.LoadData} options.data
    * @protected
    * @ignore
    */
@@ -186,12 +192,20 @@ export class QualifiedEmbeddedAssessment extends AbstractEmbed {
     // obfuscate invite path to prevent it from being opened outside the embed
     const embedPath = this.options.invitePath.replace(
       /^(\/assess\/)([a-fA-F0-9]{24})/,
+      /**
+       * @param {string} _ - The full matched string.
+       * @param {string} path - The matched path.
+       * @param {string} assessmentId - The matched assessment ID.
+       * @returns {string} - The path and embedId concatenated.
+       */
       (_, path, assessmentId) => {
         const embedId = "QE" + obfuscateId(assessmentId);
         return `${path}${embedId}`;
       },
     );
 
-    this.iframe.src = concatUrl(baseURL, embedPath);
+    if (this.iframe) {
+      this.iframe.src = concatUrl(baseURL, embedPath);
+    }
   }
 }

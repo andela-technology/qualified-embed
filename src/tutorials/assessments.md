@@ -70,7 +70,7 @@ These options will help you configure the style and visible components of the ed
 
 - [hideSidebar]{@linkcode AssessmentOptions#hideSidebar} can be used to completely hide the built-in navigation sidebar. If you do this, you may want to provide external controls for challenge navigation. However, the internal challenge buttons will allow the candidate to move forward to the next challenge and through to submission (but never backwards to a previous one).
 
-  **Also note this hides the timer.** On timed assessments, this means you'll need to provide your own external timer. You can use [`startedAt`, `timeLimit`, and `cutOffTime` from `onLoaded` to create an external timer]{@linkplain AssessmentOptions~LoadData}.
+  **Also note this hides the timer.** On timed assessments, this means you'll need to provide your own external timer. You can use [`startedAt`, `timeLimit`, and `cutOffTime` from `onLoaded` to create an external timer]{@linkplain AssessmentOptions.LoadData}.
 
 - [hideWelcome]{@linkcode AssessmentOptions#hideWelcome} can be used to immediately start a candidate on the assessment. This also hides any welcome screen information, such as navigation and timer information.
 

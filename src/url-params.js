@@ -24,7 +24,7 @@ export const UrlParams = {
    *   This also disables running code.
    *
    * @name UrlParams#mode
-   * @type (undefined|"readonly"|"restricted")
+   * @type {undefined|"readonly"|"restricted"}
    */
   mode: undefined,
 
@@ -36,7 +36,7 @@ export const UrlParams = {
    * {@link ChallengeOptions#onLoaded} callback event.
    *
    * @name UrlParams#language
-   * @type string
+   * @type {undefined|string}
    */
   language: undefined,
 
@@ -45,7 +45,7 @@ export const UrlParams = {
    * from the `idesettings` tab.
    *
    * @name UrlParams#theme
-   * @type ("light"|"dark")
+   * @type {undefined|"light"|"dark"}
    * @default "light"
    */
   theme: undefined,
@@ -56,7 +56,7 @@ export const UrlParams = {
    * @see {@link TAB_IDS} for a list of common tab IDs.
    *
    * @name UrlParams#hideTabs
-   * @type string
+   * @type {string}
    */
   hideTabs: "",
 
@@ -67,7 +67,7 @@ export const UrlParams = {
    * @see {@link TAB_IDS} for a list of common tab IDs.
    *
    * @name UrlParams#showTabs
-   * @type string
+   * @type {string}
    */
   showTabs: "",
 
@@ -85,7 +85,7 @@ export const UrlParams = {
    * or hide the `testcases` tab using `hideTabs`.
    *
    * @name UrlParams#hideActions
-   * @type (boolean|"attempt")
+   * @type {boolean|"attempt"}
    * @default false
    */
   hideActions: false,

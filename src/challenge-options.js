@@ -12,7 +12,7 @@ export const ChallengeOptions = {
    * This property is not used if the challenge is not storing the results back on an assessment result.
    *
    * @name ChallengeOptions#authToken
-   * @type string
+   * @type {string|undefined}
    */
   authToken: undefined,
 
@@ -20,7 +20,7 @@ export const ChallengeOptions = {
    * The unique embed client key value set on your team.
    *
    * @name ChallengeOptions#embedClientKey
-   * @type string
+   * @type {string|undefined}
    */
   embedClientKey: undefined,
 
@@ -49,7 +49,7 @@ export const ChallengeOptions = {
    * * `"runonly"` is identical to `"readonly"`, except that tests can be run, either programmatically with `runTests()` and `attempt()`, or through the Run and Submit buttons in the Embed UI (the UI buttons can be hidden with the `"hideActions"` option).
    *
    * @name ChallengeOptions#mode
-   * @type (null|"readonly"|"restricted"|"runonly")
+   * @type {null|"readonly"|"restricted"|"runonly"}
    */
   mode: undefined,
 
@@ -61,7 +61,7 @@ export const ChallengeOptions = {
    * {@link ChallengeOptions#onLoaded} callback event.
    *
    * @name ChallengeOptions#language
-   * @type string
+   * @type {string|undefined}
    */
   language: undefined,
 
@@ -70,7 +70,7 @@ export const ChallengeOptions = {
    * from the `idesettings` tab.
    *
    * @name ChallengeOptions#theme
-   * @type (null|"light"|"dark")
+   * @type {null|"light"|"dark"}
    * @default "light"
    */
   theme: undefined,
@@ -111,7 +111,7 @@ export const ChallengeOptions = {
    * be used if you want to configure an external editor.
    *
    * @name ChallengeOptions#hideActions
-   * @type (boolean|"attempt"|"runTests")
+   * @type {boolean|"attempt"|"runTests"}
    * @default false
    */
   hideActions: false,
@@ -158,7 +158,7 @@ export const ChallengeOptions = {
    * To change the cursor position later, please use {@link QualifiedEmbeddedChallenge#setFileContents}.
    *
    * @name ChallengeOptions#initialCursor
-   * @type ChallengeOptions~Cursor
+   * @type ChallengeOptions.Cursor
    */
   initialCursor: null,
 
@@ -172,7 +172,7 @@ export const ChallengeOptions = {
    *  overwrite the values in `fileData`.
    *
    *  @name ChallengeOptions#initialRunResult
-   *  @type ChallengeOptions~RunResult
+   *  @type ChallengeOptions.RunResult
    */
   initialRunResult: null,
 
@@ -199,7 +199,7 @@ export const ChallengeOptions = {
    * Override the base URL for testing and debugging.
    *
    * @name ChallengeOptions#baseURL
-   * @type string
+   * @type {string|null}
    */
   baseURL: null,
 
@@ -220,7 +220,7 @@ export const ChallengeOptions = {
    * @param {QualifiedEmbedManager} eventData.manager - Manager for this event
    * @param {QualifiedEmbeddedChallenge} eventData.editor - Editor for this event
    * @param {string} eventData.challengeId - Challenge ID of the editor for this event
-   * @param {ChallengeOptions~LoadData} eventData.data - Information about the challenge, will also be stored in {@link QualifiedEmbeddedChallenge#challengeData} for future access.
+   * @param {ChallengeOptions.LoadData} eventData.data - Information about the challenge, will also be stored in {@link QualifiedEmbeddedChallenge#challengeData} for future access.
    */
   onLoaded(eventData) {},
 
@@ -236,7 +236,7 @@ export const ChallengeOptions = {
    * @param {QualifiedEmbedManager} eventData.manager - Manager for this event
    * @param {QualifiedEmbeddedChallenge} eventData.editor - Editor for this event
    * @param {string} eventData.challengeId - Challenge ID of the editor for this event
-   * @param {ChallengeOptions~FileContentsData} eventData.data - File Change Data
+   * @param {ChallengeOptions.FileContentsData} eventData.data - File Change Data
    */
   onChange(eventData) {},
 
@@ -256,7 +256,7 @@ export const ChallengeOptions = {
    * @param {QualifiedEmbeddedChallenge} eventData.editor - Editor for this event
    * @param {string} eventData.challengeId - Challenge ID of the editor for this event
    * @param {"test"|"attempt"} eventData.data.type - Type of run
-   * @param {ChallengeOptions~FileContentsData} eventData.data.fileData - File data at beginning of run
+   * @param {ChallengeOptions.FileContentsData} eventData.data.fileData - File data at beginning of run
    */
   onRunStart(eventData) {},
 
@@ -269,7 +269,7 @@ export const ChallengeOptions = {
    * @param {QualifiedEmbedManager} eventData.manager - Manager for this event
    * @param {QualifiedEmbeddedChallenge} eventData.editor - Editor for this event
    * @param {string} eventData.challengeId - Challenge ID of the editor for this event
-   * @param {ChallengeOptions~RunResult} eventData.data Results of the code run
+   * @param {ChallengeOptions.RunResult} eventData.data Results of the code run
    */
   onRun(eventData) {},
 };
@@ -277,7 +277,7 @@ export const ChallengeOptions = {
 /**
  * Data about the loaded challenge, solution, and more. Can be useful for rendering options for the candidate, such as language selection.
  *
- * @typedef ChallengeOptions~LoadData
+ * @typedef ChallengeOptions.LoadData
  * @property {string} error - If set, there was an error loading the challenge (invalid ID or restrictions)
  * @property {boolean} started - True if the editor is ready to solve.
  * @property {string} solutionId - If there's an assessment result, this will be the ID of the solution for this challenge.
@@ -287,22 +287,22 @@ export const ChallengeOptions = {
  * @property {string} summary - Summary text on challenge, in Markdown
  * @property {Array<string>} languages - List of languages available on the challenge
  * @property {Array<string>} availableTabs - List of [tabs available]{@linkplain TAB_IDS} on the challenge (for hideTabs or showTabs)
- * @property {ChallengeOptions~FileContentsData} fileData - Current file contents (if available)
+ * @property {ChallengeOptions.FileContentsData} fileData - Current file contents (if available)
  */
 
 /**
  * File contents data
  *
- * @typedef ChallengeOptions~FileContentsData
+ * @typedef ChallengeOptions.FileContentsData
  * @property {Object} files - Hash of file name or path to file contents to be set on the challenge solution.
  * @property {string} files.(path) - Contents of each file. Use the file path as the key for project challenges, or `code` and `testcases` for classic challenges.
- * @property {ChallengeOptions~Cursor} cursor - Contains information about where the cursor is at the time of the event.
+ * @property {ChallengeOptions.Cursor} cursor - Contains information about where the cursor is at the time of the event.
  */
 
 /**
  * Cursor tracking data.
  *
- * @typedef ChallengeOptions~Cursor
+ * @typedef ChallengeOptions.Cursor
  * @property {string} path - Path to file. For classic code challenges, this will be <code>code</code> or <code>testcases</code>
  * @property {number} line - Line number
  * @property {number} ch - Character number
@@ -311,9 +311,9 @@ export const ChallengeOptions = {
 /**
  * Result of a code run. This is only a subset of the properties available.
  *
- * @typedef ChallengeOptions~RunResult
+ * @typedef ChallengeOptions.RunResult
  * @property {"test"|"attempt"} type - Type of run (always `"test"` for project challenges)
- * @property {ChallengeOptions~FileContentsData} fileData - The solution files at the time of the attempt
+ * @property {ChallengeOptions.FileContentsData} fileData - The solution files at the time of the attempt
  * @property {Object} flags
  * @property {boolean} flags.success - True if the code was run without error
  * @property {boolean} flags.passed - True if the solution passed all tests
