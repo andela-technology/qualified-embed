@@ -37,7 +37,7 @@ const editor = manager.createEditor({
 });
 ```
 
-Optionally integrate this into your front end framework of choice (React, Vue, Angular, etc), then bundle the code using your favorite web bundler (Vite, Webpack, Parcel, etc).
+Optionally integrate this into your front end framework of choice (React, Vue, Angular, etc), then bundle the code using your favorite web bundler (Webpack, Vite, Parcel, etc).
 
 See our [Embed with React demo](https://github.com/qualified/embed-demos/tree/master/react) for a complete example.
 
@@ -46,7 +46,7 @@ See our [Embed with React demo](https://github.com/qualified/embed-demos/tree/ma
 You can use Qualified Embed in a script tag as follows:
 
 ```html
-<script src=":replace with unpkg or jsdelivr url:"></script>
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@dist/dist/embed.min.js"></script>
 ```
 
 See our [quick start](https://andela-technology.github.io/qualified-embed/tutorial-challenges.html) and [demo page](https://github.com/qualified/embed-demos) for examples.
@@ -67,7 +67,7 @@ If you're working on Embed internals in the Qualified codebase, update `baseURL`
 
 ### Deploying the Package
 
-The package is hosted on npm.
+The package is hosted on [npm](https://www.npmjs.com/package/@qualified/embed).
 
 ```bash
 npm publish
