@@ -14,16 +14,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andela-technology/qualified-embed-manager.git"
+    "url": "git+https://github.com/andela-technology/qualified-embed.git"
   },
   "keywords": [
     "qualified",
     "embed"
   ],
   "bugs": {
-    "url": "https://github.com/andela-technology/qualified-embed-manager/issues"
+    "url": "https://github.com/andela-technology/qualified-embed/issues"
   },
-  "homepage": "https://github.com/andela-technology/qualified-embed-manager#readme",
+  "homepage": "https://github.com/andela-technology/qualified-embed#readme",
   "author": "Qualified",
   "license": "ISC",
   "dependencies": {

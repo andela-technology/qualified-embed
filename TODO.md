@@ -1,9 +1,8 @@
 # TODO
 
-- add unpkg/jsdelivr options for script tags, remove AMD from bundler potentially
-  - get webpack to build for browser module imports as well as script tags (or rely on unpkg?)
-  - update default baseUrl to point to latest CDN
-- Prepare for npm release (@qualified/embed-sdk) https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/
+- get webpack to build for browser module imports as well as script tags (or rely on unpkg?)
+- update default baseUrl in generated embed examples to point to latest CDN
+- add TS and typechecking the JSDocs
 - Determine how to version the docs (different GH pages branches or top-level folders? https://stackoverflow.com/questions/47643881/github-pages-maintaining-multiple-versions has ideas)
 - Remove the embed/manager directory and relevant gulp stuff from the main codebase
 - add jsdoc dev server with hot reloading
@@ -11,11 +10,11 @@
 - Update SDK docs to show Node usage, and update browser usage with the new QualifiedEmbed prefix.
 - check on how https://www.qualified.io/embed and https://www.qualified.io/embedded will work after removing the manager (I guess they will point to jsdelivr rather than https://www.qualified.io/embed.js?)
 - Mock CR requests in tests
-- Run by legal before going public
 
 ## Lower priority
 
 - Possibly add husky precommit hook to run linting and prettier
+- could add prettier action: https://github.com/marketplace/actions/prettier-action
 - Add TS checks on docstrings?
 - determine whether obfuscateId needs to be replaced or what's going on with that. might need to move this server-side and change it now that it's in git history. Update: it's actually in the docs: <https://www.qualified.io/embed/api-docs/global.html#obfuscateId__anchor>. So maybe not such a concern after all.
 - Simplify classes `window.QualifiedEmbed.QualifiedEmbedManager.init({` -> `new window.QualifiedEmbed.Manager({`.
