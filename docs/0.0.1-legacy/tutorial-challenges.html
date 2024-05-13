@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu inline">
-					<li><a href="QualifiedEmbeddedAssessment.html">QualifiedEmbeddedAssessment</a></li><li><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></li><li><a href="QualifiedEmbedManager.html">QualifiedEmbedManager</a></li>
+					<li><a href="QualifiedEmbeddedAssessment.html">QualifiedEmbeddedAssessment</a></li><li><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></li><li><a href="QualifiedEmbed.html">QualifiedEmbed</a></li>
 				</ul>
 			</li>
 			
@@ -165,7 +165,7 @@ window.qualifiedEmbedManager = window.QualifiedEmbed.init({
 </ul>
 <p>If any of the above are necessary for your use case, <a href="tutorial-assessments.html">try embedding full assessments instead</a>.</p>
 <h2>Initial Setup</h2>
-<p>For configuring group of challenges, please use <code>init</code> on <a href="QualifiedEmbedManager.html"><code>window.QualifiedEmbed</code></a>. Once you've set up your manager, you can create individual embeds using <a href="QualifiedEmbedManager.html#createEditor"><code>QualifiedEmbedManager#createEditor</code></a>. See <a href="QualifiedEmbeddedChallenge.html"><code>QualifiedEmbeddedChallenge</code></a> for the editor functions.</p>
+<p>For configuring group of challenges, please use <code>init</code> on <a href="QualifiedEmbed.html"><code>window.QualifiedEmbed</code></a>. Once you've set up your manager, you can create individual embeds using <a href="QualifiedEmbed.html#createEditor"><code>QualifiedEmbed#createEditor</code></a>. See <a href="QualifiedEmbeddedChallenge.html"><code>QualifiedEmbeddedChallenge</code></a> for the editor functions.</p>
 <h3>Direct Challenge Creation</h3>
 <p>If you only plan on using a single challenge, and want to control the creation and removal of that challenge through code, you can also <a href="QualifiedEmbeddedChallenge.html">create an embedded challenge directly</a>:</p>
 <pre class="prettyprint source lang-javascript"><code>var editor = new window.QualifiedEmbeddedChallenge({
