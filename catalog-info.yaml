@@ -4,7 +4,16 @@ metadata:
   name: qualified-embed
   annotations:
     github.com/project-slug: andela-technology/qualified-embed
+  links:
+    - url: https://www.qualified.io/embedded
+      title: Embed playground
+      icon: url
+  
+  tags:
+    - ror
+    - nodejs
+    - vue
 spec:
   type: other
-  lifecycle: unknown
+  lifecycle: production
   owner: qualified
