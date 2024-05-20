@@ -47,6 +47,8 @@ git push
 
 If you're publishing docs for a new release, on the `docs` branch, modify the workflow above to include subfolders for each release version.
 
-The docs for the current embed release should be hosted at <https://andela-technology.github.io/qualified-embed/docs>, while outdated versions should be hosted at <https://andela-technology.github.io/qualified-embed/docs/0.0.1> (for example).
+The docs for the current embed release should be hosted at <https://andela-technology.github.io/qualified-embed/docs>, while outdated (and the current) versions should be hosted at <https://andela-technology.github.io/qualified-embed/docs/0.0.1> (for example).
 
-You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), then copying the newly-generated folder into its version number.
+You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), generating docs for the latest release, then copying the newly-generated folder into its version number.
+
+`create_resource_links.py` should be used to link each version-specific docs folder with the global assets in the `/docs` folder. You can then delete the shared assets from the version-specific release (we should update the script to automate this).
