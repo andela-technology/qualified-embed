@@ -14,6 +14,6 @@ jobs:
       - run: npm ci
       - uses: sibiraj-s/action-eslint@v3
         with:
-          eslint-args: "--ignore-path=.gitignore --quiet"
+          eslint-args: "--ignore-path=.gitignore --quiet --ignore-pattern 'docs/*'"
           extensions: "js,jsx,ts,tsx"
           annotations: true
