@@ -10,9 +10,7 @@ metadata:
       icon: url
   
   tags:
-    - ror
-    - nodejs
-    - vue
+    - javascript
 spec:
   type: other
   lifecycle: production
