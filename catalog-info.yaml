@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: qualified-embed
+  annotations:
+    github.com/project-slug: andela-technology/qualified-embed
+  links:
+    - url: https://www.qualified.io/embedded
+      title: Embed playground
+      icon: url
+  
+  tags:
+    - javascript
+spec:
+  type: other
+  lifecycle: production
+  owner: qualified
