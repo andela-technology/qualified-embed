@@ -9,6 +9,23 @@ You should embed the full assessment whenever you need the following:
 ## Quick Start Example
 
 ```xml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Embedded Full Assessment</title>
+  <style>
+  [data-qualified-embed] {
+    width: 100%;
+    height: 60vh;
+    border: none;
+  }
+  </style>
+</head>
+<body>
+
+<h1>Embedded Full Assessment</h1>
+
+<!-- replace with your assessment id -->
 <iframe data-qualified-embed="5a309e7cac5e2d0013af6bdb"></iframe>
 
 <script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.1/dist/embed.min.js"></script>
@@ -45,6 +62,8 @@ const assessmentEditor = new window.QualifiedEmbed.QualifiedEmbeddedAssessment({
   },
 });
 </script>
+</body>
+</html>
 ```
 
 ## Usage
