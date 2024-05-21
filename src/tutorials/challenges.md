@@ -12,41 +12,73 @@ When embedding challenges, you can:
 ## Quick Start Example
 
 ```xml
-<div data-qualified-embed="507f19cde860e19729a1e810"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Embedded Challenge</title>
+  <style>
+  [data-qualified-embed] {
+    position: relative;
+    max-width: 100%;
+    width: 100em;
+    display: flex;
+    resize: both;
+    overflow: hidden;
+    height: 60vh;
+  }
+  [data-qualified-embed] > iframe {
+    border: none;
+    flex-grow: 1;
+  }
+  </style>
+</head>
+<body>
+
+<!-- replace with your challenge id -->
+<div data-qualified-embed="5c817855557303000a2f82b9"></div>
 
 <script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.1/dist/embed.min.js"></script>
 <script>
-const qualifiedEmbedManager = window.QualifiedEmbed.QualifiedEmbedManager.init({
-  // generate embeds by looking through nodes
-  autoCreate: true,
+  var manager = window.QualifiedEmbed.QualifiedEmbedManager.init({
+    // generate editors by looking through nodes
+    autoCreate: true,
 
-  // shared options for new embeds
-  options: {
-    // optional authToken for saving results from API call
-    authToken: authTokenFromAssessmentInvitation,
-    embedClientKey: embedClientKeyFromTeamSettings,
-    theme: "dark",
-  },
-
-  // challenge-specific options
-  challengeOptions: {
-    "507f19cde860e19729a1e810": {
-      language: "javascript",
-      hideTabs: "instructions,idesettings",
+    // shared options for new editors
+    options: {
+      // optional authToken for saving results from API call
+      authToken: authTokenFromAssessmentInvitation,
+      embedClientKey: embedClientKeyFromTeamSettings,
     },
-  },
 
-  // Common callbacks, can also be set per-challenge
+    // challenge-specific options
+    challengeOptions: {
+      "5c817855557303000a2f82b9": {
+        language: "javascript"
+      }
+    },
 
-  onChange({ manager, editor, challengeId, data }) {
-    // save changes made to the solution
-  },
-  onRun({ manager, editor, challengeId, data }) {
-    console.log(`challenge ${challengeId} was run with this result:`);
-    console.log(data);
-  },
-});
+    // The following events can also be handled per-challenge
+
+    onLoaded({ manager, editor, challengeId, data }) {
+      // Respond to challenge being loaded and ready for solving
+    },
+
+    onChange({ manager, editor, challengeId, data }) {
+      // save changes made to the solution
+    },
+
+    onRunStart({ manager, editor, challengeId, data }) {
+      console.log("challenge " + challengeId + " was run as a " + data.type); // test or attempt
+    },
+
+    onRun({ manager, editor, challengeId, data }) {
+      console.log("challenge " + challengeId + " was run with this result:");
+      console.log(data);
+    }
+  });
 </script>
+</body>
+</html>
 ```
 
 ## Usage

@@ -4,11 +4,13 @@ Issues and pull requests are welcome. Before opening a PR, please create an issu
 
 Before opening a PR, add automated tests if appropriate and run and pass all checks:
 
-```
+```bash
 npm run format
 npm run lint
 npm run test
 ```
+
+We have precommit hooks and CI actions to run these tasks.
 
 ## Development Setup
 
@@ -16,23 +18,24 @@ npm run test
 git config blame.ignoreRevsFile .git-blame-ignore-revs
 npm i # install dependencies
 npm start # run a development server
-npm run build # bundle the manager to /dist
 npm run jsdoc # bundle the docs to /docs
 npm run lint # run eslint
 npm run format # run prettier
+npm run test # run playwright e2e tests
 ```
 
 If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in [public/index.html](public/index.html) to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
 
 ## Creating a New Release
 
-Create a new release on GitHub at https://github.com/andela-technology/qualified-embed/releases. The release should provide a list of changes, a link to the docs and a link to the npm package.
+Create a new release on GitHub at https://github.com/andela-technology/qualified-embed/releases. The release should provide a list of changes, a link to the docs, a link to the npm package and a link to the unpkg dist bundle.
 
 ## Publishing the Package
 
 The package is hosted on [npm](https://www.npmjs.com/package/@qualified/embed) and follows semver. Update the version in package.json accordingly, update the script tags in README.md and the docs to point to the latest version, and run:
 
 ```bash
+npm run build # bundle the manager to /dist for unpkg
 npm publish
 npm deprecate @qualified/embed@<previous version>
 ```
@@ -61,27 +64,10 @@ You can achieve this by deleting the non-version labeled docs in the root folder
 
 `create-doc-resource-links.js` should be used to link each version-specific docs folder with the global assets in the `/docs` folder and delete any unnecessary folders in the version-specific docs folders.
 
-## Publishing the Browser Script
-
-We use JSDelivr to host the script via a release on GitHub. All bundles should go in the `/dist` branch and should have the same code as their corresponding npm version.
-
-```bash
-git checkout dist
-git merge main
-npm run build
-git add -f dist
-git commit -m "Add browser script for release v1.0.2"
-git push
-```
-
-Feel free to make a PR if you prefer, but be sure to merge it into the dist branch.
-
-Once you create a release, use the tag for the JSDelivr link. The format is <https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@1.0.2/dist/embed.min.js> where 1.0.2 is the release version.
-
 ## Updating Related Resources
 
-The Qualified codebase has a few references to the script. Update all JSDeliver links (`git grep jsdelivr`) to use the latest script tag.
+The Qualified codebase has a few references to the script. Update all unpkg links (`git grep unpkg`) to use the latest script tag.
 
 https://github.com/qualified/embed-demos also uses the script tag and should be updated accordingly.
 
-Update the script tags within the jsdocs here as well.
+Update the script tags within the jsdocs examples and README.md here as well.
