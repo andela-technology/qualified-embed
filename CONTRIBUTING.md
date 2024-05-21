@@ -24,12 +24,17 @@ npm run format # run prettier
 
 If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in [public/index.html](public/index.html) to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
 
-## Deploying the Package
+## Creating a new Release
 
-The package is hosted on [npm](https://www.npmjs.com/package/@qualified/embed) and follows semver.
+Create a new release on GitHub at https://github.com/andela-technology/qualified-embed/releases. The release should provide a list of changes, a link to the docs and a link to the npm package.
+
+## Publishing the Package
+
+The package is hosted on [npm](https://www.npmjs.com/package/@qualified/embed) and follows semver. Update the version in package.json accordingly, update the script tags in README.md and the docs to point to the latest version, and run:
 
 ```bash
 npm publish
+npm deprecate @qualified/embed@<previous version>
 ```
 
 ## Deploying the Docs
@@ -51,4 +56,4 @@ The docs for the current embed release should be hosted at <https://andela-techn
 
 You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), generating docs for the latest release, then copying the newly-generated folder into its version number.
 
-`create_resource_links.py` should be used to link each version-specific docs folder with the global assets in the `/docs` folder. You can then delete the shared assets from the version-specific release (we should update the script to automate this).
+`create-doc-resource-links.js` should be used to link each version-specific docs folder with the global assets in the `/docs` folder and delete any unnecessary folders in the version-specific docs folders.
