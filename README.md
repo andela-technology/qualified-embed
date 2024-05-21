@@ -4,7 +4,7 @@ With Qualified Embed, you can now build advanced, developer-friendly coding prod
 
 ## Documentation
 
-[Embed SDK docs](https://andela-technology.github.io/qualified-embed/)
+[Embed SDK docs](https://andela-technology.github.io/qualified-embed/docs)
 
 ## Examples
 

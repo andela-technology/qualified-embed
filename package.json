@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build": "webpack",
     "check-types": "tsc --skipLibCheck --project ./jsconfig.json",
-    "lint": "eslint --ignore-path=.gitignore .",
+    "lint": "eslint --ignore-path=.gitignore --ignore-pattern=docs/* .",
     "format": "prettier -w .",
     "test": "npx playwright test",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src"
