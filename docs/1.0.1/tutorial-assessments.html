@@ -1,0 +1,482 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Qualified Embed SDK Tutorial: Embedding Assessments</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="../styles/sunlight.dark.css" />
+
+    <link type="text/css" rel="stylesheet" href="../styles/site.lumen.css" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Qualified Embed SDK</a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#topNavigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="topNavigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a
+                href="classes.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Classes<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="QualifiedEmbeddedAssessment.html"
+                    >QualifiedEmbeddedAssessment</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbeddedChallenge.html"
+                    >QualifiedEmbeddedChallenge</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbedManager.html">QualifiedEmbedManager</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="interfaces.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Interfaces<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="AssessmentOptions.html">AssessmentOptions</a></li>
+                <li><a href="ChallengeOptions.html">ChallengeOptions</a></li>
+                <li><a href="UrlParams.html">UrlParams</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="tutorials.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Tutorials<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="tutorial-assessments.html">Embedding Assessments</a>
+                </li>
+                <li>
+                  <a href="tutorial-challenges.html">Embedding Challenges</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="global.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Global<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="global.html#ERROR_CONTEXTS">ERROR_CONTEXTS</a></li>
+                <li>
+                  <a href="global.html#_getStorageData">_getStorageData</a>
+                </li>
+                <li>
+                  <a href="global.html#_setStorageData">_setStorageData</a>
+                </li>
+                <li><a href="global.html#obfuscateId">obfuscateId</a></li>
+                <li><a href="global.html#deobfuscateId">deobfuscateId</a></li>
+                <li>
+                  <a href="global.html#_checkDestroyed">_checkDestroyed</a>
+                </li>
+                <li><a href="global.html#TAB_IDS">TAB_IDS</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  name="q"
+                  id="search-input"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" id="search-submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="toc-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="main">
+            <section class="tutorial-section">
+              <header>
+                <h2>Embedding Assessments</h2>
+              </header>
+
+              <article>
+                <p>
+                  Embedding assessments allows you to embed an entire Qualified
+                  assessment directly in another page. This makes it easy to
+                  fully test candidates and students without them leaving your
+                  site.
+                </p>
+                <p>
+                  You should embed the full assessment whenever you need the
+                  following:
+                </p>
+                <ul>
+                  <li>
+                    The complete assessment experience, including getting full
+                    scores &amp; playback.
+                  </li>
+                  <li>
+                    The full project challenge experience, including creating
+                    and moving files.
+                  </li>
+                  <li>Q&amp;A challenges</li>
+                </ul>
+                <h2>Quick Start Example</h2>
+                <pre
+                  class="prettyprint source lang-xml"
+                ><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+&lt;head>
+  &lt;title>Embedded Full Assessment&lt;/title>
+  &lt;style>
+  [data-qualified-embed] {
+    width: 100%;
+    height: 60vh;
+    border: none;
+  }
+  &lt;/style>
+&lt;/head>
+&lt;body>
+
+&lt;h1>Embedded Full Assessment&lt;/h1>
+
+&lt;!-- replace with your assessment id -->
+&lt;iframe data-qualified-embed=&quot;5a309e7cac5e2d0013af6bdb&quot;>&lt;/iframe>
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.1/dist/embed.min.js&quot;>&lt;/script>
+&lt;script>
+const assessmentEditor = new window.QualifiedEmbed.QualifiedEmbeddedAssessment({
+  // the node hosting the iframe
+  node: document.querySelector(
+    '[data-qualified-embed=&quot;5a309e7cac5e2d0013af6bdb&quot;]',
+  ),
+
+  // options for this assessment editor
+  options: {
+    // invitePath and authToken from assessment invitation API call
+    invitePath: invitePathFromAssessmentInvitation,
+    authToken: authTokenFromAssessmentInvitation,
+
+    embedClientKey: embedClientKeyFromTeamSettings,
+
+    onLoaded({ assessment, data }) {
+      // Respond to the assessment solver being loaded
+    },
+    onUpdated({ assessment, data }) {
+      // save changes made to the solution
+    },
+    onSolutionUpdated({ assessment, data }) {
+      console.log(`solution for challenge ${data.title} was updated`);
+    },
+    onSubmitted({ assessment, data }) {
+      console.log(&quot;assessment was submitted&quot;, data);
+    },
+    onError({ assessment, data }) {
+      console.error(`There was an error in ${data.context}`, data);
+    },
+  },
+});
+&lt;/script>
+&lt;/body>
+&lt;/html>
+</code></pre>
+                <h2>Usage</h2>
+                <p>
+                  Before you can use embedded assessments, you need to
+                  <a
+                    href="https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations"
+                    >invite the candidate or student using the
+                    AssessmentInvitations API</a
+                  >. This provides you with the unique
+                  <code>invitePath</code> and <code>authToken</code> properties
+                  needed to load the assessment.
+                </p>
+                <p>
+                  Then simply create a new
+                  <code>QualifiedEmbeddedAssessment</code> with a DOM node and
+                  those properties, the assessment will be loaded into your page
+                  automatically.
+                </p>
+                <h2>Configuration Details</h2>
+                <p>
+                  There are a few options you can use to customize the
+                  assessment editor, as well as interact with the editor
+                  directly.
+                </p>
+                <p>
+                  Below will highlight some of the more useful options.
+                  <strong
+                    ><a href="AssessmentOptions.html"
+                      >A complete list of options is available in
+                      <code>AssessmentOptions</code></a
+                    >.</strong
+                  >
+                </p>
+                <h3>Example Appearance Options</h3>
+                <p>
+                  These options will help you configure the style and visible
+                  components of the editor.
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <a href="AssessmentOptions.html#mode"
+                        ><code>mode</code></a
+                      >
+                      can be set to <code>readonly</code> or
+                      <code>restricted</code> to change how editing and saving
+                      works.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="AssessmentOptions.html#hideSidebar"
+                        ><code>hideSidebar</code></a
+                      >
+                      can be used to completely hide the built-in navigation
+                      sidebar. If you do this, you may want to provide external
+                      controls for challenge navigation. However, the internal
+                      challenge buttons will allow the candidate to move forward
+                      to the next challenge and through to submission (but never
+                      backwards to a previous one).
+                    </p>
+                    <p>
+                      <strong>Also note this hides the timer.</strong> On timed
+                      assessments, this means you'll need to provide your own
+                      external timer. You can use
+                      <a href="AssessmentOptions.html#~LoadData"
+                        ><code>startedAt</code>, <code>timeLimit</code>, and
+                        <code>cutOffTime</code> from <code>onLoaded</code> to
+                        create an external timer</a
+                      >.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a href="AssessmentOptions.html#hideWelcome"
+                        ><code>hideWelcome</code></a
+                      >
+                      can be used to immediately start a candidate on the
+                      assessment. This also hides any welcome screen
+                      information, such as navigation and timer information.
+                    </p>
+                  </li>
+                </ul>
+                <h2>Callbacks</h2>
+                <p>
+                  The embedded editor provides several callbacks throughout its
+                  lifecycle. Click on any callback for details.
+                </p>
+                <ul>
+                  <li>
+                    <a href="AssessmentOptions.html#onLoaded"
+                      ><code>onLoaded()</code></a
+                    >
+                    is called after the assessment editor has been loaded. It
+                    can be used to learn more about the assessment.
+                  </li>
+                  <li>
+                    <a href="AssessmentOptions.html#onUpdated"
+                      ><code>onUpdated()</code></a
+                    >
+                    is called whenever there is an update to the assessment
+                    result, including events that affect score &amp; completion
+                    information.
+                  </li>
+                  <li>
+                    <a href="AssessmentOptions.html#onSolutionUpdated"
+                      ><code>onSolutionUpdated()</code></a
+                    >
+                    is called as challenges are changed and solutions are
+                    modified.
+                  </li>
+                  <li>
+                    <a href="AssessmentOptions.html#onSubmitted"
+                      ><code>onSubmitted()</code></a
+                    >
+                    is called once the entire assessment has been submitted.
+                  </li>
+                  <li>
+                    <a href="AssessmentOptions.html#onError"
+                      ><code>onError()</code></a
+                    >
+                    is called for unrecoverable error events, such as network
+                    errors or permissions errors.
+                  </li>
+                </ul>
+              </article>
+            </section>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+    <footer>
+      <div><br /><br /><br /><br /><br /><br /></div>
+
+      <span class="copyright"> Qualified.io </span>
+
+      <span class="jsdoc-message">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+
+        on May 21st 2024, 12:53:50 pm using the
+        <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+      </span>
+    </footer>
+
+    <script src="../scripts/docstrap.lib.js"></script>
+    <script src="../scripts/toc.js"></script>
+
+    <script
+      type="text/javascript"
+      src="../scripts/fulltext-search-ui.js"
+    ></script>
+
+    <script>
+      $(function () {
+        $("[id*='$']").each(function () {
+          var $this = $(this);
+
+          $this.attr("id", $this.attr("id").replace("$", "__"));
+        });
+
+        $(
+          ".tutorial-section pre, .readme-section pre, pre.prettyprint.source",
+        ).each(function () {
+          var $this = $(this);
+
+          var example = $this.find("code");
+          exampleText = example.html();
+          var lang = /{@lang (.*?)}/.exec(exampleText);
+          if (lang && lang[1]) {
+            exampleText = exampleText.replace(lang[0], "");
+            example.html(exampleText);
+            lang = lang[1];
+          } else {
+            var langClassMatch = example
+              .parent()[0]
+              .className.match(/lang\-(\S+)/);
+            lang = langClassMatch ? langClassMatch[1] : "javascript";
+          }
+
+          if (lang) {
+            $this
+              .addClass("sunlight-highlight-" + lang)
+              .addClass("linenums")
+              .html(example.html());
+          }
+        });
+
+        Sunlight.highlightAll({
+          lineNumbers: true,
+          showMenu: true,
+          enableDoclinks: true,
+        });
+
+        $.catchAnchorLinks({
+          navbarOffset: 10,
+        });
+        $("#toc").toc({
+          anchorName: function (i, heading, prefix) {
+            return $(heading).attr("id") || prefix + i;
+          },
+          selectors:
+            "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+          showAndHide: false,
+          smoothScrolling: true,
+        });
+
+        $("#main span[id^='toc']").addClass("toc-shim");
+        $(".dropdown-toggle").dropdown();
+
+        $("table").each(function () {
+          var $this = $(this);
+          $this.addClass("table");
+        });
+      });
+    </script>
+
+    <!--Navigation and Symbol Display-->
+
+    <!--Google Analytics-->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        SearcherDisplay.init();
+      });
+    </script>
+  </body>
+</html>
