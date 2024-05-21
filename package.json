@@ -45,7 +45,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.js": "eslint --cache --fix --ignore-path=.gitignore",
+    "*.{js,css,html,md}": "prettier --write"
   }
 }

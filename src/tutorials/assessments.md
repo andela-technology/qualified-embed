@@ -11,42 +11,39 @@ You should embed the full assessment whenever you need the following:
 ```xml
 <iframe data-qualified-embed="5a309e7cac5e2d0013af6bdb"></iframe>
 
-<script src="//www.qualified.io/embed.js"></script>
-<script type="application/javascript">
-documentReady(function() {
-  window.assessmentEditor = new window.QualifiedEmbeddedAssessment({
-    // the node hosting the iframe
-    node: document.querySelector('[data-qualified-embed="5a309e7cac5e2d0013af6bdb"]'),
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.1/dist/embed.min.js"></script>
+<script>
+const assessmentEditor = new window.QualifiedEmbed.QualifiedEmbeddedAssessment({
+  // the node hosting the iframe
+  node: document.querySelector(
+    '[data-qualified-embed="5a309e7cac5e2d0013af6bdb"]',
+  ),
 
+  // options for this assessment editor
+  options: {
+    // invitePath and authToken from assessment invitation API call
+    invitePath: invitePathFromAssessmentInvitation,
+    authToken: authTokenFromAssessmentInvitation,
 
-    // options for this assessment editor
-    options: {
-      // invitePath and authToken from assessment invitation API call
-      invitePath: invitePathFromAssessmentInvitation,
-      authToken: authTokenFromAssessmentInvitation,
+    embedClientKey: embedClientKeyFromTeamSettings,
 
-      embedClientKey: embedClientKeyFromTeamSettings,
-
-      onLoaded({ assessment, data }) {
-        // Respond to the assessment solver being loaded
-      },
-      onUpdated({ assessment, data }) {
-        // save changes made to the solution
-      },
-      onSolutionUpdated({ assessment, data }) {
-        console.log("solution for challenge " + data.title + " was updated");
-      },
-      onSubmitted({ assessment, data }) {
-        console.log("assessment was submitted", data);
-      },
-      onError({ assessment, data }) {
-        console.error("There was an error in " + data.context, data);
-      }
-    }
-  });
+    onLoaded({ assessment, data }) {
+      // Respond to the assessment solver being loaded
+    },
+    onUpdated({ assessment, data }) {
+      // save changes made to the solution
+    },
+    onSolutionUpdated({ assessment, data }) {
+      console.log(`solution for challenge ${data.title} was updated`);
+    },
+    onSubmitted({ assessment, data }) {
+      console.log("assessment was submitted", data);
+    },
+    onError({ assessment, data }) {
+      console.error(`There was an error in ${data.context}`, data);
+    },
+  },
 });
-
-function documentReady(f){var d=document;"complete"===d.readyState||"interactive"===d.readyState?window.setTimeout(f,1):d.addEventListener("DOMContentLoaded",f)}
 </script>
 ```
 
