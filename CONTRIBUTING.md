@@ -40,6 +40,7 @@ The [docs](https://andela-technology.github.io/qualified-embed/) are hosted on G
 git checkout docs
 git merge main
 npm run jsdoc
+prettier -w .
 git add -f docs
 git commit -m "Deploy docs"
 git push
