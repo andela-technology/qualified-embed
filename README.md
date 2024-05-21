@@ -1,10 +1,10 @@
-# Qualified Embed SDK
+# Qualified Embed
 
 With Qualified Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.
 
 ## Documentation
 
-[Embed SDK docs](https://andela-technology.github.io/qualified-embed/docs)
+[Embed docs](https://andela-technology.github.io/qualified-embed/docs)
 
 ## Examples
 
@@ -18,13 +18,13 @@ With Qualified Embed, you can now build advanced, developer-friendly coding prod
 Install the dependency into your Node web project:
 
 ```
-npm i @qualified/embed-sdk
+npm i @qualified/embed
 ```
 
 Import the package and create an instance of the Embed manager:
 
 ```js
-import { QualifiedEmbedManager } from "@qualified/embed-sdk";
+import { QualifiedEmbedManager } from "@qualified/embed";
 
 const manager = QualifiedEmbedManager.init({
   options: {
@@ -46,7 +46,7 @@ See our [Embed with React demo](https://github.com/qualified/embed-demos/tree/ma
 You can use Qualified Embed in a script tag as follows:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@dist/dist/embed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@1.0.2/dist/embed.min.js"></script>
 ```
 
 See our [quick start guide](https://andela-technology.github.io/qualified-embed/tutorial-challenges.html) and [demo page](https://github.com/qualified/embed-demos) for examples.
