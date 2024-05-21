@@ -58,3 +58,9 @@ The docs for the current embed release should be hosted at <https://andela-techn
 You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), generating docs for the latest release, then copying the newly-generated folder into its version number.
 
 `create-doc-resource-links.js` should be used to link each version-specific docs folder with the global assets in the `/docs` folder and delete any unnecessary folders in the version-specific docs folders.
+
+## Updating Related Resources
+
+The Qualified codebase has a few references to the script. Update all JSDeliver links (`git grep jsdelivr`) to use the latest script tag.
+
+https://github.com/qualified/embed-demos also uses the script tag and should be updated accordingly.
