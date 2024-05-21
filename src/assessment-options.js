@@ -60,7 +60,7 @@ export const AssessmentOptions = {
    * considered a security feature.
    *
    * @name AssessmentOptions#mode
-   * @type (null|"normal"|"readonly"|"restricted"|"runonly")
+   * @type (null|"normal"|"readonly"|"restricted")
    */
   mode: undefined,
 

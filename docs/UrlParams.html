@@ -1,0 +1,598 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Qualified Embed SDK Interface: UrlParams</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css" />
+
+    <link type="text/css" rel="stylesheet" href="styles/site.lumen.css" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Qualified Embed SDK</a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#topNavigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="topNavigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a
+                href="classes.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Classes<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="QualifiedEmbeddedAssessment.html"
+                    >QualifiedEmbeddedAssessment</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbeddedChallenge.html"
+                    >QualifiedEmbeddedChallenge</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbedManager.html">QualifiedEmbedManager</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="interfaces.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Interfaces<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="AssessmentOptions.html">AssessmentOptions</a></li>
+                <li><a href="ChallengeOptions.html">ChallengeOptions</a></li>
+                <li><a href="UrlParams.html">UrlParams</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="tutorials.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Tutorials<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="tutorial-assessments.html">Embedding Assessments</a>
+                </li>
+                <li>
+                  <a href="tutorial-challenges.html">Embedding Challenges</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="global.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Global<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="global.html#ERROR_CONTEXTS">ERROR_CONTEXTS</a></li>
+                <li>
+                  <a href="global.html#_getStorageData">_getStorageData</a>
+                </li>
+                <li>
+                  <a href="global.html#_setStorageData">_setStorageData</a>
+                </li>
+                <li><a href="global.html#obfuscateId">obfuscateId</a></li>
+                <li><a href="global.html#deobfuscateId">deobfuscateId</a></li>
+                <li>
+                  <a href="global.html#_checkDestroyed">_checkDestroyed</a>
+                </li>
+                <li><a href="global.html#TAB_IDS">TAB_IDS</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  name="q"
+                  id="search-input"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" id="search-submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="toc-content">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="main">
+            <h1 class="page-title">Interface: UrlParams</h1>
+            <section>
+              <header>
+                <h2>UrlParams</h2>
+              </header>
+
+              <article>
+                <div class="container-overview">
+                  <div class="description">
+                    <p>
+                      You can directly embed a challenge editor without the
+                      Manager library. Note that the outer page will not be able
+                      to interact with the embedded challenge. This could,
+                      however, be useful as a way to show simple examples with
+                      static site generators.
+                    </p>
+                    <p>
+                      The base URL will be
+                      <code>https://www.qualified.io/embed/[challengeId]</code>.
+                    </p>
+                    <p>
+                      The following parameters are supported to be set via query
+                      parameters for simple embedding. For example, if you'd
+                      like to inject a javascript challenge with dark-mode, you
+                      might use the following code:
+                    </p>
+                    <pre
+                      class="prettyprint source lang-xml"
+                    ><code>&lt;iframe src=&quot;https://www.qualified.io/embed/abcd12340001?language=javascript&theme=dark&quot;>&lt;/iframe>
+</code></pre>
+                  </div>
+
+                  <dl class="details"></dl>
+                </div>
+
+                <h3 class="subsection-title">Members</h3>
+
+                <dl>
+                  <hr />
+                  <dt class="name" id="mode">
+                    <h4 id="mode">
+                      <span class="type-signature"></span>mode<span
+                        class="type-signature"
+                      >
+                        :undefined|"readonly"|"restricted"</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Enables setting up the editor in different read-only
+                        modes.
+                      </p>
+                      <ul>
+                        <li>
+                          <code>null</code> The default, normal mode with full
+                          editing and saving.
+                        </li>
+                        <li>
+                          <code>&quot;restricted&quot;</code> Means you can edit
+                          the code, but changes will never be saved, or sent
+                          back to the parent window.
+                        </li>
+                        <li>
+                          <code>&quot;readonly&quot;</code> Means you cannot
+                          edit the code at all. Useful for reviewing-only,
+                          without making changes. This also disables running
+                          code.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">undefined</span>
+                        |
+
+                        <span class="param-type">"readonly"</span>
+                        |
+
+                        <span class="param-type">"restricted"</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="language">
+                    <h4 id="language">
+                      <span class="type-signature"></span>language<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Language to use on classic code challenges. This is
+                        recommended for multi-language challenges, as the user
+                        is not provided a way to change the language within the
+                        editor.
+                      </p>
+                      <p>
+                        You can provide your own list of available languages
+                        using the results from the
+                        <a href="ChallengeOptions.html#onLoaded"
+                          ><code>ChallengeOptions#onLoaded</code></a
+                        >
+                        callback event.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="theme">
+                    <h4 id="theme">
+                      <span class="type-signature"></span>theme<span
+                        class="type-signature"
+                      >
+                        :"light"|"dark"</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Force the theme for this editor (one of
+                        <code>light</code> or <code>dark</code>). Leave unset to
+                        let the user select their own theme from the
+                        <code>idesettings</code> tab.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">"light"</span>
+                        |
+
+                        <span class="param-type">"dark"</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <dt
+                        class="tag-default method-doc-label method-doc-details-label"
+                      >
+                        Default Value:
+                      </dt>
+                      <dd class="tag-default">
+                        <ul class="dummy">
+                          <li>"light"</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="hideTabs">
+                    <h4 id="hideTabs">
+                      <span class="type-signature"></span>hideTabs<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Comma-delimited list of tabs to hide by tab ID or file
+                        path, overrides
+                        <a href="ChallengeOptions.html#showTabs"
+                          ><code>ChallengeOptions#showTabs</code></a
+                        >.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <dt
+                        class="tag-see method-doc-label method-doc-details-label"
+                      >
+                        See:
+                      </dt>
+                      <dd class="tag-see">
+                        <ul>
+                          <li>
+                            <a href="global.html#TAB_IDS"
+                              ><code>TAB_IDS</code></a
+                            >
+                            for a list of common tab IDs.
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="showTabs">
+                    <h4 id="showTabs">
+                      <span class="type-signature"></span>showTabs<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Comma-delimited list of tabs to show by tab ID or file
+                        path. When this is set, the default state is to show
+                        <em>no</em> tabs at all.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <dt
+                        class="tag-see method-doc-label method-doc-details-label"
+                      >
+                        See:
+                      </dt>
+                      <dd class="tag-see">
+                        <ul>
+                          <li>
+                            <a href="global.html#TAB_IDS"
+                              ><code>TAB_IDS</code></a
+                            >
+                            for a list of common tab IDs.
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="hideActions">
+                    <h4 id="hideActions">
+                      <span class="type-signature"></span>hideActions<span
+                        class="type-signature"
+                      >
+                        :boolean|"attempt"</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        If <code>true</code>, hides the list of actions in the
+                        upper left. This could be useful if you are wrapping
+                        this in your own interface.
+                      </p>
+                      <p>
+                        The user will still be able to run the code using the
+                        shortcut keys (<code>CMD/CTRL + '</code> or
+                        <code>CMD/CTRL + Enter</code>).
+                      </p>
+                      <p>
+                        For Classic Code challenges, you can choose to only show
+                        RUN TESTS. Set the value of <code>hideActions</code> to
+                        <code>&quot;attempt&quot;</code>. This hides the SUBMIT
+                        button, and disables running the code against the final
+                        submission tests. This could be useful for practice code
+                        or simple demo code.
+                      </p>
+                      <p>
+                        To achieve the reverse (only allowing hidden tests),
+                        either configure the challenge without Sample Test
+                        Cases, or hide the <code>testcases</code> tab using
+                        <code>hideTabs</code>.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">boolean</span>
+                        |
+
+                        <span class="param-type">"attempt"</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <dt
+                        class="tag-default method-doc-label method-doc-details-label"
+                      >
+                        Default Value:
+                      </dt>
+                      <dd class="tag-default">
+                        <ul class="dummy">
+                          <li>false</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
+              </article>
+            </section>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-3">
+          <div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+    <footer>
+      <div><br /><br /><br /><br /><br /><br /></div>
+
+      <span class="copyright"> Qualified.io </span>
+
+      <span class="jsdoc-message">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+
+        on May 21st 2024, 12:55:41 pm using the
+        <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+      </span>
+    </footer>
+
+    <script src="scripts/docstrap.lib.js"></script>
+    <script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+    <script>
+      $(function () {
+        $("[id*='$']").each(function () {
+          var $this = $(this);
+
+          $this.attr("id", $this.attr("id").replace("$", "__"));
+        });
+
+        $(
+          ".tutorial-section pre, .readme-section pre, pre.prettyprint.source",
+        ).each(function () {
+          var $this = $(this);
+
+          var example = $this.find("code");
+          exampleText = example.html();
+          var lang = /{@lang (.*?)}/.exec(exampleText);
+          if (lang && lang[1]) {
+            exampleText = exampleText.replace(lang[0], "");
+            example.html(exampleText);
+            lang = lang[1];
+          } else {
+            var langClassMatch = example
+              .parent()[0]
+              .className.match(/lang\-(\S+)/);
+            lang = langClassMatch ? langClassMatch[1] : "javascript";
+          }
+
+          if (lang) {
+            $this
+              .addClass("sunlight-highlight-" + lang)
+              .addClass("linenums")
+              .html(example.html());
+          }
+        });
+
+        Sunlight.highlightAll({
+          lineNumbers: true,
+          showMenu: true,
+          enableDoclinks: true,
+        });
+
+        $.catchAnchorLinks({
+          navbarOffset: 10,
+        });
+        $("#toc").toc({
+          anchorName: function (i, heading, prefix) {
+            return $(heading).attr("id") || prefix + i;
+          },
+          selectors:
+            "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+          showAndHide: false,
+          smoothScrolling: true,
+        });
+
+        $("#main span[id^='toc']").addClass("toc-shim");
+        $(".dropdown-toggle").dropdown();
+
+        $("table").each(function () {
+          var $this = $(this);
+          $this.addClass("table");
+        });
+      });
+    </script>
+
+    <!--Navigation and Symbol Display-->
+
+    <!--Google Analytics-->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        SearcherDisplay.init();
+      });
+    </script>
+  </body>
+</html>

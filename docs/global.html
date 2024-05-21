@@ -1,0 +1,938 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Qualified Embed SDK Global</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/sunlight.dark.css" />
+
+    <link type="text/css" rel="stylesheet" href="styles/site.lumen.css" />
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Qualified Embed SDK</a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#topNavigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="topNavigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a
+                href="classes.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Classes<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="QualifiedEmbeddedAssessment.html"
+                    >QualifiedEmbeddedAssessment</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbeddedChallenge.html"
+                    >QualifiedEmbeddedChallenge</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbedManager.html">QualifiedEmbedManager</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="interfaces.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Interfaces<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="AssessmentOptions.html">AssessmentOptions</a></li>
+                <li><a href="ChallengeOptions.html">ChallengeOptions</a></li>
+                <li><a href="UrlParams.html">UrlParams</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="tutorials.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Tutorials<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="tutorial-assessments.html">Embedding Assessments</a>
+                </li>
+                <li>
+                  <a href="tutorial-challenges.html">Embedding Challenges</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="global.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Global<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="global.html#ERROR_CONTEXTS">ERROR_CONTEXTS</a></li>
+                <li>
+                  <a href="global.html#_getStorageData">_getStorageData</a>
+                </li>
+                <li>
+                  <a href="global.html#_setStorageData">_setStorageData</a>
+                </li>
+                <li><a href="global.html#obfuscateId">obfuscateId</a></li>
+                <li><a href="global.html#deobfuscateId">deobfuscateId</a></li>
+                <li>
+                  <a href="global.html#_checkDestroyed">_checkDestroyed</a>
+                </li>
+                <li><a href="global.html#TAB_IDS">TAB_IDS</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  name="q"
+                  id="search-input"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" id="search-submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="toc-content">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="main">
+            <h1 class="page-title">Global</h1>
+            <section>
+              <header>
+                <h2></h2>
+              </header>
+
+              <article>
+                <div class="container-overview">
+                  <dl class="details"></dl>
+                </div>
+
+                <h3 class="subsection-title">Members</h3>
+
+                <dl>
+                  <hr />
+                  <dt class="name" id="ERROR_CONTEXTS">
+                    <h4 id="ERROR_CONTEXTS">
+                      <span class="type-signature">&lt;constant> </span
+                      >ERROR_CONTEXTS<span class="type-signature">
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Error Contexts</p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th>Default</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>load</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">load</td>
+
+                              <td class="description last">
+                                <p>
+                                  An error that occurred before the candidate
+                                  can start the assessment
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>saveSolution</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">saveSolution</td>
+
+                              <td class="description last">
+                                <p>A repeated error saving the solution</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>submitSolution</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">submitSolution</td>
+
+                              <td class="description last">
+                                <p>
+                                  A repeated error submitting a project
+                                  challenge solution
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name">
+                                <code>submitAssessment</code>
+                              </td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">submitAssessment</td>
+
+                              <td class="description last">
+                                <p>
+                                  A repeated error submitting the entire
+                                  assessment
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="TAB_IDS">
+                    <h4 id="TAB_IDS">
+                      <span class="type-signature">&lt;constant> </span
+                      >TAB_IDS<span class="type-signature"> :string</span>
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        List of common tab names. For project challenges, this
+                        will also include all readwrite enabled file paths.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th>Default</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>code</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">code</td>
+
+                              <td class="description last">
+                                <p>
+                                  Solution code. Only used for classic code
+                                  challenges, use file paths for project
+                                  challenges.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>testcases</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">testcases</td>
+
+                              <td class="description last">
+                                <p>
+                                  Editable test cases for the candidate. Only
+                                  used for classic code challenges, use file
+                                  paths for project challenges. Hiding this also
+                                  disables candidate tests.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>instructions</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">instructions</td>
+
+                              <td class="description last">
+                                <p>
+                                  The instructions created within the challenge
+                                  editor.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>runnerframe</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">runnerframe</td>
+
+                              <td class="description last">
+                                <p>
+                                  The results from running the challenge. Hiding
+                                  this tab disables running any sort of code.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>webpreview</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">webpreview</td>
+
+                              <td class="description last">
+                                <p>
+                                  Shows a real-time, embedded web preview for
+                                  project challenges with web previews enabled.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name">
+                                <code>webpreviewconsole</code>
+                              </td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">webpreviewconsole</td>
+
+                              <td class="description last">
+                                <p>
+                                  The console for the web preview. By default,
+                                  this will not open unless the console logs
+                                  button is clicked in the web preview. If you
+                                  want to force it to be opened when the embed
+                                  is loaded, use <code>initialLayout</code> to
+                                  position it.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>idesettings</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="default">idesettings</td>
+
+                              <td class="description last">
+                                <p>
+                                  Enables the code solver to modify the editor.
+                                  Changes will be synced across embeds on the
+                                  page.
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+                </dl>
+
+                <h3 class="subsection-title">Methods</h3>
+
+                <dl>
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="_getStorageData">
+                      <span class="type-signature"></span>_getStorageData(id [,
+                      challengeId])
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Retrieves parsed data from localStorage. If challengeId
+                        is provided, retrieves data specifically for that
+                        challenge; otherwise, retrieves global data.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th>Argument</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>id</code></td>
+
+                          <td class="type">
+                            <span class="param-type">*</span>
+                          </td>
+
+                          <td class="attributes"></td>
+
+                          <td class="description last">
+                            <p>The identifier for the data in localStorage</p>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="name"><code>challengeId</code></td>
+
+                          <td class="type">
+                            <span class="param-type">string</span>
+                          </td>
+
+                          <td class="attributes">
+                            &lt;optional><br />
+
+                            &lt;nullable><br />
+                          </td>
+
+                          <td class="description last">
+                            <p>
+                              Optional identifier for the challenge data to
+                              retrieve
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+
+                    <h5>Returns:</h5>
+
+                    <div class="param-desc">
+                      <ul>
+                        <li>
+                          The retrieved data, either for the specified challenge
+                          or globally
+                        </li>
+                      </ul>
+                    </div>
+
+                    <dl>
+                      <dt>Type</dt>
+                      <dd>
+                        <span class="param-type">*</span>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="_setStorageData">
+                      <span class="type-signature"></span>_setStorageData(id,
+                      challengeId, data)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Saves data to localStorage, optionally namespaced by
+                        challengeId.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>id</code></td>
+
+                          <td class="type">
+                            <span class="param-type">*</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>The identifier for the data in localStorage</p>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="name"><code>challengeId</code></td>
+
+                          <td class="type">
+                            <span class="param-type">string</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>The identifier for the challenge data</p>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="name"><code>data</code></td>
+
+                          <td class="type">
+                            <span class="param-type">*</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>The data to save</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="obfuscateId">
+                      <span class="type-signature"></span>obfuscateId(objectID)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Obfuscates a Mongo-DB ObjectID in several steps:</p>
+                      <ol>
+                        <li>
+                          The hex string is converted into a binary string by
+                          taking 2 hex characters, converting them to an
+                          integer, and getting the charCode for that integer
+                        </li>
+                        <li>
+                          The resulting binary string is base64 encoded using
+                          btoa
+                        </li>
+                        <li>
+                          We swap out the unsafe base 64 characters (/, +, =)
+                          with URL-safe ones.
+                        </li>
+                      </ol>
+                      <p>
+                        WARNING: this is only designed to work on ObjectID
+                        strings--it expects the string to match /[a-fA-F0-9]/
+                        and have an even number of characters. Odd character
+                        counts <em>will</em> break. This input is NOT validated.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>objectID</code></td>
+
+                          <td class="type">
+                            <span class="param-type">string</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>
+                              ObjectID as a string to convert. Should match
+                              /[a-fA-F0-9]{24}/. This input is NOT validated.
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+
+                    <h5>Returns:</h5>
+
+                    <div class="param-desc">
+                      <p>Obfuscated ID.</p>
+                    </div>
+
+                    <dl>
+                      <dt>Type</dt>
+                      <dd>
+                        <span class="param-type">string</span>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="deobfuscateId">
+                      <span class="type-signature"></span
+                      >deobfuscateId(obfuscatedId)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Reverses an obfuscation performed by obfuscateId.</p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>obfuscatedId</code></td>
+
+                          <td class="type">
+                            <span class="param-type">string</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>
+                              Obfuscated string. Should match
+                              /^[-_~a-zA-Z0-9]+$/. The input is not validated,
+                              and could throw if it contains invalid characters.
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+
+                    <h5>Returns:</h5>
+
+                    <div class="param-desc">
+                      <p>Original ID as a hexadecimal string</p>
+                    </div>
+
+                    <dl>
+                      <dt>Type</dt>
+                      <dd>
+                        <span class="param-type">string</span>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="_checkDestroyed">
+                      <span class="type-signature"></span
+                      >_checkDestroyed(manager)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Checks if a manager has been destroyed.</p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>manager</code></td>
+
+                          <td class="type">
+                            <span class="param-type">*</span>
+                          </td>
+
+                          <td class="description last">
+                            <p>The manager to check</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+
+                    <h5>Throws:</h5>
+
+                    <dl>
+                      <dt>
+                        <div class="param-desc">
+                          <p>
+                            Throws an error if the manager has been destroyed
+                          </p>
+                        </div>
+                      </dt>
+                      <dt>
+                        <dl>
+                          <dt>Type</dt>
+                          <dd>
+                            <span class="param-type">Error</span>
+                          </dd>
+                        </dl>
+                      </dt>
+                    </dl>
+                  </dd>
+                </dl>
+              </article>
+            </section>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-3">
+          <div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
+    <footer>
+      <div><br /><br /><br /><br /><br /><br /></div>
+
+      <span class="copyright"> Qualified.io </span>
+
+      <span class="jsdoc-message">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+
+        on May 21st 2024, 12:55:41 pm using the
+        <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+      </span>
+    </footer>
+
+    <script src="scripts/docstrap.lib.js"></script>
+    <script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+    <script>
+      $(function () {
+        $("[id*='$']").each(function () {
+          var $this = $(this);
+
+          $this.attr("id", $this.attr("id").replace("$", "__"));
+        });
+
+        $(
+          ".tutorial-section pre, .readme-section pre, pre.prettyprint.source",
+        ).each(function () {
+          var $this = $(this);
+
+          var example = $this.find("code");
+          exampleText = example.html();
+          var lang = /{@lang (.*?)}/.exec(exampleText);
+          if (lang && lang[1]) {
+            exampleText = exampleText.replace(lang[0], "");
+            example.html(exampleText);
+            lang = lang[1];
+          } else {
+            var langClassMatch = example
+              .parent()[0]
+              .className.match(/lang\-(\S+)/);
+            lang = langClassMatch ? langClassMatch[1] : "javascript";
+          }
+
+          if (lang) {
+            $this
+              .addClass("sunlight-highlight-" + lang)
+              .addClass("linenums")
+              .html(example.html());
+          }
+        });
+
+        Sunlight.highlightAll({
+          lineNumbers: true,
+          showMenu: true,
+          enableDoclinks: true,
+        });
+
+        $.catchAnchorLinks({
+          navbarOffset: 10,
+        });
+        $("#toc").toc({
+          anchorName: function (i, heading, prefix) {
+            return $(heading).attr("id") || prefix + i;
+          },
+          selectors:
+            "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+          showAndHide: false,
+          smoothScrolling: true,
+        });
+
+        $("#main span[id^='toc']").addClass("toc-shim");
+        $(".dropdown-toggle").dropdown();
+
+        $("table").each(function () {
+          var $this = $(this);
+          $this.addClass("table");
+        });
+      });
+    </script>
+
+    <!--Navigation and Symbol Display-->
+
+    <!--Google Analytics-->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        SearcherDisplay.init();
+      });
+    </script>
+  </body>
+</html>
