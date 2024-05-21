@@ -52,4 +52,4 @@ The docs for the current embed release should be hosted at <https://andela-techn
 
 You can achieve this by deleting the non-version labeled docs in the root folder (assuming it was already backed up to a version-specific subfolder), generating docs for the latest release, then copying the newly-generated folder into its version number.
 
-`create_resource_links.py` should be used to link each version-specific docs folder with the global assets in the `/docs` folder. You can then delete the shared assets from the version-specific release (we should update the script to automate this).
+`create-doc-resource-links.js` should be used to link each version-specific docs folder with the global assets in the `/docs` folder. You can then delete the shared assets from the version-specific release (we should update the script to automate this).
