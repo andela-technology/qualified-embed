@@ -49,4 +49,4 @@ You can use Qualified Embed in a script tag as follows:
 <script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@1.0.2/dist/embed.min.js"></script>
 ```
 
-See our [quick start guide](https://andela-technology.github.io/qualified-embed/tutorial-challenges.html) and [demo page](https://github.com/qualified/embed-demos) for examples.
+See our [quick start guide](https://andela-technology.github.io/qualified-embed/docs/tutorial-challenges.html) and [demo page](https://github.com/qualified/embed-demos) for examples.
