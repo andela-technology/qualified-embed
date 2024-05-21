@@ -50,6 +50,8 @@ git commit -m "Deploy docs"
 git push
 ```
 
+Feel free to make a PR if you prefer, but be sure to merge it into the docs branch.
+
 If you're publishing docs for a new release, on the `docs` branch, modify the workflow above to include subfolders for each release version.
 
 The docs for the current embed release should be hosted at <https://andela-technology.github.io/qualified-embed/docs>, while outdated (and the current) versions should be hosted at <https://andela-technology.github.io/qualified-embed/docs/0.0.1> (for example).
@@ -70,6 +72,8 @@ git add -f dist
 git commit -m "Add browser script for release v1.0.2"
 git push
 ```
+
+Feel free to make a PR if you prefer, but be sure to merge it into the dist branch.
 
 Once you create a release, use the tag for the JSDelivr link. The format is <https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@1.0.2/dist/embed.min.js> where 1.0.2 is the release version.
 
