@@ -24,7 +24,7 @@ npm run format # run prettier
 
 If you're working on Embed internals in the Qualified codebase, update `baseURL` in the Embed options in [public/index.html](public/index.html) to `http://localhost:3001` (or the port the Qualified UI Docker container is running on). You'll also need to ensure your `embedClientKey` and `challengeId` match a valid team and local Embed-enabled challenge.
 
-## Creating a new Release
+## Creating a New Release
 
 Create a new release on GitHub at https://github.com/andela-technology/qualified-embed/releases. The release should provide a list of changes, a link to the docs and a link to the npm package.
 
@@ -63,3 +63,5 @@ You can achieve this by deleting the non-version labeled docs in the root folder
 The Qualified codebase has a few references to the script. Update all JSDeliver links (`git grep jsdelivr`) to use the latest script tag.
 
 https://github.com/qualified/embed-demos also uses the script tag and should be updated accordingly.
+
+Update the script tags within the jsdocs here as well.
