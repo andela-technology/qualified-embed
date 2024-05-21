@@ -65,7 +65,6 @@ The Embed editor is not intended as a 1-to-1 replacement for the dedicated asses
 - **Time-Limits** are not shown or enforced, either for whole assessments or for individual challenges. If you need to enforce time limits, you should manage them within your application.
 - **Quiz Challenges** are not currently supported at all.
 - **Project Code Challenges** are presented in a limited format:
-  - There is no way to **submit** project challenges.
   - Candidates are not able to add, rename, or delete files.
   - There is no file tree.
   - The editor also only shows editable (`readwrite`) files to the candidate.
