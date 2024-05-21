@@ -58,6 +58,21 @@ You can achieve this by deleting the non-version labeled docs in the root folder
 
 `create-doc-resource-links.js` should be used to link each version-specific docs folder with the global assets in the `/docs` folder and delete any unnecessary folders in the version-specific docs folders.
 
+## Publishing the Browser Script
+
+We use JSDelivr to host the script via a release on GitHub. All bundles should go in the `/dist` branch and should have the same code as their corresponding npm version.
+
+```bash
+git checkout dist
+git merge main
+npm run build
+git add -f dist
+git commit -m "Add browser script for release v1.0.2"
+git push
+```
+
+Once you create a release, use the tag for the JSDelivr link. The format is <https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@1.0.2/dist/embed.min.js> where 1.0.2 is the release version.
+
 ## Updating Related Resources
 
 The Qualified codebase has a few references to the script. Update all JSDeliver links (`git grep jsdelivr`) to use the latest script tag.
