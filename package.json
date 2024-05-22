@@ -9,7 +9,7 @@
     "start": "webpack serve",
     "build": "webpack",
     "check-types": "tsc --skipLibCheck --project ./jsconfig.json",
-    "lint": "eslint --ignore-path=.gitignore .",
+    "lint": "eslint --ignore-path=.eslintignore .",
     "format": "prettier -w .",
     "test": "npx playwright test",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src",
@@ -47,7 +47,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix --ignore-path=.gitignore",
+    "*.js": "eslint --cache --fix --ignore-path=.eslintignore",
     "*.{js,css,html,md}": "prettier --write"
   }
 }
