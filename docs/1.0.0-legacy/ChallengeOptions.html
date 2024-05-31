@@ -386,7 +386,7 @@ on pages with multiple embedded challenges, otherwise start times won't be very 
             
 <hr>
 <dt class="name" id="mode">
-    <h4 id="mode"><span class="type-signature"></span>mode<span class="type-signature"> :null|"readonly"|"restricted"|"runonly"</span></h4>
+    <h4 id="mode"><span class="type-signature"></span>mode<span class="type-signature"> :null|"readonly"|"restricted""</span></h4>
 
     
 </dt>
@@ -400,7 +400,6 @@ on pages with multiple embedded challenges, otherwise start times won't be very 
 window.</li>
 <li><code>&quot;readonly&quot;</code> Means you cannot edit the code at all. Useful for reviewing-only, without making changes.
 This also disables running code.</li>
-<li><code>&quot;runonly&quot;</code> is identical to <code>&quot;readonly&quot;</code>, except that tests can be run, either programmatically with <code>runTests()</code> and <code>attempt()</code>, or through the Run and Submit buttons in the Embed UI (the UI buttons can be hidden with the <code>&quot;hideActions&quot;</code> option).</li>
 </ul>
     </div>
     
@@ -417,10 +416,6 @@ This also disables running code.</li>
 |
 
 <span class="param-type">"restricted"</span>
-|
-
-<span class="param-type">"runonly"</span>
-
 
 
             </li>
@@ -1787,7 +1782,7 @@ first time it's called.</li>
     <div class="description">
         <p>Callback with changes any time an embedded challenge solution is modified. It is also called when the solution
 is initially set up.</p>
-<p>When the <code>mode</code> is <code>readonly</code>, <code>runonly</code> or <code>restricted</code>, this callback is not triggered.</p>
+<p>When the <code>mode</code> is <code>readonly</code> or <code>restricted</code>, this callback is not triggered.</p>
     </div>
     
 
