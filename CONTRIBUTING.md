@@ -53,7 +53,7 @@ git commit -m "Deploy docs"
 git push
 ```
 
-Feel free to make a PR if you prefer, but be sure to merge it into the docs branch, not main.
+Feel free to make a PR if you prefer, but be sure to merge it into the `docs` branch, not `main`.
 
 If you're publishing docs for a new release, on the `docs` branch, modify the workflow above to include subfolders for each release version.
 

@@ -1,6 +1,6 @@
 {
   "name": "@qualified/embed",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "With Embed, you can now build advanced, developer-friendly coding products for education, recruiting, upskilling, and more. Our SDK makes it simple to embed code challenges and assessments into your existing products.",
   "main": "src/embed.js",
   "unpkg": "dist/embed.min.js",
