@@ -39,7 +39,7 @@ const editor = manager.createEditor({
 
 Optionally integrate this into your front end framework of choice (React, Vue, Angular, etc), then bundle the code using your favorite web bundler (Webpack, Vite, Parcel, etc).
 
-See our [Embed with React demo](https://github.com/qualified/embed-demos/tree/master/react) for a complete example.
+See our [Embed with React demo](https://github.com/qualified/embed-demos/tree/master/demos/react) for a complete example.
 
 ### Browser
 

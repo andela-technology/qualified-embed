@@ -6,7 +6,7 @@ With Embed, you can now build advanced, developer-friendly coding products for e
 
 We have several places you can see embeds in action:
 
-- [**View an interactive demo here.**](/embedded) This demo lets you see different challenges embedded right in the page, as well as see some of the events & data.
+- [**View an interactive demo here.**](https://www.qualified.io/embedded) This demo lets you see different challenges embedded right in the page, as well as see some of the events & data.
 
 - [**View a collection of example use cases.**](https://qualified.github.io/embed-demos/) Use these to get inspired for how you can use the Embed SDK to build creative solutions to your own code testing needs.
 

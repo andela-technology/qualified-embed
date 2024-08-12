@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Embedded Challenge</title>
+    <style>
+      [data-qualified-embed] {
+        position: relative;
+      }
+      [data-qualified-embed] iframe {
+        width: 100%;
+        height: 60vh;
+        border: none;
+      }
+    </style>
+    <script defer="defer" src="embed.min.js"></script>
+  </head>
+  <body>
+    <h1>Embedded Challenge</h1>
+    <h2>Practice Challenge</h2>
+    <div data-qualified-embed="5f029b271dbad30012978cd5"></div>
+    <script src="embed.min.js"></script>
+    <script>
+      // Note: The challenge(s) will only load on these domains:
+      // localhost
+      // 0.0.0.0
+      // 127.0.0.1
+      // cdpn.io
+      // fiddle.jshell.net
+      // glitch.com
+      // *.glitch.me
+      // *.github.io
+      // qualified.io
+      // *.learnosity.com
+      var manager = window.QualifiedEmbed.QualifiedEmbedManager.init({
+        // generate editors by looking through nodes
+        autoCreate: true,
+
+        // shared options for new editors
+        options: {
+          embedClientKey: "g39RsSfAYEkyRG8ZYjxrpT9c/XqnfQpN",
+          baseURL: "https://www.qualified.io",
+        },
+
+        // challenge-specific options
+        challengeOptions: {
+          "5f029b271dbad30012978cd5": {
+            language: "c",
+          },
+        },
+
+        // The following events can also be handled per-challenge
+
+        onLoaded({ manager, editor, challengeId, data }) {
+          // Respond to challenge being loaded and ready for solving
+        },
+
+        onChange({ manager, editor, challengeId, data }) {
+          // save changes made to the solution
+        },
+
+        onRunStart({ manager, editor, challengeId, data }) {
+          console.log(
+            "challenge " + challengeId + " was run as a " + data.type,
+          ); // test or attempt
+        },
+
+        onRun({ manager, editor, challengeId, data }) {
+          console.log(
+            "challenge " + challengeId + " was run with this result:",
+          );
+          console.log(data);
+        },
+      });
+
+      // This demo uses autoCreate. If you prefer, you can remove the autoCreate option and create editors with code like this:
+      // var node = document.querySelector("[data-qualified-embed='5f029b271dbad30012978cd5']");
+      // var editor = manager.createEditor({ node: node, challengeId: "5f029b271dbad30012978cd5", options: { /* per-challenge options */ } });
+    </script>
+  </body>
+</html>
