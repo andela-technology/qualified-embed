@@ -11,7 +11,7 @@ You should embed the full assessment whenever you need the following:
 ```xml
 <iframe data-qualified-embed="5a309e7cac5e2d0013af6bdb"></iframe>
 
-<script src="//www.qualified.io/embed.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.0-legacy/dist/embed.min.js"></script>
 <script type="application/javascript">
 documentReady(function() {
   window.assessmentEditor = new window.QualifiedEmbeddedAssessment({
