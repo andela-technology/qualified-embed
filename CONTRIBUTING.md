@@ -49,7 +49,7 @@ git checkout docs
 git merge main
 npm run jsdoc
 prettier -w .
-git add -f docs
+git add f docs
 git commit -m "Deploy docs"
 git push
 ```

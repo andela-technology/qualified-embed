@@ -1,3714 +1,2200 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Qualified Embed SDK Interface: ChallengeOptions</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Qualified Embed SDK Interface: ChallengeOptions</title>
 
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="../styles/sunlight.dark.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="../styles/sunlight.dark.css" />
 
-	<link type="text/css" rel="stylesheet" href="../styles/site.lumen.css">
+    <link type="text/css" rel="stylesheet" href="../styles/site.lumen.css" />
+  </head>
 
-</head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Qualified Embed SDK</a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#topNavigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="topNavigation">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a
+                href="classes.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Classes<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="QualifiedEmbeddedAssessment.html"
+                    >QualifiedEmbeddedAssessment</a
+                  >
+                </li>
+                <li>
+                  <a href="QualifiedEmbeddedChallenge.html"
+                    >QualifiedEmbeddedChallenge</a
+                  >
+                </li>
+                <li><a href="QualifiedEmbed.html">QualifiedEmbed</a></li>
+              </ul>
+            </li>
 
-<body>
+            <li class="dropdown">
+              <a
+                href="interfaces.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Interfaces<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="AssessmentOptions.html">AssessmentOptions</a></li>
+                <li><a href="ChallengeOptions.html">ChallengeOptions</a></li>
+                <li><a href="UrlParams.html">UrlParams</a></li>
+              </ul>
+            </li>
 
-<div class="navbar navbar-default navbar-fixed-top ">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Qualified Embed SDK</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu inline">
-					<li><a href="QualifiedEmbeddedAssessment.html">QualifiedEmbeddedAssessment</a></li><li><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></li><li><a href="QualifiedEmbed.html">QualifiedEmbed</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="interfaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Interfaces<b class="caret"></b></a>
-				<ul class="dropdown-menu inline">
-					<li><a href="AssessmentOptions.html">AssessmentOptions</a></li><li><a href="ChallengeOptions.html">ChallengeOptions</a></li><li><a href="UrlParams.html">UrlParams</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
-				<ul class="dropdown-menu inline">
-					<li><a href="tutorial-assessments.html">Embedding Assessments</a></li><li><a href="tutorial-challenges.html">Embedding Challenges</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu inline">
-					<li><a href="global.html#ERROR_CONTEXTS">ERROR_CONTEXTS</a></li><li><a href="global.html#obfuscateId">obfuscateId</a></li><li><a href="global.html#deobfuscateId">deobfuscateId</a></li><li><a href="global.html#TAB_IDS">TAB_IDS</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3 col-md-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
+            <li class="dropdown">
+              <a
+                href="tutorials.list.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Tutorials<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li>
+                  <a href="tutorial-assessments.html">Embedding Assessments</a>
+                </li>
+                <li>
+                  <a href="tutorial-challenges.html">Embedding Challenges</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a
+                href="global.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >Global<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu inline">
+                <li><a href="global.html#ERROR_CONTEXTS">ERROR_CONTEXTS</a></li>
+                <li><a href="global.html#obfuscateId">obfuscateId</a></li>
+                <li><a href="global.html#deobfuscateId">deobfuscateId</a></li>
+                <li><a href="global.html#TAB_IDS">TAB_IDS</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  name="q"
+                  id="search-input"
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" id="search-submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="toc-content">
+      <div class="row">
+        <div class="col-md-8">
+          <div id="main">
+            <h1 class="page-title">Interface: ChallengeOptions</h1>
+            <section>
+              <header>
+                <h2>ChallengeOptions</h2>
+              </header>
+
+              <article>
+                <div class="container-overview">
+                  <div class="description">
+                    <p>The available options for a challenge options hash.</p>
+                  </div>
+
+                  <dl class="details"></dl>
+                </div>
+
+                <h3 class="subsection-title">Members</h3>
+
+                <dl>
+                  <hr />
+                  <dt class="name" id="authToken">
+                    <h4 id="authToken">
+                      <span class="type-signature"></span>authToken<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        The <code>authToken</code> value from an
+                        <a
+                          href="https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations"
+                          >AssessmentInvitation</a
+                        >. This token allows a candidate to solve an embedded
+                        challenge and save the results back as a normal
+                        assessment.
+                      </p>
+                      <p>
+                        This property is not used if the challenge is not
+                        storing the results back on an assessment result.
+                      </p>
                     </div>
-                </form>
-            </div>
-        
-	</div>
 
-</div>
-</div>
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
 
+                    <dl class="details"></dl>
+                  </dd>
 
-<div class="container" id="toc-content">
-<div class="row">
+                  <hr />
+                  <dt class="name" id="embedClientKey">
+                    <h4 id="embedClientKey">
+                      <span class="type-signature"></span>embedClientKey<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>The unique embed client key value set on your team.</p>
+                    </div>
 
-	
-	<div class="col-md-8">
-	
-		<div id="main">
-			
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
 
-	<h1 class="page-title">Interface: ChallengeOptions</h1>
-<section>
+                    <dl class="details"></dl>
+                  </dd>
 
-<header>
-    
-        <h2>
-        ChallengeOptions
-        </h2>
-        
-    
-</header>
+                  <hr />
+                  <dt class="name" id="autoStart">
+                    <h4 id="autoStart">
+                      <span class="type-signature"></span>autoStart<span
+                        class="type-signature"
+                      >
+                        :boolean</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        For embedded challenges with an
+                        <a href="ChallengeOptions.html#authToken"
+                          ><code>authToken</code></a
+                        >, this automatically starts the assessment and creates
+                        the solution when the embedded editor loads.
+                      </p>
+                      <p>
+                        When <code>false</code> (the default), the user will
+                        need to click a button to start the challenge. This is
+                        recommended on pages with multiple embedded challenges,
+                        otherwise start times won't be very useful.
+                      </p>
+                      <p>
+                        When the <code>mode</code> is <code>readonly</code> or
+                        <code>restricted</code>, this option is ignored.
+                      </p>
+                    </div>
 
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">boolean</span>
+                      </li>
+                    </ul>
 
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>The available options for a challenge options hash.</p></div>
-        
+                    <dl class="details"></dl>
+                  </dd>
 
-        
-<dl class="details">
-    
+                  <hr />
+                  <dt class="name" id="mode">
+                    <h4 id="mode">
+                      <span class="type-signature"></span>mode<span
+                        class="type-signature"
+                      >
+                        :null|"readonly"|"restricted""</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Enables setting up the editor in different read-only
+                        modes.
+                      </p>
+                      <ul>
+                        <li>
+                          <code>null</code> The default, normal mode with full
+                          editing and saving.
+                        </li>
+                        <li>
+                          <code>&quot;restricted&quot;</code> Means you can edit
+                          the code, but changes will never be saved, or sent
+                          back to the parent window.
+                        </li>
+                        <li>
+                          <code>&quot;readonly&quot;</code> Means you cannot
+                          edit the code at all. Useful for reviewing-only,
+                          without making changes. This also disables running
+                          code.
+                        </li>
+                      </ul>
+                    </div>
 
-	
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">null</span>
+                        |
 
-	
+                        <span class="param-type">"readonly"</span>
+                        |
 
-	
+                        <span class="param-type">"restricted"</span>
+                      </li>
+                    </ul>
 
-    
+                    <dl class="details"></dl>
+                  </dd>
 
-    
+                  <hr />
+                  <dt class="name" id="language">
+                    <h4 id="language">
+                      <span class="type-signature"></span>language<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Language to use on classic code challenges. This is
+                        recommended for multi-language challenges, as the user
+                        is not provided a way to change the language within the
+                        editor.
+                      </p>
+                      <p>
+                        You can provide your own list of available languages
+                        using the results from the
+                        <a href="ChallengeOptions.html#onLoaded"
+                          ><code>ChallengeOptions#onLoaded</code></a
+                        >
+                        callback event.
+                      </p>
+                    </div>
 
-    
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
 
-    
+                    <dl class="details"></dl>
+                  </dd>
 
-	
+                  <hr />
+                  <dt class="name" id="theme">
+                    <h4 id="theme">
+                      <span class="type-signature"></span>theme<span
+                        class="type-signature"
+                      >
+                        :null|"light"|"dark"</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Force the theme for this editor (one of
+                        <code>light</code> or <code>dark</code>). Leave unset to
+                        let the user select their own theme from the
+                        <code>idesettings</code> tab.
+                      </p>
+                    </div>
 
-	
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">null</span>
+                        |
 
-	
+                        <span class="param-type">"light"</span>
+                        |
 
-	
+                        <span class="param-type">"dark"</span>
+                      </li>
+                    </ul>
 
-	
+                    <dl class="details">
+                      <dt
+                        class="tag-default method-doc-label method-doc-details-label"
+                      >
+                        Default Value:
+                      </dt>
+                      <dd class="tag-default">
+                        <ul class="dummy">
+                          <li>"light"</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
 
+                  <hr />
+                  <dt class="name" id="hideTabs">
+                    <h4 id="hideTabs">
+                      <span class="type-signature"></span>hideTabs<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Comma-delimited list of tabs to hide by tab ID or file
+                        path, overrides
+                        <a href="ChallengeOptions.html#showTabs"
+                          ><code>ChallengeOptions#showTabs</code></a
+                        >.
+                      </p>
+                    </div>
 
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
 
-	
+                    <dl class="details">
+                      <dt
+                        class="tag-see method-doc-label method-doc-details-label"
+                      >
+                        See:
+                      </dt>
+                      <dd class="tag-see">
+                        <ul>
+                          <li>
+                            <a href="global.html#TAB_IDS"
+                              ><code>TAB_IDS</code></a
+                            >
+                            for a list of common tab IDs.
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
 
-	
+                  <hr />
+                  <dt class="name" id="showTabs">
+                    <h4 id="showTabs">
+                      <span class="type-signature"></span>showTabs<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Comma-delimited list of tabs to show by tab ID or file
+                        path. When this is set, the default state is to show
+                        <em>no</em> tabs at all.
+                      </p>
+                    </div>
 
-	
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
 
-	
-</dl>
+                    <dl class="details">
+                      <dt
+                        class="tag-see method-doc-label method-doc-details-label"
+                      >
+                        See:
+                      </dt>
+                      <dd class="tag-see">
+                        <ul>
+                          <li>
+                            <a href="global.html#TAB_IDS"
+                              ><code>TAB_IDS</code></a
+                            >
+                            for a list of common tab IDs.
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
 
+                  <hr />
+                  <dt class="name" id="hideActions">
+                    <h4 id="hideActions">
+                      <span class="type-signature"></span>hideActions<span
+                        class="type-signature"
+                      >
+                        :boolean|"attempt"|"runTests"</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        If <code>true</code>, hides the list of actions in the
+                        upper left. This could be useful if you are wrapping
+                        this in your own interface.
+                      </p>
+                      <p>
+                        The user will still be able to run the code using the
+                        shortcut keys (<code>CMD/CTRL + '</code> or
+                        <code>CMD/CTRL + Enter</code>).
+                      </p>
+                      <p>
+                        For Classic Code challenges, you can choose to only show
+                        RUN TESTS. Set the value of <code>hideActions</code> to
+                        <code>&quot;attempt&quot;</code>. This hides the SUBMIT
+                        button, and disables running the code against the final
+                        submission tests. This could be useful for practice code
+                        or simple demo code.
+                      </p>
+                      <p>
+                        To achieve the reverse (only allowing hidden tests),
+                        either configure the challenge without Sample Test
+                        Cases, or set the value of <code>hideActions</code> to
+                        <code>runTests</code>. Simply hiding the tab will not
+                        disable the button, which could be used if you want to
+                        configure an external editor.
+                      </p>
+                    </div>
 
-        
-    
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">boolean</span>
+                        |
+
+                        <span class="param-type">"attempt"</span>
+                        |
+
+                        <span class="param-type">"runTests"</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <dt
+                        class="tag-default method-doc-label method-doc-details-label"
+                      >
+                        Default Value:
+                      </dt>
+                      <dd class="tag-default">
+                        <ul class="dummy">
+                          <li>false</li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="initialLayout">
+                    <h4 id="initialLayout">
+                      <span class="type-signature"></span>initialLayout<span
+                        class="type-signature"
+                      >
+                        :Object</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Override the default layout for the challenge. This does
+                        not replace
+                        <a href="ChallengeOptions.html#hideTabs"
+                          ><code>ChallengeOptions#hideTabs</code></a
+                        >
+                        or
+                        <a href="ChallengeOptions.html#showTabs"
+                          ><code>ChallengeOptions#showTabs</code></a
+                        >, which are still used to define tab visibility.
+                        Visible tabs that are not listed in
+                        <code>initialLayout</code> are left in their default
+                        positions.
+                      </p>
+                      <p>
+                        The first tab in each section will be the
+                        &quot;active&quot; tab when the editor loads.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">Object</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>topLeft</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of tab IDs or file paths for the top left
+                                  section of the editor. <br />Defaults to any
+                                  editable files.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>topRight</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of tab IDs or file paths for the top
+                                  right section of the editor. <br />Defaults to
+                                  all other tabs.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>bottomLeft</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of tab IDs or file paths for the bottom
+                                  left section of the editor. <br />Defaults to
+                                  empty, and not recommended for smaller
+                                  challenges.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>bottomRight</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of tab IDs or file paths for the bottom
+                                  right section of the editor. <br />Defaults to
+                                  empty, and not recommended for smaller
+                                  challenges.
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+
+                      <dt
+                        class="tag-see method-doc-label method-doc-details-label"
+                      >
+                        See:
+                      </dt>
+                      <dd class="tag-see">
+                        <ul>
+                          <li>
+                            <a href="global.html#TAB_IDS"
+                              ><code>TAB_IDS</code></a
+                            >
+                            for a list of common tab IDs.
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="initialFiles">
+                    <h4 id="initialFiles">
+                      <span class="type-signature"></span>initialFiles<span
+                        class="type-signature"
+                      >
+                        :Object</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Sets the initial solution values on the challenge. Note
+                        that this will only be processed when the challenge is
+                        first loaded, and if there isn't an existing solution.
+                      </p>
+                      <p>
+                        To change the solution content later, please use
+                        <a
+                          href="QualifiedEmbeddedChallenge.html#setFileContents"
+                          ><code
+                            >QualifiedEmbeddedChallenge#setFileContents</code
+                          ></a
+                        >.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">Object</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>(path)</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Contents of each file. Use the file path as
+                                  the key for project challenges, or
+                                  <code>code</code> and
+                                  <code>testcases</code> for classic challenges.
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="initialCursor">
+                    <h4 id="initialCursor">
+                      <span class="type-signature"></span>initialCursor<span
+                        class="type-signature"
+                      >
+                        :<a href="ChallengeOptions.html#~Cursor"
+                          >ChallengeOptions~Cursor</a
+                        ></span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Sets the initial cursor position. Note that this will
+                        only be processed when the challenge is first loaded,
+                        and if there isn't an existing solution.
+                      </p>
+                      <p>
+                        To change the cursor position later, please use
+                        <a
+                          href="QualifiedEmbeddedChallenge.html#setFileContents"
+                          ><code
+                            >QualifiedEmbeddedChallenge#setFileContents</code
+                          ></a
+                        >.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type"
+                          ><a href="ChallengeOptions.html#~Cursor"
+                            >ChallengeOptions~Cursor</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="initialRunResult">
+                    <h4 id="initialRunResult">
+                      <span class="type-signature"></span>initialRunResult<span
+                        class="type-signature"
+                      >
+                        :<a href="ChallengeOptions.html#~RunResult"
+                          >ChallengeOptions~RunResult</a
+                        ></span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Provides an initial run result, which should be the
+                        <code>eventData.data</code> returned from
+                        <a href="ChallengeOptions.html#onRun"
+                          ><code>ChallengeOptions#onRun</code></a
+                        >,
+                        <a href="QualifiedEmbeddedChallenge.html#runTests"
+                          ><code>QualifiedEmbeddedChallenge#runTests</code></a
+                        >, or
+                        <a href="QualifiedEmbeddedChallenge.html#attempt"
+                          ><code>QualifiedEmbeddedChallenge#attempt</code></a
+                        >.
+                      </p>
+                      <p>
+                        This can include the <code>fileData</code> property,
+                        which will configure the entire solution at once. If
+                        <a href="ChallengeOptions.html#initialFiles"
+                          ><code>ChallengeOptions#initialFiles</code></a
+                        >
+                        or
+                        <a href="ChallengeOptions.html#initialCursor"
+                          ><code>ChallengeOptions#initialCursor</code></a
+                        >
+                        are provided, they will overwrite the values in
+                        <code>fileData</code>.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type"
+                          ><a href="ChallengeOptions.html#~RunResult"
+                            >ChallengeOptions~RunResult</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="localStorageId">
+                    <h4 id="localStorageId">
+                      <span class="type-signature"></span>localStorageId<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        If provided, automatically saves and restores the
+                        contents of the challenge in
+                        <code>localStorage</code> using the given id as a key.
+                        This will also restore the last cursor position.
+                      </p>
+                      <p>
+                        The data will automatically be serialized using the
+                        <code>challengeId</code> so you can use the same
+                        <code>localStorageId</code> value for the entire page of
+                        challenges (or even across multiple pages).
+                      </p>
+                      <p>
+                        <strong>Note 1:</strong> Using this feature will
+                        override anything set in
+                        <a href="ChallengeOptions.html#initialFiles"
+                          ><code>ChallengeOptions#initialFiles</code></a
+                        >. If you want to replace the localStorage contents,
+                        you&quot;ll need to call
+                        <a
+                          href="QualifiedEmbeddedChallenge.html#setFileContents"
+                          ><code
+                            >QualifiedEmbeddedChallenge#setFileContents</code
+                          ></a
+                        >
+                        using the
+                        <a href="ChallengeOptions.html#onLoaded"
+                          ><code>ChallengeOptions#onLoaded</code></a
+                        >
+                        event callback.
+                      </p>
+                      <p>
+                        <strong>Note 2:</strong> The solution data will be
+                        stored on the domain of the parent frame,
+                        <em>not</em> on qualified.io. Also, the embed will
+                        <strong>never delete</strong> this data, so it is up to
+                        the outer page to manage it's <code>localStorage</code>.
+                      </p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="baseURL">
+                    <h4 id="baseURL">
+                      <span class="type-signature"></span>baseURL<span
+                        class="type-signature"
+                      >
+                        :string</span
+                      >
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Override the base URL for testing and debugging.</p>
+                    </div>
+
+                    <h5>Type:</h5>
+                    <ul>
+                      <li>
+                        <span class="param-type">string</span>
+                      </li>
+                    </ul>
+
+                    <dl class="details"></dl>
+                  </dd>
+                </dl>
+
+                <h3 class="subsection-title">Methods</h3>
+
+                <dl>
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="onLoaded">
+                      <span class="type-signature"></span>onLoaded(eventData)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Callback for when the editor has loaded.</p>
+                      <p>
+                        This callback is always called at least once, and can be
+                        called multiple times.
+                      </p>
+                      <ul>
+                        <li>
+                          Before a solution is created (when provided an
+                          <code>authToken</code>), it will be called with
+                          <code>started</code> set to <code>false</code>.
+                        </li>
+                        <li>
+                          It will always be called when the editor is ready to
+                          solve, with <code>started</code> set to
+                          <code>true</code>. This may be the first time it's
+                          called.
+                        </li>
+                        <li>
+                          It will also be called again if there are changes that
+                          affect the challenge details, such as changing the
+                          <code>challengeId</code>, or the solution language.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>eventData</code></td>
+
+                          <td class="type">
+                            <span class="param-type">Object</span>
+                          </td>
+
+                          <td class="description last">
+                            <h6
+                              class="method-params-label method-subparams-label"
+                            >
+                              Properties
+                            </h6>
+
+                            <table class="params table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Name</th>
+
+                                  <th>Type</th>
+
+                                  <th class="last">Description</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td class="name"><code>manager</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbed.html"
+                                        >QualifiedEmbed</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Manager for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>editor</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbeddedChallenge.html"
+                                        >QualifiedEmbeddedChallenge</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Editor for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>challengeId</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type">string</span>
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>
+                                      Challenge ID of the editor for this event
+                                    </p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>data</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="ChallengeOptions.html#~LoadData"
+                                        >ChallengeOptions~LoadData</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>
+                                      Information about the challenge, will also
+                                      be stored in
+                                      <a
+                                        href="QualifiedEmbeddedChallenge.html#challengeData"
+                                        ><code
+                                          >QualifiedEmbeddedChallenge#challengeData</code
+                                        ></a
+                                      >
+                                      for future access.
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="onChange">
+                      <span class="type-signature"></span>onChange(eventData)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Callback with changes any time an embedded challenge
+                        solution is modified. It is also called when the
+                        solution is initially set up.
+                      </p>
+                      <p>
+                        When the <code>mode</code> is <code>readonly</code> or
+                        <code>restricted</code>, this callback is not triggered.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>eventData</code></td>
+
+                          <td class="type">
+                            <span class="param-type">Object</span>
+                          </td>
+
+                          <td class="description last">
+                            <h6
+                              class="method-params-label method-subparams-label"
+                            >
+                              Properties
+                            </h6>
+
+                            <table class="params table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Name</th>
+
+                                  <th>Type</th>
+
+                                  <th class="last">Description</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td class="name"><code>manager</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbed.html"
+                                        >QualifiedEmbed</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Manager for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>editor</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbeddedChallenge.html"
+                                        >QualifiedEmbeddedChallenge</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Editor for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>challengeId</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type">string</span>
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>
+                                      Challenge ID of the editor for this event
+                                    </p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>data</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a
+                                        href="ChallengeOptions.html#~FileContentsData"
+                                        >ChallengeOptions~FileContentsData</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>File Change Data</p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="onRunStart">
+                      <span class="type-signature"></span>onRunStart(eventData)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Called when a run is started (internally or externally).
+                      </p>
+                      <p>
+                        Note: if you want to better link run start to run
+                        results, it might be easier to use
+                        <a href="QualifiedEmbeddedChallenge.html#runTests"
+                          ><code>QualifiedEmbeddedChallenge#runTests</code></a
+                        >
+                        and
+                        <a href="QualifiedEmbeddedChallenge.html#attempt"
+                          ><code>QualifiedEmbeddedChallenge#attempt</code></a
+                        >
+                        directly, and disable the internal buttons. This allows
+                        you to link the start with the result, as those methods
+                        return a promise on completion.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>eventData</code></td>
+
+                          <td class="type">
+                            <span class="param-type">Object</span>
+                          </td>
+
+                          <td class="description last">
+                            <h6
+                              class="method-params-label method-subparams-label"
+                            >
+                              Properties
+                            </h6>
+
+                            <table class="params table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Name</th>
+
+                                  <th>Type</th>
+
+                                  <th class="last">Description</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td class="name"><code>manager</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbed.html"
+                                        >QualifiedEmbed</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Manager for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>editor</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbeddedChallenge.html"
+                                        >QualifiedEmbeddedChallenge</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Editor for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>challengeId</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type">string</span>
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>
+                                      Challenge ID of the editor for this event
+                                    </p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>data.type</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type">"test"</span>
+                                    |
+
+                                    <span class="param-type">"attempt"</span>
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Type of run</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name">
+                                    <code>data.fileData</code>
+                                  </td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a
+                                        href="ChallengeOptions.html#~FileContentsData"
+                                        >ChallengeOptions~FileContentsData</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>File data at beginning of run</p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+                  </dd>
+
+                  <hr />
+                  <dt>
+                    <h4 class="name" id="onRun">
+                      <span class="type-signature"></span>onRun(eventData)
+                    </h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Callback with the results when any embedded challenge is
+                        run against tests, or classic code is attempted.
+                      </p>
+                    </div>
+
+                    <h5>Parameters:</h5>
+
+                    <table class="params table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+
+                          <th>Type</th>
+
+                          <th class="last">Description</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td class="name"><code>eventData</code></td>
+
+                          <td class="type">
+                            <span class="param-type">Object</span>
+                          </td>
+
+                          <td class="description last">
+                            <h6
+                              class="method-params-label method-subparams-label"
+                            >
+                              Properties
+                            </h6>
+
+                            <table class="params table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Name</th>
+
+                                  <th>Type</th>
+
+                                  <th class="last">Description</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td class="name"><code>manager</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbed.html"
+                                        >QualifiedEmbed</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Manager for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>editor</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a href="QualifiedEmbeddedChallenge.html"
+                                        >QualifiedEmbeddedChallenge</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Editor for this event</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>challengeId</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type">string</span>
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>
+                                      Challenge ID of the editor for this event
+                                    </p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td class="name"><code>data</code></td>
+
+                                  <td class="type">
+                                    <span class="param-type"
+                                      ><a
+                                        href="ChallengeOptions.html#~RunResult"
+                                        >ChallengeOptions~RunResult</a
+                                      ></span
+                                    >
+                                  </td>
+
+                                  <td class="description last">
+                                    <p>Results of the code run</p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <dl class="details"></dl>
+                  </dd>
+                </dl>
+
+                <h3 class="subsection-title">Type Definitions</h3>
+
+                <dl>
+                  <hr />
+                  <dt class="name" id="~LoadData">
+                    <h4 id="~LoadData">LoadData</h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Data about the loaded challenge, solution, and more. Can
+                        be useful for rendering options for the candidate, such
+                        as language selection.
+                      </p>
+                    </div>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>error</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  If set, there was an error loading the
+                                  challenge (invalid ID or restrictions)
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>started</code></td>
+
+                              <td class="type">
+                                <span class="param-type">boolean</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>True if the editor is ready to solve.</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>solutionId</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  If there's an assessment result, this will be
+                                  the ID of the solution for this challenge.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name">
+                                <code>solutionLanguage</code>
+                              </td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  For Classic Code challenges, this is the
+                                  current language being used for solving.
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>type</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Type of challenge (<code
+                                    >&quot;CodeChallenge&quot;</code
+                                  >
+                                  or
+                                  <code>&quot;AdvancedCodeChallenge&quot;</code
+                                  >)
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>title</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>Title of challenge</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>summary</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>Summary text on challenge, in Markdown</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>languages</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of languages available on the challenge
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>availableTabs</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  >Array.&lt;string></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  List of
+                                  <a href="global.html#TAB_IDS"
+                                    >tabs available</a
+                                  >
+                                  on the challenge (for hideTabs or showTabs)
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>fileData</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  ><a
+                                    href="ChallengeOptions.html#~FileContentsData"
+                                    >ChallengeOptions~FileContentsData</a
+                                  ></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>Current file contents (if available)</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="~FileContentsData">
+                    <h4 id="~FileContentsData">FileContentsData</h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>File contents data</p>
+                    </div>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>files</code></td>
+
+                              <td class="type">
+                                <span class="param-type">Object</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Hash of file name or path to file contents to
+                                  be set on the challenge solution.
+                                </p>
+                                <h6>Properties</h6>
+
+                                <table class="props table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>Name</th>
+
+                                      <th>Type</th>
+
+                                      <th class="last">Description</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    <tr>
+                                      <td class="name"><code>(path)</code></td>
+
+                                      <td class="type">
+                                        <span class="param-type">string</span>
+                                      </td>
+
+                                      <td class="description last">
+                                        <p>
+                                          Contents of each file. Use the file
+                                          path as the key for project
+                                          challenges, or <code>code</code> and
+                                          <code>testcases</code> for classic
+                                          challenges.
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>cursor</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  ><a href="ChallengeOptions.html#~Cursor"
+                                    >ChallengeOptions~Cursor</a
+                                  ></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Contains information about where the cursor is
+                                  at the time of the event.
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="~Cursor">
+                    <h4 id="~Cursor">Cursor</h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>Cursor tracking data.</p>
+                    </div>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>path</code></td>
+
+                              <td class="type">
+                                <span class="param-type">string</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Path to file. For classic code challenges,
+                                  this will be <code>code</code> or
+                                  <code>testcases</code>
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>line</code></td>
+
+                              <td class="type">
+                                <span class="param-type">number</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>Line number</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>ch</code></td>
+
+                              <td class="type">
+                                <span class="param-type">number</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>Character number</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+
+                  <hr />
+                  <dt class="name" id="~RunResult">
+                    <h4 id="~RunResult">RunResult</h4>
+                  </dt>
+                  <dd>
+                    <div class="description">
+                      <p>
+                        Result of a code run. This is only a subset of the
+                        properties available.
+                      </p>
+                    </div>
+
+                    <dl class="details">
+                      <h5 class="subsection-title">Properties:</h5>
+
+                      <dl>
+                        <table class="props table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Name</th>
+
+                              <th>Type</th>
+
+                              <th class="last">Description</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="name"><code>type</code></td>
+
+                              <td class="type">
+                                <span class="param-type">"test"</span>
+                                |
+
+                                <span class="param-type">"attempt"</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  Type of run (always
+                                  <code>&quot;test&quot;</code> for project
+                                  challenges)
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>fileData</code></td>
+
+                              <td class="type">
+                                <span class="param-type"
+                                  ><a
+                                    href="ChallengeOptions.html#~FileContentsData"
+                                    >ChallengeOptions~FileContentsData</a
+                                  ></span
+                                >
+                              </td>
+
+                              <td class="description last">
+                                <p>
+                                  The solution files at the time of the attempt
+                                </p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>flags</code></td>
+
+                              <td class="type">
+                                <span class="param-type">Object</span>
+                              </td>
+
+                              <td class="description last">
+                                <h6>Properties</h6>
+
+                                <table class="props table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>Name</th>
+
+                                      <th>Type</th>
+
+                                      <th class="last">Description</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    <tr>
+                                      <td class="name"><code>success</code></td>
+
+                                      <td class="type">
+                                        <span class="param-type">boolean</span>
+                                      </td>
+
+                                      <td class="description last">
+                                        <p>
+                                          True if the code was run without error
+                                        </p>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="name"><code>passed</code></td>
+
+                                      <td class="type">
+                                        <span class="param-type">boolean</span>
+                                      </td>
+
+                                      <td class="description last">
+                                        <p>
+                                          True if the solution passed all tests
+                                        </p>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="name">
+                                        <code>executionFailure</code>
+                                      </td>
+
+                                      <td class="type">
+                                        <span class="param-type">boolean</span>
+                                      </td>
+
+                                      <td class="description last">
+                                        <p>True if unable to run the code</p>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td class="name"><code>timeout</code></td>
+
+                                      <td class="type">
+                                        <span class="param-type">boolean</span>
+                                      </td>
+
+                                      <td class="description last">
+                                        <p>
+                                          True if the tests did not run within
+                                          the allotted time
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>wallTime</code></td>
+
+                              <td class="type">
+                                <span class="param-type">number</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>running time for the code</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="name"><code>result</code></td>
+
+                              <td class="type">
+                                <span class="param-type">Object</span>
+                              </td>
+
+                              <td class="description last">
+                                <p>Details of the run result</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </dl>
+                    </dl>
+                  </dd>
+                </dl>
+              </article>
+            </section>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-3">
+          <div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+        </div>
+      </div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<hr>
-<dt class="name" id="authToken">
-    <h4 id="authToken"><span class="type-signature"></span>authToken<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The <code>authToken</code> value from an <a href="https://docs.qualified.io/integrations/custom-integrations/api/#assessment-invitations">AssessmentInvitation</a>. This token allows a
-candidate to solve an embedded challenge and save the results back as a normal assessment.</p>
-<p>This property is not used if the challenge is not storing the results back on an assessment result.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="embedClientKey">
-    <h4 id="embedClientKey"><span class="type-signature"></span>embedClientKey<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The unique embed client key value set on your team.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="autoStart">
-    <h4 id="autoStart"><span class="type-signature"></span>autoStart<span class="type-signature"> :boolean</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>For embedded challenges with an <a href="ChallengeOptions.html#authToken"><code>authToken</code></a>, this automatically starts the
-assessment and creates the solution when the embedded editor loads.</p>
-<p>When <code>false</code> (the default), the user will need to click a button to start the challenge. This is recommended
-on pages with multiple embedded challenges, otherwise start times won't be very useful.</p>
-<p>When the <code>mode</code> is <code>readonly</code> or <code>restricted</code>, this option is ignored.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="mode">
-    <h4 id="mode"><span class="type-signature"></span>mode<span class="type-signature"> :null|"readonly"|"restricted""</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Enables setting up the editor in different read-only modes.</p>
-<ul>
-<li><code>null</code> The default, normal mode with full editing and saving.</li>
-<li><code>&quot;restricted&quot;</code> Means you can edit the code, but changes will never be saved, or sent back to the parent
-window.</li>
-<li><code>&quot;readonly&quot;</code> Means you cannot edit the code at all. Useful for reviewing-only, without making changes.
-This also disables running code.</li>
-</ul>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">null</span>
-|
-
-<span class="param-type">"readonly"</span>
-|
-
-<span class="param-type">"restricted"</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="language">
-    <h4 id="language"><span class="type-signature"></span>language<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Language to use on classic code challenges. This is recommended for multi-language challenges, as the user
-is not provided a way to change the language within the editor.</p>
-<p>You can provide your own list of available languages using the results from the
-<a href="ChallengeOptions.html#onLoaded"><code>ChallengeOptions#onLoaded</code></a> callback event.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="theme">
-    <h4 id="theme"><span class="type-signature"></span>theme<span class="type-signature"> :null|"light"|"dark"</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Force the theme for this editor (one of <code>light</code> or <code>dark</code>). Leave unset to let the user select their own theme
-from the <code>idesettings</code> tab.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">null</span>
-|
-
-<span class="param-type">"light"</span>
-|
-
-<span class="param-type">"dark"</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
-	<dd class="tag-default">
-		<ul class="dummy">
-			<li>"light"</li>
-		</ul>
-	</dd>
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="hideTabs">
-    <h4 id="hideTabs"><span class="type-signature"></span>hideTabs<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Comma-delimited list of tabs to hide by tab ID or file path, overrides <a href="ChallengeOptions.html#showTabs"><code>ChallengeOptions#showTabs</code></a>.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
-	<dd class="tag-see">
-		<ul>
-			<li><a href="global.html#TAB_IDS"><code>TAB_IDS</code></a> for a list of common tab IDs.</li>
-			</ul>
-	</dd>
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="showTabs">
-    <h4 id="showTabs"><span class="type-signature"></span>showTabs<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Comma-delimited list of tabs to show by tab ID or file path. When this is set, the default state is to show
-<em>no</em> tabs at all.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
-	<dd class="tag-see">
-		<ul>
-			<li><a href="global.html#TAB_IDS"><code>TAB_IDS</code></a> for a list of common tab IDs.</li>
-			</ul>
-	</dd>
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="hideActions">
-    <h4 id="hideActions"><span class="type-signature"></span>hideActions<span class="type-signature"> :boolean|"attempt"|"runTests"</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>If <code>true</code>, hides the list of actions in the upper left. This could be useful if you are wrapping this in your
-own interface.</p>
-<p>The user will still be able to run the code using the shortcut keys (<code>CMD/CTRL + '</code> or <code>CMD/CTRL + Enter</code>).</p>
-<p>For Classic Code challenges, you can choose to only show RUN TESTS. Set the value of <code>hideActions</code> to
-<code>&quot;attempt&quot;</code>. This hides the SUBMIT button, and disables running the code against the final submission tests.
-This could be useful for practice code or simple demo code.</p>
-<p>To achieve the reverse (only allowing hidden tests), either configure the challenge without Sample Test Cases,
-or set the value of <code>hideActions</code> to <code>runTests</code>. Simply hiding the tab will not disable the button, which could
-be used if you want to configure an external editor.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-|
-
-<span class="param-type">"attempt"</span>
-|
-
-<span class="param-type">"runTests"</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-	<dt class="tag-default method-doc-label method-doc-details-label">Default Value:</dt>
-	<dd class="tag-default">
-		<ul class="dummy">
-			<li>false</li>
-		</ul>
-	</dd>
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="initialLayout">
-    <h4 id="initialLayout"><span class="type-signature"></span>initialLayout<span class="type-signature"> :Object</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Override the default layout for the challenge. This does not replace <a href="ChallengeOptions.html#hideTabs"><code>ChallengeOptions#hideTabs</code></a> or
-<a href="ChallengeOptions.html#showTabs"><code>ChallengeOptions#showTabs</code></a>, which are still used to define tab visibility. Visible tabs that are not
-listed in <code>initialLayout</code> are left in their default positions.</p>
-<p>The first tab in each section will be the &quot;active&quot; tab when the editor loads.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>topLeft</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of tab IDs or file paths for the top left section of the editor. <br/>Defaults to any editable files.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>topRight</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of tab IDs or file paths for the top right section of the editor. <br/>Defaults to all other tabs.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>bottomLeft</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of tab IDs or file paths for the bottom left section of the editor. <br/>Defaults to empty, and not recommended for smaller challenges.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>bottomRight</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of tab IDs or file paths for the bottom right section of the editor. <br/>Defaults to empty, and not recommended for smaller challenges.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
-	<dd class="tag-see">
-		<ul>
-			<li><a href="global.html#TAB_IDS"><code>TAB_IDS</code></a> for a list of common tab IDs.</li>
-			</ul>
-	</dd>
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="initialFiles">
-    <h4 id="initialFiles"><span class="type-signature"></span>initialFiles<span class="type-signature"> :Object</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Sets the initial solution values on the challenge. Note that this will only be processed when the challenge
-is first loaded, and if there isn't an existing solution.</p>
-<p>To change the solution content later, please use <a href="QualifiedEmbeddedChallenge.html#setFileContents"><code>QualifiedEmbeddedChallenge#setFileContents</code></a>.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>(path)</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Contents of each file. Use the file path as the key for project challenges, or <code>code</code> and <code>testcases</code> for classic challenges.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="initialCursor">
-    <h4 id="initialCursor"><span class="type-signature"></span>initialCursor<span class="type-signature"> :<a href="ChallengeOptions.html#~Cursor">ChallengeOptions~Cursor</a></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Sets the initial cursor position. Note that this will only be processed when the challenge
-is first loaded, and if there isn't an existing solution.</p>
-<p>To change the cursor position later, please use <a href="QualifiedEmbeddedChallenge.html#setFileContents"><code>QualifiedEmbeddedChallenge#setFileContents</code></a>.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ChallengeOptions.html#~Cursor">ChallengeOptions~Cursor</a></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="initialRunResult">
-    <h4 id="initialRunResult"><span class="type-signature"></span>initialRunResult<span class="type-signature"> :<a href="ChallengeOptions.html#~RunResult">ChallengeOptions~RunResult</a></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Provides an initial run result, which should be the <code>eventData.data</code> returned from
-<a href="ChallengeOptions.html#onRun"><code>ChallengeOptions#onRun</code></a>, <a href="QualifiedEmbeddedChallenge.html#runTests"><code>QualifiedEmbeddedChallenge#runTests</code></a>, or
-<a href="QualifiedEmbeddedChallenge.html#attempt"><code>QualifiedEmbeddedChallenge#attempt</code></a>.</p>
-<p>This can include the <code>fileData</code> property, which will configure the entire solution at once. If
-<a href="ChallengeOptions.html#initialFiles"><code>ChallengeOptions#initialFiles</code></a> or <a href="ChallengeOptions.html#initialCursor"><code>ChallengeOptions#initialCursor</code></a> are provided, they will
-overwrite the values in <code>fileData</code>.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ChallengeOptions.html#~RunResult">ChallengeOptions~RunResult</a></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="localStorageId">
-    <h4 id="localStorageId"><span class="type-signature"></span>localStorageId<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>If provided, automatically saves and restores the contents of the challenge in <code>localStorage</code> using the given
-id as a key. This will also restore the last cursor position.</p>
-<p>The data will automatically be serialized using the <code>challengeId</code> so you can use the same <code>localStorageId</code> value
-for the entire page of challenges (or even across multiple pages).</p>
-<p><strong>Note 1:</strong> Using this feature will override anything set in <a href="ChallengeOptions.html#initialFiles"><code>ChallengeOptions#initialFiles</code></a>. If you want to
-replace the localStorage contents, you&quot;ll need to call <a href="QualifiedEmbeddedChallenge.html#setFileContents"><code>QualifiedEmbeddedChallenge#setFileContents</code></a> using
-the <a href="ChallengeOptions.html#onLoaded"><code>ChallengeOptions#onLoaded</code></a> event callback.</p>
-<p><strong>Note 2:</strong> The solution data will be stored on the domain of the parent frame, <em>not</em> on qualified.io. Also, the
-embed will <strong>never delete</strong> this data, so it is up to the outer page to manage it's <code>localStorage</code>.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id="baseURL">
-    <h4 id="baseURL"><span class="type-signature"></span>baseURL<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Override the base URL for testing and debugging.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="onLoaded"><span class="type-signature"></span>onLoaded(eventData)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Callback for when the editor has loaded.</p>
-<p>This callback is always called at least once, and can be called multiple times.</p>
-<ul>
-<li>Before a solution is created (when provided an <code>authToken</code>), it will be called with <code>started</code> set to <code>false</code>.</li>
-<li>It will always be called when the editor is ready to solve, with <code>started</code> set to <code>true</code>. This may be the
-first time it's called.</li>
-<li>It will also be called again if there are changes that affect the challenge details, such as changing the
-<code>challengeId</code>, or the solution language.</li>
-</ul>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>eventData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>manager</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbed.html">QualifiedEmbed</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Manager for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>editor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>challengeId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Challenge ID of the editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~LoadData">ChallengeOptions~LoadData</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Information about the challenge, will also be stored in <a href="QualifiedEmbeddedChallenge.html#challengeData"><code>QualifiedEmbeddedChallenge#challengeData</code></a> for future access.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="onChange"><span class="type-signature"></span>onChange(eventData)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Callback with changes any time an embedded challenge solution is modified. It is also called when the solution
-is initially set up.</p>
-<p>When the <code>mode</code> is <code>readonly</code> or <code>restricted</code>, this callback is not triggered.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>eventData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>manager</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbed.html">QualifiedEmbed</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Manager for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>editor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>challengeId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Challenge ID of the editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~FileContentsData">ChallengeOptions~FileContentsData</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>File Change Data</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="onRunStart"><span class="type-signature"></span>onRunStart(eventData)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Called when a run is started (internally or externally).</p>
-<p>Note: if you want to better link run start to run results, it might be easier to use
-<a href="QualifiedEmbeddedChallenge.html#runTests"><code>QualifiedEmbeddedChallenge#runTests</code></a> and <a href="QualifiedEmbeddedChallenge.html#attempt"><code>QualifiedEmbeddedChallenge#attempt</code></a> directly, and disable the
-internal buttons. This allows you to link the start with the result, as those methods return a
-promise on completion.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>eventData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>manager</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbed.html">QualifiedEmbed</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Manager for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>editor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>challengeId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Challenge ID of the editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data.type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">"test"</span>
-|
-
-<span class="param-type">"attempt"</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Type of run</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data.fileData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~FileContentsData">ChallengeOptions~FileContentsData</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>File data at beginning of run</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="onRun"><span class="type-signature"></span>onRun(eventData)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Callback with the results when any embedded challenge is run against tests, or classic code is attempted.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>eventData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6 class="method-params-label method-subparams-label">Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>manager</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbed.html">QualifiedEmbed</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Manager for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>editor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="QualifiedEmbeddedChallenge.html">QualifiedEmbeddedChallenge</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>challengeId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Challenge ID of the editor for this event</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~RunResult">ChallengeOptions~RunResult</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Results of the code run</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        <dl>
-                
-<hr>
-<dt class="name" id="~LoadData">
-    <h4 id="~LoadData">LoadData</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Data about the loaded challenge, solution, and more. Can be useful for rendering options for the candidate, such as language selection.</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>error</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If set, there was an error loading the challenge (invalid ID or restrictions)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>started</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>True if the editor is ready to solve.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>solutionId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>If there's an assessment result, this will be the ID of the solution for this challenge.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>solutionLanguage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>For Classic Code challenges, this is the current language being used for solving.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Type of challenge (<code>&quot;CodeChallenge&quot;</code> or <code>&quot;AdvancedCodeChallenge&quot;</code>)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Title of challenge</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>summary</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Summary text on challenge, in Markdown</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>languages</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of languages available on the challenge</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>availableTabs</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;string></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>List of <a href="global.html#TAB_IDS">tabs available</a> on the challenge (for hideTabs or showTabs)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~FileContentsData">ChallengeOptions~FileContentsData</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Current file contents (if available)</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id="~FileContentsData">
-    <h4 id="~FileContentsData">FileContentsData</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>File contents data</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>files</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Hash of file name or path to file contents to be set on the challenge solution.</p>
-                <h6>Properties</h6>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>(path)</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Contents of each file. Use the file path as the key for project challenges, or <code>code</code> and <code>testcases</code> for classic challenges.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>cursor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~Cursor">ChallengeOptions~Cursor</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Contains information about where the cursor is at the time of the event.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id="~Cursor">
-    <h4 id="~Cursor">Cursor</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Cursor tracking data.</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Path to file. For classic code challenges, this will be <code>code</code> or <code>testcases</code></p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>line</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Line number</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ch</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Character number</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id="~RunResult">
-    <h4 id="~RunResult">RunResult</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Result of a code run. This is only a subset of the properties available.</p>
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">"test"</span>
-|
-
-<span class="param-type">"attempt"</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Type of run (always <code>&quot;test&quot;</code> for project challenges)</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ChallengeOptions.html#~FileContentsData">ChallengeOptions~FileContentsData</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The solution files at the time of the attempt</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>flags</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>success</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>True if the code was run without error</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>passed</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>True if the solution passed all tests</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>executionFailure</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>True if unable to run the code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>timeout</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>True if the tests did not run within the allotted time</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>wallTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>running time for the code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>result</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Details of the run result</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            </dl>
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
-</div>
-
 
     <div class="modal fade" id="searchResults">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
             <h4 class="modal-title">Search results</h4>
           </div>
           <div class="modal-body"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
     </div>
 
+    <footer>
+      <div><br /><br /><br /><br /><br /><br /></div>
 
-<footer>
+      <span class="copyright"> Qualified.io </span>
 
-	<div><br><br><br><br><br><br></div>
+      <span class="jsdoc-message">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
 
+        on May 8th 2024, 10:18:39 pm using the
+        <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+      </span>
+    </footer>
 
-	<span class="copyright">
-	Qualified.io
-	</span>
+    <script src="../scripts/docstrap.lib.js"></script>
+    <script src="../scripts/toc.js"></script>
 
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
-	
-		on May 8th 2024, 10:18:39 pm
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
-</footer>
+    <script
+      type="text/javascript"
+      src="../scripts/fulltext-search-ui.js"
+    ></script>
 
-<script src="../scripts/docstrap.lib.js"></script>
-<script src="../scripts/toc.js"></script>
+    <script>
+      $(function () {
+        $("[id*='$']").each(function () {
+          var $this = $(this);
 
-    <script type="text/javascript" src="../scripts/fulltext-search-ui.js"></script>
-
-
-<script>
-$( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
-
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
-
-	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
-		var $this = $( this );
-
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
-		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
-			lang = lang[1];
-		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
-			lang = langClassMatch ? langClassMatch[1] : "javascript";
-		}
-
-		if ( lang ) {
-
-			$this
-			.addClass( "sunlight-highlight-" + lang )
-			.addClass( "linenums" )
-			.html( example.html() );
-
-		}
-	} );
-
-	Sunlight.highlightAll( {
-		lineNumbers : true,
-		showMenu : true,
-		enableDoclinks : true
-	} );
-
-	$.catchAnchorLinks( {
-        navbarOffset: 10
-	} );
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			return $( heading ).attr( "id" ) || ( prefix + i );
-		},
-		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
-		showAndHide : false,
-		smoothScrolling: true
-	} );
-
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-
-    $( "table" ).each( function () {
-      var $this = $( this );
-      $this.addClass('table');
-    } );
-
-} );
-</script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-<!--Google Analytics-->
-
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            SearcherDisplay.init();
+          $this.attr("id", $this.attr("id").replace("$", "__"));
         });
+
+        $(
+          ".tutorial-section pre, .readme-section pre, pre.prettyprint.source",
+        ).each(function () {
+          var $this = $(this);
+
+          var example = $this.find("code");
+          exampleText = example.html();
+          var lang = /{@lang (.*?)}/.exec(exampleText);
+          if (lang && lang[1]) {
+            exampleText = exampleText.replace(lang[0], "");
+            example.html(exampleText);
+            lang = lang[1];
+          } else {
+            var langClassMatch = example
+              .parent()[0]
+              .className.match(/lang\-(\S+)/);
+            lang = langClassMatch ? langClassMatch[1] : "javascript";
+          }
+
+          if (lang) {
+            $this
+              .addClass("sunlight-highlight-" + lang)
+              .addClass("linenums")
+              .html(example.html());
+          }
+        });
+
+        Sunlight.highlightAll({
+          lineNumbers: true,
+          showMenu: true,
+          enableDoclinks: true,
+        });
+
+        $.catchAnchorLinks({
+          navbarOffset: 10,
+        });
+        $("#toc").toc({
+          anchorName: function (i, heading, prefix) {
+            return $(heading).attr("id") || prefix + i;
+          },
+          selectors:
+            "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+          showAndHide: false,
+          smoothScrolling: true,
+        });
+
+        $("#main span[id^='toc']").addClass("toc-shim");
+        $(".dropdown-toggle").dropdown();
+
+        $("table").each(function () {
+          var $this = $(this);
+          $this.addClass("table");
+        });
+      });
     </script>
 
+    <!--Navigation and Symbol Display-->
 
-</body>
+    <!--Google Analytics-->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        SearcherDisplay.init();
+      });
+    </script>
+  </body>
 </html>
