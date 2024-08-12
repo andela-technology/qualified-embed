@@ -1,3 +1,6 @@
+- Use jsdelivr/unpkg with npm rather than gh.
+  - See: https://unpkg.com/browse/vue@3.4.21/package.json
+  - See: https://github.com/bigskysoftware/htmx/blob/master/package.json
 - Update SDK docs to show Node usage in addition to browser usage.
 - add jsdoc dev server with hot reloading
 - add TS and typechecking the JSDocs, as well as emit types
