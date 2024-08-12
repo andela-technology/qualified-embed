@@ -14,7 +14,7 @@ When embedding challenges, you can:
 ```xml
 <div data-qualified-embed="507f19cde860e19729a1e810"></div>
 
-<script src="//www.qualified.io/embed.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.0-legacy/dist/embed.min.js"></script>
 <script type="application/javascript">
 window.qualifiedEmbedManager = window.QualifiedEmbed.init({
   // generate embeds by looking through nodes
