@@ -65,8 +65,8 @@ You can achieve this by deleting the non-version labeled docs in the root folder
 
 ## Updating Related Resources
 
-The Qualified codebase has a few references to the script. Update all unpkg links (`git grep unpkg`) to use the latest script tag.
+The Qualified codebase has a few references to the script. Update all unpkg links (`git grep unpkg` / `git grep jsdelivr`) to use the latest script tag.
 
 https://github.com/qualified/embed-demos also uses the script tag and should be updated accordingly.
 
-Update the script tags within the jsdocs examples and README.md here as well.
+Update the script tags within the jsdocs examples and README.md here as well (README.md needs to be updated before deploying the new version, since that's what npm uses on the package page).
