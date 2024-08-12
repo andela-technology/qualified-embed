@@ -37,7 +37,7 @@ When embedding challenges, you can:
 <!-- replace with your challenge id -->
 <div data-qualified-embed="5c817855557303000a2f82b9"></div>
 
-<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v1.0.1/dist/embed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v2.0.0/dist/embed.min.js"></script>
 <script>
   var manager = window.QualifiedEmbed.QualifiedEmbedManager.init({
     // generate editors by looking through nodes
