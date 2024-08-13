@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * The available options for an assessment options hash.
  * @type Object
