@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * List of common tab names. For project challenges, this will also include all readwrite enabled file paths.
  * @readonly
