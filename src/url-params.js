@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * You can directly embed a challenge editor without the Manager library. Note that the outer page will not be able to interact with the embedded challenge. This could, however, be useful as a way to show simple examples with static site generators.
  *

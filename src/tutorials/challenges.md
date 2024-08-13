@@ -12,41 +12,73 @@ When embedding challenges, you can:
 ## Quick Start Example
 
 ```xml
-<div data-qualified-embed="507f19cde860e19729a1e810"></div>
-
-<script src="//www.qualified.io/embed.js"></script>
-<script type="application/javascript">
-window.qualifiedEmbedManager = window.QualifiedEmbed.init({
-  // generate embeds by looking through nodes
-  autoCreate: true,
-
-  // shared options for new embeds
-  options: {
-    // optional authToken for saving results from API call
-    authToken: authTokenFromAssessmentInvitation,
-    embedClientKey: embedClientKeyFromTeamSettings,
-    theme: "dark",
-  },
-
-  // challenge-specific options
-  challengeOptions: {
-    "507f19cde860e19729a1e810": {
-      language: "javascript",
-      hideTabs: "instructions,idesettings",
-    },
-  },
-
-  // Common callbacks, can also be set per-challenge
-
-  onChange({ manager, editor, challengeId, data }) {
-  	// save changes made to the solution
-  },
-  onRun({ manager, editor, challengeId, data }) {
-    console.log("challenge " + challengeId + " was run with this result:");
-    console.log(data);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Embedded Challenge</title>
+  <style>
+  [data-qualified-embed] {
+    position: relative;
+    max-width: 100%;
+    width: 100em;
+    display: flex;
+    resize: both;
+    overflow: hidden;
+    height: 60vh;
   }
-});
+  [data-qualified-embed] > iframe {
+    border: none;
+    flex-grow: 1;
+  }
+  </style>
+</head>
+<body>
+
+<!-- replace with your challenge id -->
+<div data-qualified-embed="5c817855557303000a2f82b9"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@qualified/embed@2.0.0"></script>
+<script>
+  var manager = window.QualifiedEmbed.QualifiedEmbedManager.init({
+    // generate editors by looking through nodes
+    autoCreate: true,
+
+    // shared options for new editors
+    options: {
+      // optional authToken for saving results from API call
+      authToken: authTokenFromAssessmentInvitation,
+      embedClientKey: embedClientKeyFromTeamSettings,
+    },
+
+    // challenge-specific options
+    challengeOptions: {
+      "5c817855557303000a2f82b9": {
+        language: "javascript"
+      }
+    },
+
+    // The following events can also be handled per-challenge
+
+    onLoaded({ manager, editor, challengeId, data }) {
+      // Respond to challenge being loaded and ready for solving
+    },
+
+    onChange({ manager, editor, challengeId, data }) {
+      // save changes made to the solution
+    },
+
+    onRunStart({ manager, editor, challengeId, data }) {
+      console.log("challenge " + challengeId + " was run as a " + data.type); // test or attempt
+    },
+
+    onRun({ manager, editor, challengeId, data }) {
+      console.log("challenge " + challengeId + " was run with this result:");
+      console.log(data);
+    }
+  });
 </script>
+</body>
+</html>
 ```
 
 ## Usage
@@ -65,7 +97,6 @@ The Embed editor is not intended as a 1-to-1 replacement for the dedicated asses
 - **Time-Limits** are not shown or enforced, either for whole assessments or for individual challenges. If you need to enforce time limits, you should manage them within your application.
 - **Quiz Challenges** are not currently supported at all.
 - **Project Code Challenges** are presented in a limited format:
-  - There is no way to **submit** project challenges.
   - Candidates are not able to add, rename, or delete files.
   - There is no file tree.
   - The editor also only shows editable (`readwrite`) files to the candidate.
@@ -76,14 +107,14 @@ If any of the above are necessary for your use case, [try embedding full assessm
 
 ## Initial Setup
 
-For configuring group of challenges, please use `init` on [window.QualifiedEmbed]{@linkcode QualifiedEmbedManager}. Once you've set up your manager, you can create individual embeds using {@link QualifiedEmbedManager#createEditor}. See {@link QualifiedEmbeddedChallenge} for the editor functions.
+For configuring group of challenges, please use `init` on [window.QualifiedEmbed.QualifiedEmbedManager]{@linkcode QualifiedEmbedManager}. Once you've set up your manager, you can create individual embeds using {@link QualifiedEmbedManager#createEditor}. See {@link QualifiedEmbeddedChallenge} for the editor functions.
 
 ### Direct Challenge Creation
 
 If you only plan on using a single challenge, and want to control the creation and removal of that challenge through code, you can also [create an embedded challenge directly]{@linkplain QualifiedEmbeddedChallenge}:
 
 ```javascript
-var editor = new window.QualifiedEmbeddedChallenge({
+const editor = new window.QualifiedEmbed.QualifiedEmbeddedChallenge({
   node: iframeNode,
 
   challengeId: "507f19cde860e19729a1e810",

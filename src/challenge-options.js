@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * The available options for a challenge options hash.
  * @type Object
@@ -46,10 +45,9 @@ export const ChallengeOptions = {
    *   window.
    * * `"readonly"` Means you cannot edit the code at all. Useful for reviewing-only, without making changes.
    *   This also disables running code.
-   * * `"runonly"` is identical to `"readonly"`, except that tests can be run, either programmatically with `runTests()` and `attempt()`, or through the Run and Submit buttons in the Embed UI (the UI buttons can be hidden with the `"hideActions"` option).
    *
    * @name ChallengeOptions#mode
-   * @type {null|"readonly"|"restricted"|"runonly"}
+   * @type (null|"readonly"|"restricted")
    */
   mode: undefined,
 
@@ -228,7 +226,7 @@ export const ChallengeOptions = {
    * Callback with changes any time an embedded challenge solution is modified. It is also called when the solution
    * is initially set up.
    *
-   * When the `mode` is `readonly`, `runonly` or `restricted`, this callback is not triggered.
+   * When the `mode` is `readonly` or `restricted`, this callback is not triggered.
    *
    * @method ChallengeOptions#onChange
    *

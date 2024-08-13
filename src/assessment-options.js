@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /**
  * The available options for an assessment options hash.
  * @type Object
@@ -60,7 +59,7 @@ export const AssessmentOptions = {
    * considered a security feature.
    *
    * @name AssessmentOptions#mode
-   * @type {null|"normal"|"readonly"|"restricted"|"runonly"}
+   * @type (null|"normal"|"readonly"|"restricted")
    */
   mode: undefined,
 
