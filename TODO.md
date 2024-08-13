@@ -1,10 +1,9 @@
-- Use jsdelivr/unpkg with npm rather than gh.
-  - See: https://unpkg.com/browse/vue@3.4.21/package.json
-  - See: https://github.com/bigskysoftware/htmx/blob/master/package.json
 - Update SDK docs to show Node usage in addition to browser usage.
 - add jsdoc dev server with hot reloading
 - add TS and typechecking the JSDocs, as well as emit types
 - get webpack to build for browser module imports as well as script tags (or rely on unpkg?)
+  - See: https://unpkg.com/browse/vue@3.4.21/package.json
+  - See: https://github.com/bigskysoftware/htmx/blob/master/package.json
 - Mock CR requests in tests
 - Add LICENSE
 - could add prettier action: https://github.com/marketplace/actions/prettier-action

@@ -28,7 +28,7 @@ You should embed the full assessment whenever you need the following:
 <!-- replace with your assessment id -->
 <iframe data-qualified-embed="5a309e7cac5e2d0013af6bdb"></iframe>
 
-<script src="https://cdn.jsdelivr.net/gh/andela-technology/qualified-embed@v2.0.0/dist/embed.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@qualified/embed@2.0.0"></script>
 <script>
 const assessmentEditor = new window.QualifiedEmbed.QualifiedEmbeddedAssessment({
   // the node hosting the iframe
