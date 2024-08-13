@@ -9,11 +9,11 @@
     "start": "webpack serve",
     "build": "webpack",
     "check-types": "tsc --skipLibCheck --project ./jsconfig.json",
-    "lint": "eslint --ignore-path=.eslintignore .",
+    "lint": "eslint",
     "format": "prettier -w .",
     "test": "playwright test",
     "jsdoc": "jsdoc -c jsdoc.config.json -R src/README.md -t ./node_modules/ink-docstrap/template src",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -33,11 +33,11 @@
     "penpal": "^5.2.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-jsdoc": "^48.2.3",
+    "@playwright/test": "^1.46.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-jsdoc": "^50.0.1",
     "html-webpack-plugin": "^5.6.0",
-    "husky": "^9.0.11",
+    "husky": "^9.1.4",
     "ink-docstrap": "^1.3.2",
     "jsdoc": "^3.6.4",
     "lint-staged": "^15.2.2",
@@ -47,7 +47,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix --ignore-path=.eslintignore",
+    "*.js": "eslint --cache --fix",
     "*.{js,css,html,md}": "prettier --write"
   }
 }
