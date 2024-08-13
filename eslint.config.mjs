@@ -5,7 +5,7 @@ export default [
     files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
     ignores: [
       "dist/embed.min.js",
-      "docs",
+      "docs/**",
     ],
     languageOptions: {
       ecmaVersion: "latest",
