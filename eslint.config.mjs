@@ -3,10 +3,7 @@ import jsdoc from "eslint-plugin-jsdoc";
 export default [
   {
     files: ["**/*.js", "**/*.cjs", "**/*.mjs"],
-    ignores: [
-      "dist/embed.min.js",
-      "docs/**",
-    ],
+    ignores: ["dist/embed.min.js", "docs/**"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
